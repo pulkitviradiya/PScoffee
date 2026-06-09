@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="P.S. Coffee serves 100% Arabica specialty coffee from ₹89 at co-working spaces, corporate campuses, and universities across Ahmedabad. The habit you didn't know you needed.">
+  <meta name="theme-color" content="#E8400C">
+  <meta property="og:title" content="P.S. Coffee — The cup you didn't forget.">
+  <meta property="og:description" content="100% Arabica. No shortcuts. No pretense. Specialty coffee for people with places to be, starting at ₹89.">
+  <title>P.S. Coffee — Specialty Coffee from ₹89 | Ahmedabad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── VARIABLES ──────────────────────────────────────────── */
+    :root {
+      --tc:      #E8400C;
+      --tc-dark: #B8300A;
+      --tc-deep: #8A220A;
+      --cream:   #FAF6EE;
+      --cream2:  #F2EBD9;
+      --cream3:  #E8DCC8;
+      --ink:     #1C1007;
+      --ink2:    #3D2810;
+      --ink3:    #6B4A28;
+      --font-d:  'Aldrich', sans-serif;
+      --font-b:  'Inter', sans-serif;
+      --mw:      1180px;
+      --px:      clamp(1.25rem, 5vw, 3.5rem);
+    }
+
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-b); background: var(--cream); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    img, svg { display: block; }
+
+    /* ─── UTILS ──────────────────────────────────────────────── */
+    .wrap   { max-width: var(--mw); margin: 0 auto; padding: 0 var(--px); }
+    .eyebrow { font-size: 10.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink3); }
+    .eyebrow-light { font-size: 10.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: rgba(250,246,238,.5); }
+
+    /* scroll reveal */
+    .fade { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .fade.in  { opacity: 1; transform: none; }
+    .fade.d1  { transition-delay: .1s; }
+    .fade.d2  { transition-delay: .2s; }
+    .fade.d3  { transition-delay: .3s; }
+    .fade.d4  { transition-delay: .45s; }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: var(--cream);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    #nav.stuck { border-color: var(--cream3); box-shadow: 0 2px 24px rgba(28,16,7,.06); }
+    .nav-i {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px;
+    }
+    .nav-logo { font-family: var(--font-d); font-size: 26px; color: var(--tc); letter-spacing: -1px; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 13px; color: var(--ink2); transition: color .2s; }
+    .nav-links a:hover { color: var(--tc); }
+    .nav-cta {
+      background: var(--tc); color: #FAF6EE !important;
+      padding: 8px 20px; border-radius: 7px; font-weight: 500 !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--tc-dark) !important; }
+    .ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .ham span { display: block; width: 22px; height: 1.5px; background: var(--ink); border-radius: 2px; transition: all .3s; }
+    .ham.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px,4.5px); }
+    .ham.open span:nth-child(2) { opacity: 0; }
+    .ham.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px,-4.5px); }
+
+    /* mobile nav */
+    .nav-mob {
+      display: none; flex-direction: column;
+      background: var(--cream); border-top: 1px solid var(--cream3);
+      padding: 1.5rem var(--px) 2rem;
+      gap: 1.25rem;
+    }
+    .nav-mob.open { display: flex; }
+    .nav-mob a { font-size: 15px; color: var(--ink2); }
+    .nav-mob .nav-cta { text-align: center; border-radius: 8px; padding: 12px; color: #FAF6EE !important; }
+
+    /* ─── BUTTONS ────────────────────────────────────────────── */
+    .btn-cream {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #FAF6EE; color: var(--tc);
+      padding: 13px 26px; border-radius: 8px;
+      font-size: 14px; font-weight: 600;
+      transition: background .2s, transform .2s;
+    }
+    .btn-cream:hover { background: var(--cream2); transform: translateY(-1px); }
+    .btn-outline-cream {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1.5px solid rgba(250,246,238,.45); color: #FAF6EE;
+      padding: 13px 26px; border-radius: 8px;
+      font-size: 14px; font-weight: 500;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-outline-cream:hover { border-color: rgba(250,246,238,.9); background: rgba(250,246,238,.07); }
+    .btn-tc {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--tc); color: #FAF6EE;
+      padding: 13px 26px; border-radius: 8px;
+      font-size: 14px; font-weight: 600;
+      transition: background .2s, transform .2s;
+      border: none; cursor: pointer;
+    }
+    .btn-tc:hover { background: var(--tc-dark); transform: translateY(-1px); }
+    .arrow-icon { width:16px; height:16px; flex-shrink:0; }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh; background: var(--tc);
+      display: flex; flex-direction: column; justify-content: center;
+      padding-top: 62px; position: relative; overflow: hidden;
+    }
+    #hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 85% 15%, rgba(250,246,238,.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 15% 85%, rgba(28,16,7,.14) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    /* subtle grain overlay */
+    #hero::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      opacity: .04;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center;
+      min-height: calc(100vh - 62px);
+      padding: 5rem 0 4rem;
+      position: relative; z-index: 2;
+    }
+    .hero-ey { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: rgba(250,246,238,.55); margin-bottom: 1.5rem; }
+    .hero-mark { font-family: var(--font-d); font-size: clamp(80px,12vw,152px); color: #FAF6EE; line-height: .92; letter-spacing: -3px; }
+    .hero-sub  { font-size: clamp(13px,1.8vw,17px); letter-spacing: .38em; text-transform: uppercase; color: rgba(250,246,238,.6); margin: .5rem 0 2rem; }
+    .hero-tag  { font-family: var(--font-d); font-size: clamp(18px,2.4vw,27px); color: #FAF6EE; line-height: 1.25; margin-bottom: 1rem; }
+    .hero-desc { font-size: 15px; color: rgba(250,246,238,.72); line-height: 1.75; max-width: 420px; margin-bottom: 2.5rem; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* ── hero cup ── */
+    .hero-vis { display: flex; justify-content: center; align-items: center; position: relative; }
+
+    @keyframes float { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-14px); } }
+    @keyframes steam1 { 0%,100%{opacity:0;transform:translateY(0) scaleX(1);} 40%{opacity:.75;} 70%{opacity:.5;transform:translateY(-32px) scaleX(1.2);} }
+    @keyframes steam2 { 0%,100%{opacity:0;transform:translateY(0);} 40%{opacity:.6;} 70%{opacity:.35;transform:translateY(-38px) scaleX(.85);} }
+    @keyframes steam3 { 0%,100%{opacity:0;transform:translateY(0) scaleX(1);} 40%{opacity:.55;} 70%{opacity:.3;transform:translateY(-28px) scaleX(1.1);} }
+
+    .cup-svg { animation: float 4.5s ease-in-out infinite; transform-origin: center bottom; }
+    .st1 { animation: steam1 2.8s ease-in-out infinite; }
+    .st2 { animation: steam2 2.8s ease-in-out infinite .5s; }
+    .st3 { animation: steam3 2.8s ease-in-out infinite 1s; }
+
+    /* scroll hint */
+    .scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      opacity: .45; z-index: 3;
+    }
+    .scroll-hint span { font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: #FAF6EE; }
+    @keyframes bounce-y { 0%,100%{transform:translateY(0);} 55%{transform:translateY(6px);} }
+    .scroll-hint svg { animation: bounce-y 2s ease-in-out infinite; }
+
+    /* ─── MARQUEE ────────────────────────────────────────────── */
+    .mq-wrap { background: var(--ink); overflow: hidden; padding: 15px 0; }
+    .mq-track { display: flex; width: max-content; animation: ticker 22s linear infinite; }
+    @keyframes ticker { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+    .mq-item {
+      display: flex; align-items: center; gap: 2rem;
+      padding: 0 2rem; white-space: nowrap;
+      font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--cream3);
+    }
+    .mq-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--tc); flex-shrink: 0; }
+
+    /* ─── HABIT SECTION ──────────────────────────────────────── */
+    #habit { background: var(--cream); padding: 8rem 0; overflow: hidden; }
+    .habit-hd { text-align: center; margin-bottom: 5rem; }
+    .habit-title { font-family: var(--font-d); font-size: clamp(30px,5vw,54px); color: var(--ink); line-height: 1.1; margin: .6rem 0 1rem; }
+    .habit-sub   { font-size: 16px; color: var(--ink3); max-width: 460px; margin: 0 auto; line-height: 1.75; }
+
+    /* day counter */
+    .day-cnt-wrap { display: flex; justify-content: center; margin-bottom: 3.5rem; }
+    .day-cnt { text-align: center; position: relative; }
+    .cnt-num {
+      font-family: var(--font-d);
+      font-size: clamp(96px,16vw,192px);
+      color: var(--tc); line-height: 1; letter-spacing: -5px;
+      position: relative; display: inline-block;
+    }
+    .cnt-flame {
+      position: absolute; right: -2.5rem; top: .5rem;
+      font-size: clamp(36px,6vw,64px);
+      opacity: 0; transform: scale(.6);
+      transition: opacity .5s ease, transform .5s cubic-bezier(.34,1.56,.64,1);
+    }
+    .cnt-flame.show { opacity: 1; transform: scale(1); }
+    .cnt-lbl { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink3); margin-top: -.75rem; }
+
+    /* streak grid */
+    .streak-grid {
+      display: grid; grid-template-columns: repeat(7, 1fr);
+      gap: 10px; max-width: 520px; margin: 0 auto 4rem;
+    }
+    .s-cup {
+      aspect-ratio: 1; border-radius: 12px;
+      background: var(--cream2); border: 1.5px solid var(--cream3);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: scale(.65);
+      transition: opacity .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1), background .3s, border-color .3s;
+    }
+    .s-cup.vis   { opacity: 1; transform: scale(1); }
+    .s-cup.full  { background: var(--tc); border-color: var(--tc-dark); }
+    .s-cup.today { background: var(--tc); border-color: var(--tc-dark); animation: today-glow 2.2s ease-in-out infinite; }
+    @keyframes today-glow {
+      0%,100% { box-shadow: 0 0 0 3px rgba(232,64,12,.2); }
+      50%      { box-shadow: 0 0 0 9px rgba(232,64,12,.08); }
+    }
+    .cup-ico { width: 42%; height: 42%; }
+
+    /* characters (peeeeps-inspired) */
+    .chars-row {
+      display: flex; justify-content: center;
+      gap: clamp(1.5rem, 4vw, 4rem);
+      flex-wrap: wrap; margin-top: 5rem;
+    }
+    .char-card { text-align: center; opacity: 0; transform: translateY(40px); transition: opacity .6s ease, transform .6s cubic-bezier(.34,1.4,.64,1); }
+    .char-card.in { opacity: 1; transform: none; }
+    .char-card:nth-child(2) { transition-delay: .12s; }
+    .char-card:nth-child(3) { transition-delay: .24s; }
+    .char-card:nth-child(4) { transition-delay: .36s; }
+
+    .char-fig { width: 88px; height: 110px; margin: 0 auto 1rem; }
+    @keyframes bob { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-7px);} }
+    .char-fig svg { animation: bob 3.5s ease-in-out infinite; }
+    .char-card:nth-child(2) .char-fig svg { animation-delay: .5s; }
+    .char-card:nth-child(3) .char-fig svg { animation-delay: 1s; }
+    .char-card:nth-child(4) .char-fig svg { animation-delay: 1.5s; }
+    .char-lbl  { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+    .char-time { font-size: 11px; color: var(--ink3); letter-spacing: .06em; }
+
+    /* stats strip */
+    .habit-stats {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 2px; margin-top: 5rem;
+      background: var(--cream3); border-radius: 16px; overflow: hidden;
+    }
+    .stat-box { background: var(--cream); padding: 2.5rem 1.5rem; text-align: center; }
+    .stat-n { font-family: var(--font-d); font-size: clamp(28px,4vw,44px); color: var(--tc); margin-bottom: .4rem; }
+    .stat-l { font-size: 13px; color: var(--ink3); line-height: 1.45; }
+
+    /* ─── WHY PS ─────────────────────────────────────────────── */
+    #why { background: var(--ink); padding: 7rem 0; }
+    .why-head { margin-bottom: 3rem; }
+    .why-title { font-family: var(--font-d); font-size: clamp(28px,4.5vw,48px); color: #FAF6EE; margin-top: .5rem; line-height: 1.15; }
+    .pillars {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 2px; background: var(--ink2); border-radius: 16px; overflow: hidden;
+    }
+    .pillar { background: var(--ink); padding: 3rem 2rem; position: relative; overflow: hidden; }
+    .pillar::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--tc); transform: scaleX(0); transform-origin: left;
+      transition: transform .4s ease;
+    }
+    .pillar:hover::after { transform: scaleX(1); }
+    .p-num { font-size: 10px; letter-spacing: .18em; color: var(--tc); font-family: var(--font-d); margin-bottom: 1.75rem; opacity: .8; }
+    .p-icon { width: 38px; height: 38px; color: rgba(250,246,238,.22); margin-bottom: 1.5rem; }
+    .p-title { font-family: var(--font-d); font-size: 21px; color: #FAF6EE; margin-bottom: .875rem; line-height: 1.2; }
+    .p-desc  { font-size: 14px; color: rgba(250,246,238,.52); line-height: 1.72; }
+
+    /* ─── MENU ───────────────────────────────────────────────── */
+    #menu { background: var(--cream2); padding: 7rem 0; }
+    .sec-hd { margin-bottom: 4rem; }
+    .sec-title { font-family: var(--font-d); font-size: clamp(30px,5vw,52px); color: var(--ink); margin-top: .5rem; line-height: 1.1; }
+    .sec-desc { font-size: 15px; color: var(--ink2); line-height: 1.72; max-width: 520px; margin-top: .75rem; }
+
+    .menu-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+    .menu-cat-title {
+      font-family: var(--font-d); font-size: 17px; color: var(--ink);
+      margin-bottom: 1.25rem; padding-bottom: .75rem;
+      border-bottom: 1px solid var(--cream3);
+    }
+    .mi { display: flex; justify-content: space-between; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid rgba(232,220,200,.5); gap: 1rem; }
+    .mi:last-child { border-bottom: none; }
+    .mi-name { font-size: 14.5px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+    .mi-desc { font-size: 11.5px; color: var(--ink3); font-style: italic; line-height: 1.5; }
+    .mi-price { font-family: var(--font-d); font-size: 15px; color: var(--tc); flex-shrink: 0; }
+    .menu-note {
+      margin-top: 2rem; grid-column: 1 / -1;
+      font-size: 13px; color: var(--ink3); font-style: italic; line-height: 1.65;
+      padding: 1.25rem 1.5rem; background: var(--cream); border-radius: 10px;
+      border-left: 3px solid var(--tc);
+    }
+
+    /* ─── MANIFESTO ──────────────────────────────────────────── */
+    #story { background: var(--cream); padding: 8rem 0; }
+    .story-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .story-left { position: sticky; top: 80px; }
+    .story-quote { font-family: var(--font-d); font-size: clamp(26px,3.5vw,42px); color: var(--ink); line-height: 1.25; }
+    .story-body  { font-size: 16px; color: var(--ink2); line-height: 1.82; }
+    .story-body p + p { margin-top: 1.25rem; }
+    .story-sign  { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--cream3); }
+    .story-name  { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .story-role  { font-size: 13px; color: var(--ink3); margin-top: 2px; }
+    .story-ps    { font-size: 14px; color: var(--tc); font-style: italic; font-family: var(--font-d); margin-top: .75rem; }
+
+    /* ─── PROMISE STRIP ──────────────────────────────────────── */
+    #promise { background: var(--tc); padding: 5rem 0; overflow: hidden; position: relative; }
+    #promise::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(28,16,7,.08) 0%, transparent 70%);
+    }
+    .promise-bg-text {
+      font-family: var(--font-d); font-size: clamp(56px,10vw,112px);
+      color: rgba(250,246,238,.08); white-space: nowrap; line-height: 1;
+      letter-spacing: -2px; text-transform: uppercase; pointer-events: none;
+      margin-bottom: 1rem;
+      animation: ticker 18s linear infinite;
+      width: max-content;
+    }
+    .promise-body { position: relative; z-index: 2; text-align: center; padding: 0 var(--px); }
+    .promise-main { font-family: var(--font-d); font-size: clamp(28px,4.5vw,52px); color: #FAF6EE; line-height: 1.25; max-width: 700px; margin: 0 auto 2rem; }
+    .promise-sub  { font-size: 15px; color: rgba(250,246,238,.7); max-width: 440px; margin: 0 auto 2.5rem; line-height: 1.7; }
+
+    /* ─── PS PACK ────────────────────────────────────────────── */
+    #pack { background: var(--cream2); padding: 7rem 0; }
+    .pack-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+    .pack-card {
+      border-radius: 18px; padding: 2.5rem;
+      border: 1.5px solid var(--cream3); background: var(--cream);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .pack-card:hover { transform: translateY(-5px); box-shadow: 0 24px 48px rgba(28,16,7,.07); }
+    .pack-card.hot { background: var(--tc); border-color: var(--tc-dark); }
+    .pack-badge {
+      font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+      background: rgba(250,246,238,.18); color: #FAF6EE;
+      padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 1.25rem;
+    }
+    .pack-n { font-family: var(--font-d); font-size: 21px; margin-bottom: .5rem; }
+    .pack-price { font-family: var(--font-d); font-size: 48px; line-height: 1; margin-bottom: .25rem; }
+    .pack-per { font-size: 13px; margin-bottom: 1.5rem; }
+    .pack-card:not(.hot) .pack-n, .pack-card:not(.hot) .pack-price { color: var(--ink); }
+    .pack-card:not(.hot) .pack-price { color: var(--tc); }
+    .pack-card:not(.hot) .pack-per   { color: var(--ink3); }
+    .pack-card.hot .pack-n, .pack-card.hot .pack-price { color: #FAF6EE; }
+    .pack-card.hot .pack-per { color: rgba(250,246,238,.65); }
+    .pack-body { font-size: 14px; line-height: 1.65; margin-bottom: 2rem; }
+    .pack-card:not(.hot) .pack-body { color: var(--ink2); }
+    .pack-card.hot .pack-body { color: rgba(250,246,238,.8); }
+    .pack-btn {
+      display: block; text-align: center;
+      padding: 13px 24px; border-radius: 9px;
+      font-size: 14px; font-weight: 600; cursor: pointer; border: none;
+      transition: background .2s; text-decoration: none;
+    }
+    .pack-card:not(.hot) .pack-btn { background: var(--tc); color: #FAF6EE; }
+    .pack-card:not(.hot) .pack-btn:hover { background: var(--tc-dark); }
+    .pack-card.hot .pack-btn { background: #FAF6EE; color: var(--tc); }
+    .pack-card.hot .pack-btn:hover { background: var(--cream2); }
+
+    .pack-steps { margin-top: 4rem; }
+    .pack-steps-title { font-family: var(--font-d); font-size: 19px; color: var(--ink); margin: .5rem 0 2rem; }
+    .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+    .step { display: flex; gap: 1rem; align-items: flex-start; }
+    .step-n { width: 30px; height: 30px; border-radius: 50%; background: var(--tc); color: #FAF6EE; font-family: var(--font-d); font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+    .step-desc  { font-size: 13px; color: var(--ink3); line-height: 1.55; }
+
+    /* ─── BEANS ──────────────────────────────────────────────── */
+    #beans { background: var(--cream); padding: 7rem 0; }
+    .beans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3rem; }
+    .beans-desc { font-size: 15px; color: var(--ink2); line-height: 1.8; margin: 1rem 0 2rem; }
+    .origins { display: flex; flex-direction: column; gap: 1.5rem; }
+    .origin { padding-left: 1.25rem; border-left: 3px solid var(--tc); }
+    .origin.dim { border-color: var(--cream3); }
+    .origin-n { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+    .origin-d { font-size: 13px; color: var(--ink3); line-height: 1.5; }
+    .beans-promise { background: var(--ink); border-radius: 18px; padding: 3rem; }
+    .bp-eyebrow { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--tc); opacity: .8; margin-bottom: 1.5rem; }
+    .bp-lines { display: flex; flex-direction: column; gap: .75rem; }
+    .bp-line { font-family: var(--font-d); font-size: 16px; color: #FAF6EE; line-height: 1.55; }
+    .bp-ps { font-size: 14px; color: var(--tc); font-style: italic; margin-top: 1.5rem; font-family: var(--font-d); }
+
+    /* ─── LOCATIONS ──────────────────────────────────────────── */
+    #locations { background: var(--cream2); padding: 7rem 0; }
+    .loc-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3rem; }
+    .deck-card { background: var(--tc); border-radius: 18px; padding: 2.5rem; position: sticky; top: 80px; }
+    .deck-title { font-family: var(--font-d); font-size: 23px; color: #FAF6EE; margin: .5rem 0 1rem; }
+    .deck-desc  { font-size: 14px; color: rgba(250,246,238,.78); line-height: 1.72; margin-bottom: 2rem; }
+    .deck-specs { display: flex; flex-direction: column; gap: 1rem; }
+    .d-spec { display: flex; align-items: center; gap: 1rem; }
+    .d-spec-ic { width: 34px; height: 34px; border-radius: 8px; background: rgba(250,246,238,.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #FAF6EE; }
+    .d-spec-t  { font-size: 13px; color: rgba(250,246,238,.78); line-height: 1.4; }
+
+    .loc-list { display: flex; flex-direction: column; gap: 1rem; }
+    .loc-card { background: var(--cream); border: 1px solid var(--cream3); border-radius: 12px; padding: 1.5rem; transition: border-color .2s, transform .2s; }
+    .loc-card:hover { border-color: var(--tc); transform: translateX(5px); }
+    .loc-n { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+    .loc-a { font-size: 13px; color: var(--ink3); margin-bottom: 4px; }
+    .loc-h { font-size: 12px; color: var(--ink3); }
+    .loc-ps { font-size: 12px; color: var(--tc); font-style: italic; margin-top: 8px; font-family: var(--font-d); }
+    .loc-cta-card { background: var(--ink); border-radius: 12px; padding: 1.5rem; }
+    .loc-cta-t { font-size: 15px; font-weight: 600; color: #FAF6EE; margin-bottom: 6px; }
+    .loc-cta-d { font-size: 13px; color: rgba(250,246,238,.55); line-height: 1.6; margin-bottom: 1rem; }
+    .link-tc { font-size: 13px; font-weight: 500; color: var(--tc); display: inline-flex; align-items: center; gap: 6px; transition: gap .2s; }
+    .link-tc:hover { gap: 10px; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer { background: var(--ink); padding: 5rem 0 2rem; }
+    .foot-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem; padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(250,246,238,.07); margin-bottom: 2rem;
+    }
+    .foot-logo { font-family: var(--font-d); font-size: 34px; color: var(--tc); letter-spacing: -1px; margin-bottom: .75rem; }
+    .foot-tagline { font-size: 13px; color: rgba(250,246,238,.4); line-height: 1.7; max-width: 240px; margin-bottom: 1.5rem; }
+    .foot-ps { font-family: var(--font-d); font-size: 13px; color: var(--tc); font-style: italic; }
+    .foot-col-t { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: rgba(250,246,238,.3); margin-bottom: 1.25rem; }
+    .foot-links { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
+    .foot-links a { font-size: 13px; color: rgba(250,246,238,.5); transition: color .2s; }
+    .foot-links a:hover { color: #FAF6EE; }
+    .foot-bot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .foot-copy { font-size: 12px; color: rgba(250,246,238,.25); }
+    .foot-legal { display: flex; gap: 1.5rem; }
+    .foot-legal a { font-size: 12px; color: rgba(250,246,238,.25); transition: color .2s; }
+    .foot-legal a:hover { color: rgba(250,246,238,.55); }
+
+    /* ─── CROWD SECTION ─────────────────────────────────────────── */
+    #crowd { position:relative; overflow:hidden; background:var(--ink); height:680px; }
+    @media(max-width:700px){ #crowd{ height:500px; } }
+
+    /* canvas holds all scrolling rows */
+    .c-wrap {
+      position:absolute; inset:0;
+      display:flex; flex-direction:column;
+      pointer-events:none; user-select:none;
+    }
+    .c-row {
+      display:flex; flex:none;
+      animation: cR 32s linear infinite;
+      will-change: transform;
+    }
+    .c-row.alt { animation-name: cL; }
+    @keyframes cR { from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
+    @keyframes cL { from{ transform:translateX(-50%) } to{ transform:translateX(0) } }
+
+    /* each portrait cell */
+    .c-cell {
+      flex:none; width:88px; height:97px;
+      overflow:hidden; display:block;
+      transition: transform .22s cubic-bezier(.34,1.56,.64,1);
+      pointer-events:auto; cursor:default;
+    }
+    .c-cell:hover { transform:scale(1.12) translateY(-3px); z-index:8; position:relative; }
+    .c-cell svg { width:88px; height:97px; display:block; }
+
+    /* dark vignette in center only — characters visible at edges */
+    .c-veil {
+      position:absolute; inset:0; z-index:5;
+      display:flex; align-items:center; justify-content:center;
+      background:
+        radial-gradient(ellipse 44% 48% at 50% 50%,
+          rgba(28,16,7,.97) 0%,
+          rgba(28,16,7,.90) 22%,
+          rgba(28,16,7,.60) 42%,
+          rgba(28,16,7,.15) 62%,
+          transparent 80%);
+      pointer-events:none;
+    }
+    .c-veil > * { pointer-events:auto; }
+
+    /* overlay text */
+    .c-text { text-align:center; padding:0 2rem; }
+    .c-title {
+      font-family:var(--font-d);
+      font-size:clamp(26px,4.8vw,54px);
+      color:var(--cream); line-height:1.14;
+      margin:.5rem 0 1rem;
+    }
+    .c-sub {
+      font-size:15px; color:rgba(250,246,238,.65);
+      line-height:1.72; margin-bottom:1.8rem; max-width:460px;
+    }
+
+    /* speed controls */
+    .c-spd {
+      position:absolute; bottom:1.4rem; right:2rem; z-index:20;
+      display:flex; gap:6px;
+      background:rgba(28,16,7,.82); padding:6px; border-radius:8px;
+      backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+    }
+    .spd-btn {
+      background:transparent; border:1px solid rgba(250,246,238,.2);
+      color:rgba(250,246,238,.5); padding:5px 13px; border-radius:5px;
+      font-size:11px; letter-spacing:.08em; font-family:var(--font-b);
+      cursor:pointer; transition:all .2s;
+    }
+    .spd-btn.on, .spd-btn:hover { background:var(--tc); border-color:var(--tc); color:var(--cream); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media(max-width:960px){
+      .hero-grid    { grid-template-columns:1fr; text-align:center; padding:3rem 0 5rem; }
+      .hero-desc, .hero-actions { margin-inline:auto; }
+      .hero-actions { justify-content:center; }
+      .hero-vis     { margin-top:2.5rem; }
+      .hero-desc    { margin-left:auto; margin-right:auto; }
+      .pillars      { grid-template-columns:1fr; }
+      .menu-cols    { grid-template-columns:1fr; gap:2.5rem; }
+      .story-inner  { grid-template-columns:1fr; gap:3rem; }
+      .story-left   { position:static; }
+      .pack-cards   { grid-template-columns:1fr; }
+      .steps        { grid-template-columns:1fr; }
+      .beans-grid   { grid-template-columns:1fr; gap:3rem; }
+      .loc-wrap     { grid-template-columns:1fr; gap:3rem; }
+      .deck-card    { position:static; }
+      .foot-top     { grid-template-columns:1fr 1fr; }
+      .habit-stats  { grid-template-columns:1fr; }
+      .nav-links    { display:none; }
+      .ham          { display:flex; }
+    }
+    @media(max-width:600px){
+      .streak-grid  { gap:7px; }
+      .chars-row    { gap:1.5rem; }
+      .char-fig     { width:72px; height:90px; }
+      .foot-top     { grid-template-columns:1fr; }
+      .foot-bot     { flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-i">
+      <a href="#" class="nav-logo">P.S.</a>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#story">Story</a></li>
+        <li><a href="#beans">Beans</a></li>
+        <li><a href="#locations">Find a P.S.</a></li>
+        <li><a href="#pack" class="nav-cta">Get the Pack</a></li>
+      </ul>
+      <div class="ham" id="ham" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="nav-mob" id="nav-mob">
+    <a href="#menu" onclick="closeNav()">Menu</a>
+    <a href="#story" onclick="closeNav()">Our Story</a>
+    <a href="#beans" onclick="closeNav()">Beans</a>
+    <a href="#locations" onclick="closeNav()">Find a P.S.</a>
+    <a href="#pack" class="nav-cta" onclick="closeNav()">Get the Pack</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ══════════════════════════ -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <!-- Left: content -->
+      <div class="hero-content">
+        <p class="hero-ey">P.S. Coffee · Specialty Coffee QSR · Ahmedabad</p>
+        <h1 class="hero-mark">P.S.</h1>
+        <p class="hero-sub">Coffee</p>
+        <h2 class="hero-tag">The thought you add at the end.<br>Now at the beginning.</h2>
+        <p class="hero-desc">100% Arabica specialty coffee. Made properly. Priced honestly. At your office, your campus, your co-working space — from ₹89.</p>
+        <div class="hero-actions">
+          <a href="#locations" class="btn-cream">
+            Find a P.S. near you
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#story" class="btn-outline-cream">Our story</a>
+        </div>
+      </div>
+
+      <!-- Right: animated cup -->
+      <div class="hero-vis">
+        <svg class="cup-svg" viewBox="0 0 220 280" fill="none" xmlns="http://www.w3.org/2000/svg" width="320" height="320">
+          <!-- Steam wisps -->
+          <path class="st1" d="M 88 72 C 82 58 82 44 88 30 C 94 16 94 2 88 -10" stroke="rgba(250,246,238,0.55)" stroke-width="2.5" stroke-linecap="round"/>
+          <path class="st2" d="M 110 66 C 104 52 104 38 110 24 C 116 10 116 -4 110 -16" stroke="rgba(250,246,238,0.45)" stroke-width="2.5" stroke-linecap="round"/>
+          <path class="st3" d="M 132 72 C 138 58 138 44 132 30 C 126 16 126 2 132 -10" stroke="rgba(250,246,238,0.4)" stroke-width="2.5" stroke-linecap="round"/>
+
+          <!-- Cup body -->
+          <path d="M 55 90 L 42 252 Q 42 262 52 262 L 168 262 Q 178 262 178 252 L 165 90 Z" fill="rgba(250,246,238,0.13)" stroke="rgba(250,246,238,0.38)" stroke-width="2"/>
+
+          <!-- Sleeve band -->
+          <path d="M 62 130 L 58 186 L 162 186 L 158 130 Z" fill="rgba(250,246,238,0.07)" stroke="rgba(250,246,238,0.18)" stroke-width="1.5"/>
+
+          <!-- P.S. text -->
+          <text x="110" y="166" font-family="Aldrich,sans-serif" font-size="34" fill="rgba(250,246,238,0.9)" text-anchor="middle" letter-spacing="-1">P.S.</text>
+          <!-- Small arabica -->
+          <text x="110" y="182" font-family="Inter,sans-serif" font-size="8.5" fill="rgba(250,246,238,0.38)" text-anchor="middle" letter-spacing="4">ARABICA</text>
+
+          <!-- Rule line on cup -->
+          <line x1="82" y1="191" x2="138" y2="191" stroke="rgba(250,246,238,0.15)" stroke-width="1"/>
+
+          <!-- Lid rim -->
+          <path d="M 49 90 Q 49 80 55 78 L 165 78 Q 171 80 171 90 Z" fill="rgba(250,246,238,0.18)" stroke="rgba(250,246,238,0.35)" stroke-width="1.5"/>
+          <!-- Lid dome curve -->
+          <path d="M 68 78 Q 110 70 152 78" stroke="rgba(250,246,238,0.22)" stroke-width="1.5" fill="none"/>
+          <!-- Drink spout -->
+          <path d="M 93 75 Q 110 70 127 75" stroke="rgba(250,246,238,0.55)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+          <!-- Handle -->
+          <path d="M 165 134 Q 195 134 195 162 Q 195 190 165 190" stroke="rgba(250,246,238,0.32)" stroke-width="2" fill="none"/>
+
+          <!-- Shadow ellipse -->
+          <ellipse cx="110" cy="266" rx="58" ry="7" fill="rgba(28,16,7,0.22)"/>
+
+          <!-- Subtle ring glow -->
+          <ellipse cx="110" cy="180" rx="85" ry="85" stroke="rgba(250,246,238,0.04)" stroke-width="40" fill="none"/>
+        </svg>
+      </div>
+
+    </div><!-- /hero-grid -->
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>
+
+<!-- ════════════════════════ MARQUEE ═══════════════════════════ -->
+<div class="mq-wrap">
+  <div class="mq-track" aria-hidden="true">
+    <!-- duplicated for seamless loop -->
+    <div class="mq-item"><span class="mq-dot"></span>100% Arabica</div>
+    <div class="mq-item"><span class="mq-dot"></span>From ₹89</div>
+    <div class="mq-item"><span class="mq-dot"></span>Grab & Go</div>
+    <div class="mq-item"><span class="mq-dot"></span>Specialty Coffee</div>
+    <div class="mq-item"><span class="mq-dot"></span>No Robusta</div>
+    <div class="mq-item"><span class="mq-dot"></span>Chikmagalur · Coorg</div>
+    <div class="mq-item"><span class="mq-dot"></span>Build the Habit</div>
+    <div class="mq-item"><span class="mq-dot"></span>P.S. — You Always Do</div>
+    <div class="mq-item"><span class="mq-dot"></span>100% Arabica</div>
+    <div class="mq-item"><span class="mq-dot"></span>From ₹89</div>
+    <div class="mq-item"><span class="mq-dot"></span>Grab & Go</div>
+    <div class="mq-item"><span class="mq-dot"></span>Specialty Coffee</div>
+    <div class="mq-item"><span class="mq-dot"></span>No Robusta</div>
+    <div class="mq-item"><span class="mq-dot"></span>Chikmagalur · Coorg</div>
+    <div class="mq-item"><span class="mq-dot"></span>Build the Habit</div>
+    <div class="mq-item"><span class="mq-dot"></span>P.S. — You Always Do</div>
+  </div>
+</div>
+
+<!-- ══════════════════════ CROWD RUSH ════════════════════════ -->
+<section id="crowd">
+  <div class="c-wrap" id="c-wrap"></div>
+  <div class="c-veil">
+    <div class="c-text">
+      <p class="eyebrow-light">The morning rush · The 3pm rescue · The campus run</p>
+      <h2 class="c-title">For every person<br>in this city.</h2>
+      <p class="c-sub">₹89. 100% Arabica. In under 90 seconds.<br>For every morning rush. Every deadline. Every campus corridor.</p>
+      <a href="#habit" class="btn-cream">
+        Build the habit
+        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="c-spd">
+    <button class="spd-btn" onclick="setSpd(.45,this)">Slow</button>
+    <button class="spd-btn on" onclick="setSpd(1,this)">Normal</button>
+    <button class="spd-btn" onclick="setSpd(2.2,this)">Fast</button>
+  </div>
+</section>
+
+<!-- ══════════════════════ HABIT SECTION ══════════════════════ -->
+<section id="habit">
+  <div class="wrap">
+
+    <div class="habit-hd fade">
+      <p class="eyebrow">Build the habit</p>
+      <h2 class="habit-title">Day 1. Day 7. Day 30.<br>Then you stop counting.</h2>
+      <p class="habit-sub">Some habits earn their place quietly, cup by cup. This is one of them. 100% Arabica, every single time.</p>
+    </div>
+
+    <!-- Animated day counter -->
+    <div class="day-cnt-wrap fade d1">
+      <div class="day-cnt">
+        <div class="cnt-num" id="cnt">01</div>
+        <span class="cnt-flame" id="flame">🔥</span>
+        <p class="cnt-lbl">Day Streak</p>
+      </div>
+    </div>
+
+    <!-- 30-cup streak grid -->
+    <div class="streak-grid" id="streak-grid">
+      <!-- 30 cups: JS fills these -->
+    </div>
+
+    <!-- Characters row (peeeeps-inspired) -->
+    <div class="chars-row" id="chars-row">
+
+      <!-- Character 1: The 6AM Founder -->
+      <div class="char-card">
+        <div class="char-fig">
+          <svg viewBox="0 0 88 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- body pill -->
+            <rect x="14" y="24" width="60" height="72" rx="22" fill="#F2EBD9" stroke="#1C1007" stroke-width="1.5"/>
+            <!-- head -->
+            <circle cx="44" cy="20" r="16" fill="#FAF6EE" stroke="#1C1007" stroke-width="1.5"/>
+            <!-- face dots -->
+            <circle cx="39" cy="18" r="2" fill="#1C1007"/>
+            <circle cx="49" cy="18" r="2" fill="#1C1007"/>
+            <!-- left arm down -->
+            <path d="M 14 52 Q 4 58 6 70" stroke="#1C1007" stroke-width="1.75" stroke-linecap="round" fill="none"/>
+            <!-- right arm up holding cup -->
+            <path d="M 74 48 Q 84 38 82 26" stroke="#1C1007" stroke-width="1.75" stroke-linecap="round" fill="none"/>
+            <!-- cup -->
+            <path d="M 78 12 L 76 26 Q 76 28 78 28 L 88 28 Q 90 28 90 26 L 88 12 Z" fill="#E8400C"/>
+            <rect x="76" y="12" width="14" height="3" rx="1.5" fill="rgba(0,0,0,0.18)"/>
+            <!-- steam from cup -->
+            <path d="M 82 9 Q 80 4 82 0" stroke="rgba(250,246,238,0.7)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- legs -->
+            <path d="M 36 96 L 32 108" stroke="#1C1007" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 52 96 L 56 108" stroke="#1C1007" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="char-lbl">The 6AM Founder</p>
+        <p class="char-time">Before the city wakes.</p>
+      </div>
+
+      <!-- Character 2: The 9AM Regular -->
+      <div class="char-card">
+        <div class="char-fig">
+          <svg viewBox="0 0 88 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="16" y="24" width="56" height="72" rx="20" fill="#E8DCC8" stroke="#1C1007" stroke-width="1.5"/>
+            <circle cx="44" cy="20" r="15" fill="#FAF6EE" stroke="#1C1007" stroke-width="1.5"/>
+            <circle cx="40" cy="18" r="2" fill="#1C1007"/>
+            <circle cx="48" cy="18" r="2" fill="#1C1007"/>
+            <!-- smile -->
+            <path d="M 40 24 Q 44 27 48 24" stroke="#1C1007" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- left arm - casual -->
+            <path d="M 16 55 Q 6 60 8 72" stroke="#1C1007" stroke-width="1.75" stroke-linecap="round" fill="none"/>
+            <!-- right arm - cup at side -->
+            <path d="M 72 58 Q 82 62 82 72" stroke="#1C1007" stroke-width="1.75" stroke-linecap="round" fill="none"/>
+            <!-- cup at side -->
+            <path d="M 78 68 L 76 82 Q 76 84 78 84 L 88 84 Q 90 84 90 82 L 88 68 Z" fill="#E8400C"/>
+            <rect x="76" y="68" width="14" height="3" rx="1.5" fill="rgba(0,0,0,0.18)"/>
+            <!-- bag strap hint -->
+            <path d="M 16 40 Q 8 50 10 68" stroke="#1C1007" stroke-width="1" stroke-dasharray="3 3" fill="none" opacity="0.4"/>
+            <path d="M 36 96 L 34 108" stroke="#1C1007" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 52 96 L 54 108" stroke="#1C1007" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="char-lbl">The 9AM Regular</p>
+        <p class="char-time">Desk. Coffee. Repeat.</p>
+      </div>
+
+      <!-- Character 3: The 3PM Rescue -->
+      <div class="char-card">
+        <div class="char-fig">
+          <svg viewBox="0 0 88 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="26" width="58" height="70" rx="22" fill="#FAF6EE" stroke="#1C1007" stroke-width="1.5"/>
+            <circle cx="44" cy="22" r="15" fill="#F2EBD9" stroke="#1C1007" stroke-width="1.5"/>
+            <!-- tired eyes (half-closed) -->
+            <path d="M 37 20 Q 40 18 43 20" stroke="#1C1007" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M 45 20 Q 48 18 51 20" stroke="#1C1007" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- both arms holding cup up to face -->
+            <path d="M 15 54 Q 10 46 14 38" stroke="#1C1007" stroke-width="1.75" stroke-linecap="round" fill="none"/>
+            <path d="M 73 54 Q 78 46 74 38" stroke="#1C1007" stroke-width="1.75" stroke-linecap="round" fill="none"/>
+            <!-- cup held in front of face -->
+            <path d="M 28 28 L 26 44 Q 26 46 28 46 L 60 46 Q 62 46 62 44 L 60 28 Z" fill="#E8400C"/>
+            <rect x="26" y="28" width="36" height="5" rx="2.5" fill="rgba(0,0,0,0.18)"/>
+            <!-- steam above cup -->
+            <path d="M 36 25 Q 34 18 36 12" stroke="rgba(232,64,12,0.6)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M 44 24 Q 44 17 44 10" stroke="rgba(232,64,12,0.5)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M 52 25 Q 54 18 52 12" stroke="rgba(232,64,12,0.5)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M 35 96 L 32 108" stroke="#1C1007" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 53 96 L 56 108" stroke="#1C1007" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="char-lbl">The 3PM Rescue</p>
+        <p class="char-time">The slide starts at 2:45.</p>
+      </div>
+
+      <!-- Character 4: The Campus Regular -->
+      <div class="char-card">
+        <div class="char-fig">
+          <svg viewBox="0 0 88 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="24" width="60" height="72" rx="22" fill="#E8DCC8" stroke="#1C1007" stroke-width="1.5"/>
+            <!-- backpack hint on left -->
+            <rect x="4" y="32" width="14" height="36" rx="7" fill="#F2EBD9" stroke="#1C1007" stroke-width="1.25"/>
+            <circle cx="44" cy="20" r="15" fill="#FAF6EE" stroke="#1C1007" stroke-width="1.5"/>
+            <circle cx="40" cy="18" r="2" fill="#1C1007"/>
+            <circle cx="48" cy="18" r="2" fill="#1C1007"/>
+            <path d="M 40 24 Q 44 28 48 24" stroke="#1C1007" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- left arm to bag -->
+            <path d="M 14 50 Q 6 48 6 50" stroke="#1C1007" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <!-- right arm holding cup out -->
+            <path d="M 74 52 Q 84 50 86 40" stroke="#1C1007" stroke-width="1.75" stroke-linecap="round" fill="none"/>
+            <!-- cup -->
+            <path d="M 82 26 L 80 42 Q 80 44 82 44 L 92 44 Q 94 44 94 42 L 92 26 Z" fill="#E8400C"/>
+            <rect x="80" y="26" width="14" height="3" rx="1.5" fill="rgba(0,0,0,0.18)"/>
+            <path d="M 36 96 L 32 108" stroke="#1C1007" stroke-width="2" stroke-linecap="round"/>
+            <path d="M 52 96 L 56 108" stroke="#1C1007" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="char-lbl">The Campus Type</p>
+        <p class="char-time">Between lectures, always.</p>
+      </div>
+
+    </div><!-- /chars-row -->
+
+    <!-- Habit stats -->
+    <div class="habit-stats fade d3">
+      <div class="stat-box">
+        <p class="stat-n" id="cups-stat">0</p>
+        <p class="stat-l">Cups served &amp; counting</p>
+      </div>
+      <div class="stat-box">
+        <p class="stat-n" id="users-stat">0</p>
+        <p class="stat-l">Daily regulars across Ahmedabad</p>
+      </div>
+      <div class="stat-box">
+        <p class="stat-n">100%</p>
+        <p class="stat-l">Arabica. Always. No asterisk.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════ WHY PS ═══════════════════════════ -->
+<section id="why">
+  <div class="wrap">
+    <div class="why-head fade">
+      <p class="eyebrow" style="color:var(--tc); opacity:.8;">Why P.S. Coffee</p>
+      <h2 class="why-title">Three things we'll<br>never compromise on.</h2>
+    </div>
+    <div class="pillars">
+
+      <div class="pillar fade">
+        <p class="p-num">01</p>
+        <!-- Bean icon -->
+        <svg class="p-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <ellipse cx="19" cy="19" rx="10" ry="16" transform="rotate(30 19 19)"/>
+          <path d="M 10 26 Q 19 19 28 12" />
+        </svg>
+        <h3 class="p-title">100% Arabica.<br>Verified.</h3>
+        <p class="p-desc">No Robusta blends. No chicory. Single-origin beans from Chikmagalur and Coorg — sourced and roasted for flavour, not for margin. We made the numbers work without touching the bean.</p>
+      </div>
+
+      <div class="pillar fade d1">
+        <p class="p-num">02</p>
+        <!-- Price tag icon -->
+        <svg class="p-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 6 6 L 6 18 L 22 32 Q 24 34 26 32 L 34 24 Q 36 22 34 20 L 20 6 Z"/>
+          <circle cx="13" cy="13" r="2.5" fill="currentColor"/>
+        </svg>
+        <h3 class="p-title">From ₹89.<br>Always.</h3>
+        <p class="p-desc">Specialty shouldn't mean premium pricing. We built a lean model — small-format decks, focused menu, direct sourcing — so the cup stays honest. ₹89 is not a launch price. It's the point.</p>
+      </div>
+
+      <div class="pillar fade d2">
+        <p class="p-num">03</p>
+        <!-- Building icon -->
+        <svg class="p-icon" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="8" y="10" width="22" height="24" rx="2"/>
+          <path d="M 14 34 L 14 26 Q 14 23 19 23 Q 24 23 24 26 L 24 34"/>
+          <rect x="12" y="15" width="4" height="4" rx="1"/>
+          <rect x="22" y="15" width="4" height="4" rx="1"/>
+          <path d="M 6 10 L 19 4 L 32 10"/>
+        </svg>
+        <h3 class="p-title">In your building.<br>Not down the street.</h3>
+        <p class="p-desc">Co-working spaces. Corporate lobbies. University campuses. P.S. lives where you already spend your day. No commute, no queue, no reason to skip. In under 90 seconds.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ MENU ═════════════════════════════ -->
+<section id="menu">
+  <div class="wrap">
+    <div class="sec-hd fade">
+      <p class="eyebrow">P.S. = Proudly Specialty</p>
+      <h2 class="sec-title">A menu with nothing to hide.</h2>
+      <p class="sec-desc">Every item made with 100% Arabica. Every price honest. No Robusta hiding in a blend. No ₹320 latte tax.</p>
+    </div>
+
+    <div class="menu-cols">
+
+      <!-- Hot Classics -->
+      <div class="fade d1">
+        <p class="menu-cat-title">Hot classics</p>
+        <div class="mi">
+          <div><p class="mi-name">Espresso</p><p class="mi-desc">The original P.S. Short, honest, final.</p></div>
+          <span class="mi-price">₹89</span>
+        </div>
+        <div class="mi">
+          <div><p class="mi-name">Americano</p><p class="mi-desc">Espresso, long. For people who take their time.</p></div>
+          <span class="mi-price">₹99</span>
+        </div>
+        <div class="mi">
+          <div><p class="mi-name">Cappuccino</p><p class="mi-desc">The one most of you come back for. We know.</p></div>
+          <span class="mi-price">₹109</span>
+        </div>
+        <div class="mi">
+          <div><p class="mi-name">Flat White</p><p class="mi-desc">More coffee. Less foam. No compromise.</p></div>
+          <span class="mi-price">₹119</span>
+        </div>
+        <div class="mi">
+          <div><p class="mi-name">Latte</p><p class="mi-desc">Gentle. Consistent. The one that became a daily thing.</p></div>
+          <span class="mi-price">₹119</span>
+        </div>
+
+        <p class="menu-cat-title" style="margin-top:2rem;">P.S. specials</p>
+        <div class="mi">
+          <div><p class="mi-name">Spanish Latte</p><p class="mi-desc">Condensed milk. Not apologising for it.</p></div>
+          <span class="mi-price">₹139</span>
+        </div>
+        <div class="mi">
+          <div><p class="mi-name">Jaggery Latte</p><p class="mi-desc">Arabica meets gur. A P.S. original.</p></div>
+          <span class="mi-price">₹129</span>
+        </div>
+        <div class="mi">
+          <div><p class="mi-name">Affogato</p><p class="mi-desc">Espresso over ice cream. The best kind of afterthought.</p></div>
+          <span class="mi-price">₹159</span>
+        </div>
+      </div>
+
+      <!-- Cold & Iced -->
+      <div class="fade d2">
+        <p class="menu-cat-title">Cold &amp; iced</p>
+        <div class="mi">
+          <div><p class="mi-name">Iced Americano</p><p class="mi-desc">Cold, clean, Arabica. The afternoon anchor.</p></div>
+          <span class="mi-price">₹109</span>
+        </div>
+        <div class="mi">
+          <div><p class="mi-name">Cold Brew</p><p class="mi-desc">12 hours. Slow. Smoother than you'd expect.</p></div>
+          <span class="mi-price">₹129</span>
+        </div>
+        <div class="mi">
+          <div><p class="mi-name">Iced Latte</p><p class="mi-desc">The summer P.S. It still counts.</p></div>
+          <span class="mi-price">₹119</span>
+        </div>
+        <div class="mi">
+          <div><p class="mi-name">Iced Cappuccino</p><p class="mi-desc">Cold foam, full espresso. No compromise in the cold.</p></div>
+          <span class="mi-price">₹119</span>
+        </div>
+
+        <!-- Menu note spanning full width below -->
+      </div>
+
+      <!-- Menu note full-width -->
+      <div class="menu-note fade d3">
+        All espresso drinks are made with 100% Arabica single-origin beans. Oat milk available — no surcharge. <br>
+        P.S. — We don't do decaf. We do Arabica, properly. If you want half the coffee, order an Americano.
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ MANIFESTO ══════════════════════════ -->
+<section id="story">
+  <div class="wrap">
+    <div class="story-inner">
+
+      <div class="story-left fade">
+        <p class="eyebrow">Why "P.S."?</p>
+        <h2 class="story-quote" style="margin:.75rem 0;">We didn't start with coffee.<br>We started with a question.</h2>
+        <p style="font-size:15px; color:var(--tc); font-style:italic; font-family:var(--font-d);">Why does specialty coffee cost ₹320 in India? The beans are Indian. The baristas are Indian. The margin isn't.</p>
+      </div>
+
+      <div class="fade d2">
+        <div class="story-body">
+          <p>A postscript is what you write after you think the letter is done. The thought that refused to stay quiet. The line that turns out to be the most important one in the whole message.</p>
+          <p>We think great coffee works the same way. It's not on the calendar. It's the cup you grabbed on the way to your desk that changed how the next three hours felt. Not because it was grand — because it was right.</p>
+          <p>P.S. Coffee was built to be that for people who get their mornings done in co-working spaces, corporate lobbies, and university corridors. The daily habit that earns its place, quietly, cup after cup.</p>
+          <p>We didn't find a cheaper bean to hit ₹89. We found a smarter model. Small-format decks. Direct sourcing from Chikmagalur and Coorg estates. A lean menu of drinks people actually order. The result: specialty grade coffee at the price of an ordinary cup. <em>Plain &amp; Simple.</em></p>
+        </div>
+        <div class="story-sign">
+          <p class="story-name">Pulkit Viradiya</p>
+          <p class="story-role">Founder, P.S. Coffee</p>
+          <p class="story-ps">P.S. — We're just getting started.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ PROMISE STRIP ══════════════════════ -->
+<section id="promise">
+  <div class="promise-bg-text" aria-hidden="true">
+    ORDER · RETURN TOMORROW · REPEAT INDEFINITELY · ORDER · RETURN TOMORROW · REPEAT INDEFINITELY ·&nbsp;
+  </div>
+  <div class="promise-body fade">
+    <h2 class="promise-main">"Started as a habit.<br>Stayed as a ritual.<br>Welcome."</h2>
+    <p class="promise-sub">100% Arabica specialty coffee. Made properly. Priced honestly. At your office, your campus, your co-working space.</p>
+    <a href="#locations" class="btn-cream">
+      Find your P.S.
+      <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ════════════════════════ PS PACK ══════════════════════════ -->
+<section id="pack">
+  <div class="wrap">
+    <div class="sec-hd fade">
+      <p class="eyebrow">P.S. = Plain & Simple</p>
+      <h2 class="sec-title">Make it official.</h2>
+      <p class="sec-desc">The P.S. Pack: prepay your coffee, save 20%, and never have a bad coffee day. Because some habits deserve a commitment.</p>
+    </div>
+
+    <div class="pack-cards">
+      <div class="pack-card fade d1">
+        <p class="pack-n">10-Cup Pack</p>
+        <p class="pack-price">₹880</p>
+        <p class="pack-per">₹88 / cup — save ₹210</p>
+        <p class="pack-body">For the committed. Two working weeks, covered. No expiry date on your pack. Use it when you need it.</p>
+        <a href="#" class="pack-btn">Get the 10-Cup Pack</a>
+      </div>
+
+      <div class="pack-card hot fade d2">
+        <span class="pack-badge">Most popular</span>
+        <p class="pack-n">20-Cup Pack</p>
+        <p class="pack-price">₹1,680</p>
+        <p class="pack-per">₹84 / cup — save ₹500</p>
+        <p class="pack-body">For the seriously committed. A full month of morning. Same habit, better math. No automatic renewals without your say.</p>
+        <a href="#" class="pack-btn">Get the 20-Cup Pack</a>
+      </div>
+    </div>
+
+    <div class="pack-steps fade d3">
+      <p class="eyebrow">How it works</p>
+      <p class="pack-steps-title">P.S. — Plain & Simple. Three steps.</p>
+      <div class="steps">
+        <div class="step">
+          <span class="step-n">1</span>
+          <div>
+            <p class="step-title">Choose your pack</p>
+            <p class="step-desc">10 or 20 cups. No expiry. No automatic renewal. Top up when you're ready.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-n">2</span>
+          <div>
+            <p class="step-title">Order on the app</p>
+            <p class="step-desc">Scan at the deck or pre-order on the P.S. app. Your cup is ready when you arrive.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-n">3</span>
+          <div>
+            <p class="step-title">Show up. That's it.</p>
+            <p class="step-desc">No daily decision. No price anxiety. Just the cup that's already paid for.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ BEANS ══════════════════════════════ -->
+<section id="beans">
+  <div class="wrap">
+    <div class="sec-hd fade">
+      <p class="eyebrow">P.S. = Perfectly Sourced</p>
+      <h2 class="sec-title">Every cup starts here.</h2>
+    </div>
+
+    <div class="beans-grid">
+      <div class="fade d1">
+        <p class="beans-desc">Every P.S. Coffee cup starts with 100% Arabica beans — origin-traceable, properly roasted, sourced from the estates that Indian coffee was built on. No Robusta. No compromise.</p>
+        <div class="origins">
+          <div class="origin">
+            <p class="origin-n">Chikmagalur, Karnataka</p>
+            <p class="origin-d">2,000m above sea level. Slow-ripened. Bright, fruity, clean finish.</p>
+          </div>
+          <div class="origin">
+            <p class="origin-n">Coorg, Karnataka</p>
+            <p class="origin-d">India's coffee heartland. Full-bodied, balanced, consistently great shot-pulling.</p>
+          </div>
+          <div class="origin dim">
+            <p class="origin-n">Western Ghats estates</p>
+            <p class="origin-d">Rotating single origins from our roaster partnerships. Seasonal, named, always Arabica.</p>
+          </div>
+          <div class="origin dim">
+            <p class="origin-n">Our roaster network</p>
+            <p class="origin-d">Sourced from Gujarat-accessible roasters — including Curious Life (Rajkot) and Kaffa (Ahmedabad).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade d2">
+        <div class="beans-promise">
+          <p class="bp-eyebrow">The P.S. standard</p>
+          <div class="bp-lines">
+            <p class="bp-line">We will never put Robusta in a P.S. cup.</p>
+            <p class="bp-line">We will never use a blend we can't name.</p>
+            <p class="bp-line">We will never charge a premium for a mediocre bean.</p>
+          </div>
+          <p class="bp-ps">P.S. — Perfectly Sourced. Always.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ LOCATIONS ════════════════════════════ -->
+<section id="locations">
+  <div class="wrap">
+    <div class="sec-hd fade">
+      <p class="eyebrow">Find a P.S.</p>
+      <h2 class="sec-title">Your P.S. is closer<br>than you think.</h2>
+      <p class="sec-desc">We don't build coffee shops and hope people find us. We go where you already are — your office building, your co-working space, your campus.</p>
+    </div>
+
+    <div class="loc-wrap">
+
+      <!-- Deck explainer (sticky) -->
+      <div class="fade d1">
+        <div class="deck-card">
+          <p class="eyebrow-light">What's a P.S. deck?</p>
+          <h3 class="deck-title">Compact. Fast. In your building.</h3>
+          <p class="deck-desc">A P.S. deck is a compact, grab-and-go coffee station that lives inside buildings rather than on the street. Fast service, full Arabica, no need to step outside.</p>
+          <div class="deck-specs">
+            <div class="d-spec">
+              <div class="d-spec-ic">
+                <!-- clock icon -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              </div>
+              <p class="d-spec-t">Under 90 seconds — from order to hand.</p>
+            </div>
+            <div class="d-spec">
+              <div class="d-spec-ic">
+                <!-- grid/layout icon -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              </div>
+              <p class="d-spec-t">50–100 sq. ft. Only. No café footprint needed.</p>
+            </div>
+            <div class="d-spec">
+              <div class="d-spec-ic">
+                <!-- check icon -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <p class="d-spec-t">We bring counter, barista &amp; beans. You bring the space.</p>
+            </div>
+            <div class="d-spec">
+              <div class="d-spec-ic">
+                <!-- rupee/coin icon -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 8h6M9 12h6M12 12v4"/><path d="M9 8 Q 12 14 15 12"/></svg>
+              </div>
+              <p class="d-spec-t">From ₹89 per cup. Accessible every single day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Location cards -->
+      <div class="loc-list fade d2">
+        <div class="loc-card">
+          <p class="loc-n">Westbridge CoWork Deck</p>
+          <p class="loc-a">Westbridge Co-Working · Prahlad Nagar, Ahmedabad</p>
+          <p class="loc-h">Mon–Sat, 8:00 AM – 7:00 PM</p>
+          <p class="loc-ps">P.S. — This one's yours.</p>
+        </div>
+        <div class="loc-card">
+          <p class="loc-n">Synapse Campus Deck</p>
+          <p class="loc-a">Synapse Innovation Hub · GIFT City, Gandhinagar</p>
+          <p class="loc-h">Mon–Fri, 7:30 AM – 8:00 PM</p>
+          <p class="loc-ps">P.S. — This one's yours.</p>
+        </div>
+        <div class="loc-card">
+          <p class="loc-n">Stellar One Lobby Deck</p>
+          <p class="loc-a">Stellar One Office Complex · SG Highway, Ahmedabad</p>
+          <p class="loc-h">Mon–Sat, 8:30 AM – 6:30 PM</p>
+          <p class="loc-ps">P.S. — This one's yours.</p>
+        </div>
+        <div class="loc-cta-card">
+          <p class="loc-cta-t">Don't see a P.S. near you yet?</p>
+          <p class="loc-cta-d">We're growing. If you want P.S. Coffee in your building, co-working space, or campus — tell us. Some of our best decks started with one message.</p>
+          <a href="#" class="link-tc">
+            Suggest a location
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ FOOTER ═════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+
+      <div>
+        <p class="foot-logo">P.S.</p>
+        <p class="foot-tagline">Specialty coffee for people with places to be. 100% Arabica. From ₹89. In your building.</p>
+        <p class="foot-ps">P.S. — Thank you for coming back.</p>
+      </div>
+
+      <div>
+        <p class="foot-col-t">Menu</p>
+        <ul class="foot-links">
+          <li><a href="#">Hot Classics</a></li>
+          <li><a href="#">Cold &amp; Iced</a></li>
+          <li><a href="#">P.S. Specials</a></li>
+          <li><a href="#">The P.S. Pack</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="foot-col-t">Company</p>
+        <ul class="foot-links">
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#beans">Our Beans</a></li>
+          <li><a href="#locations">Find a P.S.</a></li>
+          <li><a href="#">Corporate &amp; Campus</a></li>
+          <li><a href="#">Franchise / Partner</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="foot-col-t">Get in touch</p>
+        <ul class="foot-links">
+          <li><a href="mailto:hello@ps.coffee">hello@ps.coffee</a></li>
+          <li><a href="#">@pscoffee.in</a></li>
+          <li><a href="#">Press &amp; media</a></li>
+          <li><a href="#">Suggest a location</a></li>
+        </ul>
+        <p class="foot-col-t" style="margin-top:1.75rem;">Download the app</p>
+        <ul class="foot-links">
+          <li><a href="#">App Store</a></li>
+          <li><a href="#">Google Play</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="foot-bot">
+      <p class="foot-copy">© 2025 P.S. Coffee. All rights reserved. Specialty Coffee QSR, Ahmedabad.</p>
+      <div class="foot-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Allergen Info</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════ JAVASCRIPT ═════════════════════════ -->
+<script>
+  /* ── NAV ───────────────────────────────────────────── */
+  const nav    = document.getElementById('nav');
+  const ham    = document.getElementById('ham');
+  const navMob = document.getElementById('nav-mob');
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('stuck', window.scrollY > 24);
+  }, { passive: true });
+
+  function toggleNav() {
+    ham.classList.toggle('open');
+    navMob.classList.toggle('open');
+  }
+  function closeNav() {
+    ham.classList.remove('open');
+    navMob.classList.remove('open');
+  }
+
+  /* ── SCROLL REVEAL ─────────────────────────────────── */
+  const fadeEls = document.querySelectorAll('.fade');
+  const fadeObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); } });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => fadeObs.observe(el));
+
+  /* ── BUILD STREAK GRID ─────────────────────────────── */
+  const grid = document.getElementById('streak-grid');
+  for (let i = 0; i < 30; i++) {
+    const div = document.createElement('div');
+    div.className = 's-cup';
+    div.innerHTML = `
+      <svg class="cup-ico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 3h14l-1.5 15.5A2 2 0 0 1 15.5 20.5h-7a2 2 0 0 1-1.997-1.823L5 3z"
+          fill="${i < 29 ? 'rgba(250,246,238,0.18)' : 'rgba(250,246,238,0.22)'}"
+          stroke="${i < 29 ? 'rgba(250,246,238,0.45)' : 'rgba(250,246,238,0.7)'}"
+          stroke-width="1.5"/>
+        <rect x="4" y="3" width="16" height="2.5" rx="1.25"
+          fill="${i < 29 ? 'rgba(250,246,238,0.25)' : 'rgba(250,246,238,0.55)'}"/>
+      </svg>`;
+    grid.appendChild(div);
+  }
+
+  /* ── HABIT ANIMATION (triggers once on scroll-in) ─── */
+  let habitDone = false;
+  const cntEl  = document.getElementById('cnt');
+  const flame  = document.getElementById('flame');
+  const cups   = document.querySelectorAll('.s-cup');
+  const chars  = document.querySelectorAll('.char-card');
+  const cupsStatEl  = document.getElementById('cups-stat');
+  const usersStatEl = document.getElementById('users-stat');
+
+  function animateCount(el, end, duration, prefix = '', suffix = '') {
+    const start = performance.now();
+    const startVal = 0;
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const val = Math.round(startVal + (end - startVal) * ease);
+      el.textContent = prefix + val.toLocaleString('en-IN') + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const habitObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !habitDone) {
+        habitDone = true;
+
+        // Day counter: 01 → 30
+        let day = 0;
+        const dayInterval = setInterval(() => {
+          day++;
+          cntEl.textContent = String(day).padStart(2, '0');
+          if (day >= 30) {
+            clearInterval(dayInterval);
+            setTimeout(() => flame.classList.add('show'), 200);
+          }
+        }, 66);
+
+        // Cups fill in staggered
+        cups.forEach((cup, i) => {
+          setTimeout(() => {
+            cup.classList.add('vis');
+            if (i < 29) cup.classList.add('full');
+            else cup.classList.add('today');
+          }, 200 + i * 72);
+        });
+
+        // Characters slide up
+        setTimeout(() => {
+          chars.forEach(c => c.classList.add('in'));
+        }, 2600);
+
+        // Stats count up
+        setTimeout(() => {
+          animateCount(cupsStatEl,  47293, 2200, '', '+');
+          animateCount(usersStatEl, 2100,  1800, '', '+');
+        }, 800);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  const habitSec = document.getElementById('habit');
+  if (habitSec) habitObs.observe(habitSec);
+
+  /* ── CROWD ── 8 hand-drawn portraits, static strings, no closures ── */
+  (function(){
+    var W = document.getElementById('c-wrap');
+    if (!W) return;
+
+    /* colour palette */
+    var BG = '#FAF6EE', K = '#1C1007', T = '#E8400C';
+
+    /* 8 fully hard-coded illustrated portrait SVGs (viewBox 0 0 88 97) */
+    var CHARS = [
+
+      /* 0 – Afro + big smile */
+      '<svg viewBox="0 0 88 97" xmlns="http://www.w3.org/2000/svg"><rect width="88" height="97" fill="#FAF6EE"/>' +
+      '<ellipse cx="44" cy="29" rx="41" ry="34" fill="#1C1007"/>' +
+      '<ellipse cx="44" cy="52" rx="27" ry="32" fill="#F2EBD9" stroke="#1C1007" stroke-width="2.5"/>' +
+      '<path d="M 17 54 Q 8 62 10 73 Q 13 81 21 77 L 19 66 Z" fill="#F2EBD9" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<path d="M 71 54 Q 80 62 78 73 Q 75 81 67 77 L 69 66 Z" fill="#F2EBD9" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<ellipse cx="33" cy="47" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="34.5" cy="47" r="4.5" fill="#1C1007"/><circle cx="36" cy="45" r="1.7" fill="white"/>' +
+      '<path d="M 26 43 Q 33 37 40 43" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<ellipse cx="55" cy="47" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="56.5" cy="47" r="4.5" fill="#1C1007"/><circle cx="58" cy="45" r="1.7" fill="white"/>' +
+      '<path d="M 48 43 Q 55 37 62 43" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<path d="M 41 60 Q 38 67 40 70 Q 44 73 48 70 Q 50 67 47 60" stroke="#1C1007" stroke-width="1.5" fill="none" stroke-linecap="round"/>' +
+      '<path d="M 40 70 Q 44 72 48 70" stroke="#1C1007" stroke-width="1.5" fill="none"/>' +
+      '<path d="M 35 79 Q 44 87 53 79" stroke="#1C1007" stroke-width="2" fill="none" stroke-linecap="round"/>' +
+      '<path d="M 35 79 Q 37 74 39 79" stroke="#1C1007" stroke-width="1.5" fill="none"/>' +
+      '<path d="M 53 79 Q 51 74 49 79" stroke="#1C1007" stroke-width="1.5" fill="none"/>' +
+      '<path d="M 0 97 Q 2 81 18 76 L 44 71 L 70 76 Q 86 81 88 97 Z" fill="#E8400C" stroke="#1C1007" stroke-width="2"/>' +
+      '<path d="M 36 71 Q 44 82 52 71" fill="none" stroke="#1C1007" stroke-width="1.75"/></svg>',
+
+      /* 1 – Short hair + rectangular glasses + dark skin */
+      '<svg viewBox="0 0 88 97" xmlns="http://www.w3.org/2000/svg"><rect width="88" height="97" fill="#FAF6EE"/>' +
+      '<path d="M 18 35 Q 18 5 44 2 Q 70 5 70 35 Q 62 22 44 20 Q 26 22 18 35 Z" fill="#1C1007"/>' +
+      '<ellipse cx="44" cy="52" rx="27" ry="32" fill="#B07840" stroke="#1C1007" stroke-width="2.5"/>' +
+      '<path d="M 17 54 Q 8 62 10 73 Q 13 81 21 77 L 19 66 Z" fill="#B07840" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<path d="M 71 54 Q 80 62 78 73 Q 75 81 67 77 L 69 66 Z" fill="#B07840" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<rect x="21" y="41" width="19" height="13" rx="2.5" fill="rgba(250,246,238,.35)" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="30.5" cy="47.5" r="5" fill="#1C1007"/><circle cx="32" cy="45.5" r="1.8" fill="white"/>' +
+      '<rect x="48" y="41" width="19" height="13" rx="2.5" fill="rgba(250,246,238,.35)" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="57.5" cy="47.5" r="5" fill="#1C1007"/><circle cx="59" cy="45.5" r="1.8" fill="white"/>' +
+      '<line x1="40" y1="47" x2="48" y2="47" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<line x1="9" y1="46" x2="21" y2="46" stroke="#1C1007" stroke-width="1.5"/>' +
+      '<line x1="67" y1="46" x2="79" y2="46" stroke="#1C1007" stroke-width="1.5"/>' +
+      '<path d="M 38 70 Q 44 75 50 70" stroke="#1C1007" stroke-width="2" fill="none" stroke-linecap="round"/>' +
+      '<path d="M 0 97 Q 2 81 18 76 L 44 71 L 70 76 Q 86 81 88 97 Z" fill="#E8400C" stroke="#1C1007" stroke-width="2"/>' +
+      '<path d="M 36 71 Q 44 82 52 71" fill="none" stroke="#1C1007" stroke-width="1.75"/></svg>',
+
+      /* 2 – Bob cut + earrings + warm skin */
+      '<svg viewBox="0 0 88 97" xmlns="http://www.w3.org/2000/svg"><rect width="88" height="97" fill="#FAF6EE"/>' +
+      '<path d="M 14 38 Q 14 4 44 2 Q 74 4 74 38 L 72 56 Q 60 63 44 63 Q 28 63 16 56 Z" fill="#1C1007"/>' +
+      '<ellipse cx="44" cy="52" rx="27" ry="32" fill="#E8C49A" stroke="#1C1007" stroke-width="2.5"/>' +
+      '<path d="M 17 54 Q 8 62 10 73 Q 13 81 21 77 L 19 66 Z" fill="#E8C49A" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<path d="M 71 54 Q 80 62 78 73 Q 75 81 67 77 L 69 66 Z" fill="#E8C49A" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<ellipse cx="33" cy="47" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="34.5" cy="47" r="4.5" fill="#1C1007"/><circle cx="36" cy="45" r="1.7" fill="white"/>' +
+      '<path d="M 26 43 Q 33 37 40 43" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<ellipse cx="55" cy="47" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="56.5" cy="47" r="4.5" fill="#1C1007"/><circle cx="58" cy="45" r="1.7" fill="white"/>' +
+      '<path d="M 48 43 Q 55 37 62 43" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<circle cx="9" cy="65" r="4.5" fill="#E8400C" stroke="#1C1007" stroke-width="1.5"/>' +
+      '<circle cx="79" cy="65" r="4.5" fill="#E8400C" stroke="#1C1007" stroke-width="1.5"/>' +
+      '<path d="M 36 79 Q 44 87 52 79" stroke="#1C1007" stroke-width="2.5" fill="none" stroke-linecap="round"/>' +
+      '<path d="M 36 79 Q 38 74 40 79" stroke="#1C1007" stroke-width="1.5" fill="none"/>' +
+      '<path d="M 52 79 Q 50 74 48 79" stroke="#1C1007" stroke-width="1.5" fill="none"/>' +
+      '<path d="M 0 97 Q 2 81 18 76 L 44 71 L 70 76 Q 86 81 88 97 Z" fill="#E8400C" stroke="#1C1007" stroke-width="2"/>' +
+      '<path d="M 36 71 Q 44 82 52 71" fill="none" stroke="#1C1007" stroke-width="1.75"/></svg>',
+
+      /* 3 – Bald + full beard */
+      '<svg viewBox="0 0 88 97" xmlns="http://www.w3.org/2000/svg"><rect width="88" height="97" fill="#FAF6EE"/>' +
+      '<ellipse cx="44" cy="48" rx="27" ry="32" fill="#D4A574" stroke="#1C1007" stroke-width="2.5"/>' +
+      '<path d="M 17 50 Q 8 58 10 69 Q 13 77 21 73 L 19 62 Z" fill="#D4A574" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<path d="M 71 50 Q 80 58 78 69 Q 75 77 67 73 L 69 62 Z" fill="#D4A574" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<path d="M 26 30 Q 24 12 44 10 Q 64 12 62 30" stroke="#1C1007" stroke-width="1.5" fill="none" opacity="0.25"/>' +
+      '<ellipse cx="33" cy="42" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="34.5" cy="42" r="4.5" fill="#1C1007"/><circle cx="36" cy="40" r="1.7" fill="white"/>' +
+      '<path d="M 26 38 Q 33 32 40 38" stroke="#1C1007" stroke-width="2" fill="none"/>' +
+      '<ellipse cx="55" cy="42" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="56.5" cy="42" r="4.5" fill="#1C1007"/><circle cx="58" cy="40" r="1.7" fill="white"/>' +
+      '<path d="M 48 38 Q 55 32 62 38" stroke="#1C1007" stroke-width="2" fill="none"/>' +
+      '<path d="M 17 64 Q 19 83 44 85 Q 69 83 71 64 Q 60 72 44 73 Q 28 72 17 64 Z" fill="#1C1007"/>' +
+      '<path d="M 0 97 Q 2 81 18 76 L 44 71 L 70 76 Q 86 81 88 97 Z" fill="#E8400C" stroke="#1C1007" stroke-width="2"/>' +
+      '<path d="M 36 71 Q 44 82 52 71" fill="none" stroke="#1C1007" stroke-width="1.75"/></svg>',
+
+      /* 4 – Spiky hair + dark sunglasses */
+      '<svg viewBox="0 0 88 97" xmlns="http://www.w3.org/2000/svg"><rect width="88" height="97" fill="#FAF6EE"/>' +
+      '<path d="M 18 40 L 23 14 L 31 27 L 41 4 L 51 27 L 59 12 L 67 27 L 75 14 L 77 38 Q 44 28 18 40 Z" fill="#1C1007"/>' +
+      '<ellipse cx="44" cy="52" rx="27" ry="32" fill="#F2EBD9" stroke="#1C1007" stroke-width="2.5"/>' +
+      '<path d="M 17 54 Q 8 62 10 73 Q 13 81 21 77 L 19 66 Z" fill="#F2EBD9" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<path d="M 71 54 Q 80 62 78 73 Q 75 81 67 77 L 69 66 Z" fill="#F2EBD9" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<path d="M 13 41 L 39 41 L 39 54 Q 39 57 37 57 L 15 57 Q 13 55 13 53 Z" fill="#1C1007"/>' +
+      '<path d="M 49 41 L 75 41 L 75 53 Q 75 57 73 57 L 51 57 Q 49 55 49 53 Z" fill="#1C1007"/>' +
+      '<line x1="39" y1="49" x2="49" y2="49" stroke="#1C1007" stroke-width="2.5"/>' +
+      '<path d="M 38 74 Q 44 81 50 74" stroke="#1C1007" stroke-width="2" fill="none" stroke-linecap="round"/>' +
+      '<path d="M 0 97 Q 2 81 18 76 L 44 71 L 70 76 Q 86 81 88 97 Z" fill="#1C1007" stroke="#1C1007" stroke-width="2"/>' +
+      '<path d="M 36 71 Q 44 82 52 71" fill="none" stroke="#E8400C" stroke-width="1.75"/></svg>',
+
+      /* 5 – Hair bun + mustache + medium tan skin */
+      '<svg viewBox="0 0 88 97" xmlns="http://www.w3.org/2000/svg"><rect width="88" height="97" fill="#FAF6EE"/>' +
+      '<path d="M 24 35 Q 24 8 44 4 Q 64 8 64 35 Z" fill="#1C1007"/>' +
+      '<circle cx="44" cy="4" r="13" fill="#1C1007"/>' +
+      '<ellipse cx="44" cy="52" rx="27" ry="32" fill="#C8956A" stroke="#1C1007" stroke-width="2.5"/>' +
+      '<path d="M 17 54 Q 8 62 10 73 Q 13 81 21 77 L 19 66 Z" fill="#C8956A" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<path d="M 71 54 Q 80 62 78 73 Q 75 81 67 77 L 69 66 Z" fill="#C8956A" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<ellipse cx="33" cy="47" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="34.5" cy="47" r="4.5" fill="#1C1007"/><circle cx="36" cy="45" r="1.7" fill="white"/>' +
+      '<path d="M 26 43 Q 33 37 40 43" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<ellipse cx="55" cy="47" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="56.5" cy="47" r="4.5" fill="#1C1007"/><circle cx="58" cy="45" r="1.7" fill="white"/>' +
+      '<path d="M 48 43 Q 55 37 62 43" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<path d="M 34 65 Q 40 70 44 68 Q 48 70 54 65 Q 50 59 44 61 Q 38 59 34 65 Z" fill="#1C1007"/>' +
+      '<line x1="38" y1="78" x2="50" y2="78" stroke="#1C1007" stroke-width="2" stroke-linecap="round"/>' +
+      '<path d="M 0 97 Q 2 81 18 76 L 44 71 L 70 76 Q 86 81 88 97 Z" fill="#E8400C" stroke="#1C1007" stroke-width="2"/>' +
+      '<path d="M 36 71 Q 44 82 52 71" fill="none" stroke="#1C1007" stroke-width="1.75"/></svg>',
+
+      /* 6 – Long wavy hair + open smile + light skin */
+      '<svg viewBox="0 0 88 97" xmlns="http://www.w3.org/2000/svg"><rect width="88" height="97" fill="#FAF6EE"/>' +
+      '<path d="M 14 33 Q 12 4 44 1 Q 76 4 74 33 L 80 97 L 68 97 Q 62 68 44 66 Q 26 68 20 97 L 8 97 Z" fill="#1C1007"/>' +
+      '<ellipse cx="44" cy="52" rx="27" ry="32" fill="#F0D8B8" stroke="#1C1007" stroke-width="2.5"/>' +
+      '<ellipse cx="33" cy="46" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="34.5" cy="46" r="4.5" fill="#1C1007"/><circle cx="36" cy="44" r="1.7" fill="white"/>' +
+      '<path d="M 26 42 Q 33 36 40 42" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<ellipse cx="55" cy="46" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="56.5" cy="46" r="4.5" fill="#1C1007"/><circle cx="58" cy="44" r="1.7" fill="white"/>' +
+      '<path d="M 48 42 Q 55 36 62 42" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<path d="M 41 60 Q 38 67 40 70 Q 44 73 48 70 Q 50 67 47 60" stroke="#1C1007" stroke-width="1.5" fill="none" stroke-linecap="round"/>' +
+      '<path d="M 40 70 Q 44 72 48 70" stroke="#1C1007" stroke-width="1.5" fill="none"/>' +
+      '<path d="M 34 79 Q 44 88 54 79" stroke="#1C1007" stroke-width="2.5" fill="none" stroke-linecap="round"/>' +
+      '<path d="M 34 79 Q 36 74 38 79" stroke="#1C1007" stroke-width="1.5" fill="none"/>' +
+      '<path d="M 54 79 Q 52 74 50 79" stroke="#1C1007" stroke-width="1.5" fill="none"/>' +
+      '<path d="M 0 97 Q 2 81 18 76 L 44 71 L 70 76 Q 86 81 88 97 Z" fill="#E8400C" stroke="#1C1007" stroke-width="2"/>' +
+      '<path d="M 36 71 Q 44 82 52 71" fill="none" stroke="#1C1007" stroke-width="1.75"/></svg>',
+
+      /* 7 – Turban + round glasses + terracotta jewel */
+      '<svg viewBox="0 0 88 97" xmlns="http://www.w3.org/2000/svg"><rect width="88" height="97" fill="#FAF6EE"/>' +
+      '<path d="M 4 44 Q 5 4 44 1 Q 83 4 84 44 Q 74 20 44 16 Q 14 20 4 44 Z" fill="#1C1007"/>' +
+      '<path d="M 6 38 Q 44 24 82 38" stroke="#3D2810" stroke-width="4" fill="none" opacity="0.7"/>' +
+      '<path d="M 8 28 Q 44 16 80 28" stroke="#3D2810" stroke-width="3" fill="none" opacity="0.5"/>' +
+      '<circle cx="44" cy="1" r="7" fill="#E8400C"/><circle cx="44" cy="1" r="4" fill="#B8300A"/>' +
+      '<ellipse cx="44" cy="54" rx="27" ry="32" fill="#D4B896" stroke="#1C1007" stroke-width="2.5"/>' +
+      '<path d="M 17 56 Q 8 64 10 75 Q 13 83 21 79 L 19 68 Z" fill="#D4B896" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<path d="M 71 56 Q 80 64 78 75 Q 75 83 67 79 L 69 68 Z" fill="#D4B896" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="31" cy="50" r="10" fill="rgba(250,246,238,.35)" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="32.5" cy="50" r="5" fill="#1C1007"/><circle cx="34" cy="48" r="1.8" fill="white"/>' +
+      '<circle cx="57" cy="50" r="10" fill="rgba(250,246,238,.35)" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="58.5" cy="50" r="5" fill="#1C1007"/><circle cx="60" cy="48" r="1.8" fill="white"/>' +
+      '<line x1="41" y1="50" x2="47" y2="50" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<line x1="9" y1="48" x2="21" y2="50" stroke="#1C1007" stroke-width="1.5"/>' +
+      '<line x1="67" y1="50" x2="79" y2="48" stroke="#1C1007" stroke-width="1.5"/>' +
+      '<path d="M 38 73 Q 44 79 50 73" stroke="#1C1007" stroke-width="2" fill="none" stroke-linecap="round"/>' +
+      '<path d="M 0 97 Q 2 81 18 76 L 44 71 L 70 76 Q 86 81 88 97 Z" fill="#E8400C" stroke="#1C1007" stroke-width="2"/>' +
+      '<path d="M 36 71 Q 44 82 52 71" fill="none" stroke="#1C1007" stroke-width="1.75"/></svg>',
+
+      /* 8 – Braids + headphones */
+      '<svg viewBox="0 0 88 97" xmlns="http://www.w3.org/2000/svg"><rect width="88" height="97" fill="#FAF6EE"/>' +
+      '<path d="M 22 27 Q 22 4 44 1 Q 66 4 66 27 Z" fill="#1C1007"/>' +
+      '<path d="M 12 47 Q 6 63 10 85 Q 14 91 18 89 Q 22 85 18 73 L 20 47 Z" fill="#1C1007"/>' +
+      '<path d="M 76 47 Q 82 63 78 85 Q 74 91 70 89 Q 66 85 70 73 L 68 47 Z" fill="#1C1007"/>' +
+      '<path d="M 12 55 L 20 55 M 12 63 L 20 63 M 13 71 L 19 71" stroke="#FAF6EE" stroke-width="1.5"/>' +
+      '<path d="M 68 55 L 76 55 M 68 63 L 76 63 M 69 71 L 75 71" stroke="#FAF6EE" stroke-width="1.5"/>' +
+      '<ellipse cx="44" cy="52" rx="27" ry="32" fill="#C8956A" stroke="#1C1007" stroke-width="2.5"/>' +
+      '<path d="M 9 45 Q 9 15 44 15 Q 79 15 79 45" stroke="#1C1007" stroke-width="3.5" fill="none"/>' +
+      '<rect x="3" y="40" width="10" height="16" rx="5" fill="#1C1007"/>' +
+      '<rect x="75" y="40" width="10" height="16" rx="5" fill="#1C1007"/>' +
+      '<ellipse cx="33" cy="47" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="34.5" cy="47" r="4.5" fill="#1C1007"/><circle cx="36" cy="45" r="1.7" fill="white"/>' +
+      '<path d="M 26 43 Q 33 37 40 43" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<ellipse cx="55" cy="47" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="56.5" cy="47" r="4.5" fill="#1C1007"/><circle cx="58" cy="45" r="1.7" fill="white"/>' +
+      '<path d="M 48 43 Q 55 37 62 43" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<line x1="38" y1="77" x2="50" y2="77" stroke="#1C1007" stroke-width="2" stroke-linecap="round"/>' +
+      '<path d="M 0 97 Q 2 81 18 76 L 44 71 L 70 76 Q 86 81 88 97 Z" fill="#E8400C" stroke="#1C1007" stroke-width="2"/>' +
+      '<path d="M 36 71 Q 44 82 52 71" fill="none" stroke="#1C1007" stroke-width="1.75"/></svg>',
+
+      /* 9 – Curly natural hair + round glasses + deepest skin */
+      '<svg viewBox="0 0 88 97" xmlns="http://www.w3.org/2000/svg"><rect width="88" height="97" fill="#FAF6EE"/>' +
+      '<path d="M 10 42 Q 8 6 44 2 Q 80 6 78 42 Q 74 28 68 35 Q 64 23 58 31 Q 54 21 44 29 Q 34 21 30 31 Q 24 23 20 35 Q 14 28 10 42 Z" fill="#1C1007"/>' +
+      '<ellipse cx="44" cy="52" rx="27" ry="32" fill="#BA8050" stroke="#1C1007" stroke-width="2.5"/>' +
+      '<path d="M 17 54 Q 8 62 10 73 Q 13 81 21 77 L 19 66 Z" fill="#BA8050" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<path d="M 71 54 Q 80 62 78 73 Q 75 81 67 77 L 69 66 Z" fill="#BA8050" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="31" cy="47" r="10" fill="rgba(250,246,238,.3)" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="32.5" cy="47" r="5" fill="#1C1007"/><circle cx="34" cy="45" r="1.8" fill="white"/>' +
+      '<circle cx="57" cy="47" r="10" fill="rgba(250,246,238,.3)" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="58.5" cy="47" r="5" fill="#1C1007"/><circle cx="60" cy="45" r="1.8" fill="white"/>' +
+      '<line x1="41" y1="47" x2="47" y2="47" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<line x1="9" y1="45" x2="21" y2="47" stroke="#1C1007" stroke-width="1.5"/>' +
+      '<line x1="67" y1="47" x2="79" y2="45" stroke="#1C1007" stroke-width="1.5"/>' +
+      '<path d="M 36 77 Q 44 84 52 77" stroke="#1C1007" stroke-width="2" fill="none" stroke-linecap="round"/>' +
+      '<path d="M 0 97 Q 2 81 18 76 L 44 71 L 70 76 Q 86 81 88 97 Z" fill="#E8400C" stroke="#1C1007" stroke-width="2"/>' +
+      '<path d="M 36 71 Q 44 82 52 71" fill="none" stroke="#1C1007" stroke-width="1.75"/></svg>',
+
+      /* 10 – Side-part + light skin + terracotta collar shirt */
+      '<svg viewBox="0 0 88 97" xmlns="http://www.w3.org/2000/svg"><rect width="88" height="97" fill="#FAF6EE"/>' +
+      '<path d="M 18 37 Q 18 5 44 2 Q 70 5 70 37 Q 56 25 44 27 Q 28 25 18 37 Z" fill="#1C1007"/>' +
+      '<path d="M 18 37 Q 34 23 44 27" stroke="#1C1007" stroke-width="3" fill="none"/>' +
+      '<ellipse cx="44" cy="52" rx="27" ry="32" fill="#F2EBD9" stroke="#1C1007" stroke-width="2.5"/>' +
+      '<path d="M 17 54 Q 8 62 10 73 Q 13 81 21 77 L 19 66 Z" fill="#F2EBD9" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<path d="M 71 54 Q 80 62 78 73 Q 75 81 67 77 L 69 66 Z" fill="#F2EBD9" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<ellipse cx="33" cy="46" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="34.5" cy="46" r="4.5" fill="#1C1007"/><circle cx="36" cy="44" r="1.7" fill="white"/>' +
+      '<path d="M 26 42 Q 33 36 40 42" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<ellipse cx="55" cy="46" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="56.5" cy="46" r="4.5" fill="#1C1007"/><circle cx="58" cy="44" r="1.7" fill="white"/>' +
+      '<path d="M 48 42 Q 55 36 62 42" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<path d="M 41 60 Q 38 67 40 70 Q 44 73 48 70 Q 50 67 47 60" stroke="#1C1007" stroke-width="1.5" fill="none" stroke-linecap="round"/>' +
+      '<path d="M 40 70 Q 44 72 48 70" stroke="#1C1007" stroke-width="1.5" fill="none"/>' +
+      '<line x1="38" y1="79" x2="50" y2="79" stroke="#1C1007" stroke-width="2" stroke-linecap="round"/>' +
+      '<path d="M 0 97 Q 2 81 18 76 L 44 71 L 70 76 Q 86 81 88 97 Z" fill="#E8400C" stroke="#1C1007" stroke-width="2"/>' +
+      '<path d="M 36 71 Q 44 82 52 71" fill="none" stroke="#1C1007" stroke-width="1.75"/></svg>',
+
+      /* 11 – Shoulder-length straight hair + earrings + tan skin */
+      '<svg viewBox="0 0 88 97" xmlns="http://www.w3.org/2000/svg"><rect width="88" height="97" fill="#FAF6EE"/>' +
+      '<path d="M 16 31 Q 14 4 44 1 Q 74 4 72 31 L 78 97 L 68 97 Q 62 67 44 65 Q 26 67 20 97 L 10 97 Z" fill="#1C1007"/>' +
+      '<ellipse cx="44" cy="52" rx="27" ry="32" fill="#D4A574" stroke="#1C1007" stroke-width="2.5"/>' +
+      '<ellipse cx="33" cy="46" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="34.5" cy="46" r="4.5" fill="#1C1007"/><circle cx="36" cy="44" r="1.7" fill="white"/>' +
+      '<path d="M 26 42 Q 33 36 40 42" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<ellipse cx="55" cy="46" rx="7" ry="8" fill="white" stroke="#1C1007" stroke-width="1.75"/>' +
+      '<circle cx="56.5" cy="46" r="4.5" fill="#1C1007"/><circle cx="58" cy="44" r="1.7" fill="white"/>' +
+      '<path d="M 48 42 Q 55 36 62 42" stroke="#1C1007" stroke-width="1.75" fill="none"/>' +
+      '<circle cx="9" cy="65" r="4.5" fill="#E8400C" stroke="#1C1007" stroke-width="1.5"/>' +
+      '<circle cx="79" cy="65" r="4.5" fill="#E8400C" stroke="#1C1007" stroke-width="1.5"/>' +
+      '<path d="M 38 77 Q 44 83 50 77" stroke="#1C1007" stroke-width="2" fill="none" stroke-linecap="round"/>' +
+      '<path d="M 0 97 Q 2 81 18 76 L 44 71 L 70 76 Q 86 81 88 97 Z" fill="#E8400C" stroke="#1C1007" stroke-width="2"/>' +
+      '<path d="M 36 71 Q 44 82 52 71" fill="none" stroke="#1C1007" stroke-width="1.75"/></svg>'
+    ];
+
+    /* simple deterministic selector */
+    function pick(n, m) {
+      n = (n ^ 61) ^ (n >>> 16);
+      n += n << 3;
+      n ^= n >>> 4;
+      n = Math.imul(n, 0x27d4eb2d) >>> 0;
+      return n % m;
+    }
+
+    var SPD = [32, 42, 26, 38, 28, 36, 22];
+
+    for (var r = 0; r < 7; r++) {
+      var row = document.createElement('div');
+      row.className = 'c-row' + (r % 2 ? ' alt' : '');
+      row.style.animationDuration = SPD[r] + 's';
+      var html = '';
+      for (var cp = 0; cp < 2; cp++) {
+        for (var i = 0; i < 18; i++) {
+          html += '<div class="c-cell">' + CHARS[pick(r * 31 + i * 7 + cp * 13, CHARS.length)] + '</div>';
+        }
+      }
+      row.innerHTML = html;
+      W.appendChild(row);
+    }
+  })();
+
+  function setSpd(mult, btn) {
+    document.querySelectorAll('.spd-btn').forEach(function(b){ b.classList.remove('on'); });
+    btn.classList.add('on');
+    var BASE = [32, 42, 26, 38, 28, 36, 22];
+    document.querySelectorAll('.c-row').forEach(function(row, i) {
+      row.style.animationDuration = (BASE[i % BASE.length] / mult) + 's';
+    });
+  }
+
+  /* ── SMOOTH CLOSE NAV ON LINK CLICK ───────────────── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', () => closeNav());
+  });
+</script>
+</body>
+</html>
