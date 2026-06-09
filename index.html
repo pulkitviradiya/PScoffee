@@ -503,32 +503,26 @@
 
     /* ─── CROWD SECTION ─────────────────────────────────────────── */
     #crowd { position:relative; overflow:hidden; background:var(--ink); height:680px; }
-    @media(max-width:700px){ #crowd{ height:500px; } }
+    @media(max-width:700px){ #crowd{ height:520px; } }
 
-    /* canvas holds all scrolling rows */
-    .c-wrap {
+    /* peeps grid */
+    .crowd-grid {
       position:absolute; inset:0;
-      display:flex; flex-direction:column;
-      pointer-events:none; user-select:none;
+      display:grid; gap:0;
     }
-    .c-row {
-      display:flex; flex:none;
-      animation: cR 32s linear infinite;
+    .peep-cell {
+      background-image: url('crowd.jpg');
+      filter: invert(1) sepia(1) saturate(5.5) hue-rotate(345deg) brightness(1.08);
+      mix-blend-mode: screen;
+      animation: peep-bob var(--dur,3s) ease-in-out var(--dly,0s) infinite;
       will-change: transform;
     }
-    .c-row.alt { animation-name: cL; }
-    @keyframes cR { from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
-    @keyframes cL { from{ transform:translateX(-50%) } to{ transform:translateX(0) } }
-
-    /* each portrait cell */
-    .c-cell {
-      flex:none; width:88px; height:97px;
-      overflow:hidden; display:block;
-      transition: transform .22s cubic-bezier(.34,1.56,.64,1);
-      pointer-events:auto; cursor:default;
+    @keyframes peep-bob {
+      0%,100% { transform: translate(0,0) rotate(0deg) scale(1); }
+      22%      { transform: translate(0.8px,-2.5px) rotate(0.4deg) scale(1.008); }
+      50%      { transform: translate(-0.6px,1.5px) rotate(-0.3deg) scale(0.994); }
+      78%      { transform: translate(1.2px,0.6px) rotate(0.18deg) scale(1.003); }
     }
-    .c-cell:hover { transform:scale(1.12) translateY(-3px); z-index:8; position:relative; }
-    .c-cell svg { width:88px; height:97px; display:block; }
 
     /* dark vignette in center only — characters visible at edges */
     .c-veil {
@@ -558,7 +552,7 @@
       line-height:1.72; margin-bottom:1.8rem; max-width:460px;
     }
 
-    /* speed controls */
+    /* wobble speed controls */
     .c-spd {
       position:absolute; bottom:1.4rem; right:2rem; z-index:20;
       display:flex; gap:6px;
@@ -731,7 +725,7 @@
 
 <!-- ══════════════════════ CROWD RUSH ════════════════════════ -->
 <section id="crowd">
-  <div class="c-wrap" id="c-wrap"></div>
+  <div class="crowd-grid" id="crowd-grid"></div>
   <div class="c-veil">
     <div class="c-text">
       <p class="eyebrow-light">The morning rush · The 3pm rescue · The campus run</p>
@@ -1441,13 +1435,32 @@
   const habitSec = document.getElementById('habit');
   if (habitSec) habitObs.observe(habitSec);
 
-  /* ── CROWD ── 8 hand-drawn portraits, static strings, no closures ── */
+  /* ── CROWD ── Open Peeps illustration, per-face wobble ── */
   (function(){
-    var W = document.getElementById('c-wrap');
-    if (!W) return;
+    var G = document.getElementById('crowd-grid');
+    if (!G) return;
+    var COLS = 10, ROWS = 9;
+    G.style.gridTemplateColumns = 'repeat(' + COLS + ',1fr)';
+    G.style.gridTemplateRows    = 'repeat(' + ROWS + ',1fr)';
+    for (var r = 0; r < ROWS; r++) {
+      for (var c = 0; c < COLS; c++) {
+        var d = document.createElement('div');
+        d.className = 'peep-cell';
+        d.style.backgroundSize     = (COLS * 100) + '% ' + (ROWS * 100) + '%';
+        var bpx = COLS > 1 ? (c / (COLS - 1) * 100).toFixed(1) : '0';
+        var bpy = ROWS > 1 ? (r / (ROWS - 1) * 100).toFixed(1) : '0';
+        d.style.backgroundPosition = bpx + '% ' + bpy + '%';
+        var dur = (2.2 + Math.random() * 2.6).toFixed(2);
+        d.dataset.dur = dur;
+        d.style.setProperty('--dur', dur + 's');
+        d.style.setProperty('--dly', '-' + (Math.random() * 5).toFixed(2) + 's');
+        G.appendChild(d);
+      }
+    }
+  })();
 
-    /* colour palette */
-    var BG = '#FAF6EE', K = '#1C1007', T = '#E8400C';
+  /* ── (old SVG portraits removed) ── */
+  (function(){ return; var BG = '#FAF6EE', K = '#1C1007', T = '#E8400C';
 
     /* 8 fully hard-coded illustrated portrait SVGs (viewBox 0 0 88 97) */
     var CHARS = [
@@ -1694,12 +1707,12 @@
     }
   })();
 
-  function setSpd(mult, btn) {
+  function setSpd(rate, btn) {
     document.querySelectorAll('.spd-btn').forEach(function(b){ b.classList.remove('on'); });
     btn.classList.add('on');
-    var BASE = [32, 42, 26, 38, 28, 36, 22];
-    document.querySelectorAll('.c-row').forEach(function(row, i) {
-      row.style.animationDuration = (BASE[i % BASE.length] / mult) + 's';
+    var mult = rate === 0.45 ? 2.8 : rate === 2.2 ? 0.35 : 1;
+    document.querySelectorAll('.peep-cell').forEach(function(c) {
+      c.style.animationDuration = (parseFloat(c.dataset.dur) * mult).toFixed(2) + 's';
     });
   }
 
