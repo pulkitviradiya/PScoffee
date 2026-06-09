@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Espresso, cappuccino, cold brew, iced latte and more — all made with 100% Arabica. View the full P.S. Coffee menu. No Robusta. No fine print. Starting at ₹89.">
+  <meta name="theme-color" content="#E8400C">
+  <title>Menu | P.S. Coffee — 100% Arabica from ₹89</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--tc:#E8400C;--tc-dark:#B8300A;--tc-deep:#8A220A;--cream:#FAF6EE;--cream2:#F2EBD9;--cream3:#E8DCC8;--ink:#1C1007;--ink2:#3D2810;--ink3:#6B4A28;--font-d:'Aldrich',sans-serif;--font-b:'Inter',sans-serif;--mw:1180px;--px:clamp(1.25rem,5vw,3.5rem);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-b);background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+    a{text-decoration:none;color:inherit;}
+    img,svg{display:block;}
+    .wrap{max-width:var(--mw);margin:0 auto;padding:0 var(--px);}
+    .eyebrow{font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);}
+    .eyebrow-light{font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,246,238,.5);}
+    .fade{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+    .fade.in{opacity:1;transform:none;}
+    .fade.d1{transition-delay:.1s;}.fade.d2{transition-delay:.2s;}.fade.d3{transition-delay:.3s;}.fade.d4{transition-delay:.45s;}
+
+    /* NAV */
+    #nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--cream);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s;}
+    #nav.stuck{border-color:var(--cream3);box-shadow:0 2px 24px rgba(28,16,7,.06);}
+    .nav-i{display:flex;align-items:center;justify-content:space-between;height:62px;}
+    .nav-logo{font-family:var(--font-d);font-size:26px;color:var(--tc);letter-spacing:-1px;}
+    .nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;}
+    .nav-links a{font-size:13px;color:var(--ink2);transition:color .2s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--tc);}
+    .nav-cta{background:var(--tc);color:#FAF6EE !important;padding:8px 20px;border-radius:7px;font-weight:500 !important;transition:background .2s !important;}
+    .nav-cta:hover{background:var(--tc-dark) !important;}
+    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+    .ham span{display:block;width:22px;height:1.5px;background:var(--ink);border-radius:2px;transition:all .3s;}
+    .ham.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px);}
+    .ham.open span:nth-child(2){opacity:0;}
+    .ham.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px);}
+    .nav-mob{display:none;flex-direction:column;background:var(--cream);border-top:1px solid var(--cream3);padding:1.5rem var(--px) 2rem;gap:1.25rem;}
+    .nav-mob.open{display:flex;}
+    .nav-mob a{font-size:15px;color:var(--ink2);}
+    .nav-mob .nav-cta{text-align:center;border-radius:8px;padding:12px;color:#FAF6EE !important;}
+
+    /* BUTTONS */
+    .btn-cream{display:inline-flex;align-items:center;gap:8px;background:#FAF6EE;color:var(--tc);padding:13px 26px;border-radius:8px;font-size:14px;font-weight:600;transition:background .2s,transform .2s;}
+    .btn-cream:hover{background:var(--cream2);transform:translateY(-1px);}
+    .btn-tc{display:inline-flex;align-items:center;gap:8px;background:var(--tc);color:#FAF6EE;padding:13px 26px;border-radius:8px;font-size:14px;font-weight:600;transition:background .2s,transform .2s;border:none;cursor:pointer;}
+    .btn-tc:hover{background:var(--tc-dark);transform:translateY(-1px);}
+    .btn-outline-cream{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(250,246,238,.45);color:#FAF6EE;padding:13px 26px;border-radius:8px;font-size:14px;font-weight:500;transition:border-color .2s,background .2s;}
+    .btn-outline-cream:hover{border-color:rgba(250,246,238,.9);background:rgba(250,246,238,.07);}
+    .arrow-icon{width:16px;height:16px;flex-shrink:0;}
+
+    /* PAGE HERO */
+    .pg-hero{background:var(--tc);padding:6rem 0 4.5rem;margin-top:62px;position:relative;overflow:hidden;}
+    .pg-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 85% 15%,rgba(250,246,238,.07) 0%,transparent 60%),radial-gradient(ellipse 50% 60% at 15% 85%,rgba(28,16,7,.14) 0%,transparent 60%);pointer-events:none;}
+    .pg-hero::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");}
+    .pg-hero .wrap{position:relative;z-index:2;}
+    .pg-ey{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,238,.55);margin-bottom:1rem;}
+    .pg-title{font-family:var(--font-d);font-size:clamp(32px,5.5vw,62px);color:#FAF6EE;line-height:1.05;margin-bottom:1rem;}
+    .pg-sub{font-size:clamp(14px,1.8vw,17px);color:rgba(250,246,238,.72);line-height:1.75;max-width:540px;}
+    .pg-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:2rem;}
+
+    /* MARQUEE */
+    .mq-wrap{background:var(--ink);overflow:hidden;padding:14px 0;}
+    .mq-track{display:flex;width:max-content;animation:ticker 22s linear infinite;}
+    @keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+    .mq-item{display:flex;align-items:center;gap:2rem;padding:0 2rem;white-space:nowrap;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream3);}
+    .mq-dot{width:4px;height:4px;border-radius:50%;background:var(--tc);flex-shrink:0;}
+
+    /* MENU SECTIONS */
+    .menu-body{padding:6rem 0;}
+    .menu-intro{max-width:600px;margin-bottom:4rem;}
+    .menu-intro-title{font-family:var(--font-d);font-size:clamp(26px,4vw,42px);color:var(--ink);line-height:1.1;margin:.5rem 0 1rem;}
+    .menu-intro-desc{font-size:15px;color:var(--ink2);line-height:1.8;}
+
+    .menu-cat{margin-bottom:4rem;}
+    .menu-cat-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;padding-bottom:.875rem;border-bottom:2px solid var(--ink);}
+    .menu-cat-name{font-family:var(--font-d);font-size:22px;color:var(--ink);}
+    .menu-cat-desc{font-size:13px;color:var(--ink3);font-style:italic;max-width:380px;text-align:right;}
+    .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--cream3);border-radius:16px;overflow:hidden;}
+    .mi{display:flex;justify-content:space-between;align-items:flex-start;padding:1.375rem 1.5rem;background:var(--cream);gap:1rem;transition:background .2s;}
+    .mi:hover{background:var(--cream2);}
+    .mi-left{}
+    .mi-name{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:4px;}
+    .mi-desc{font-size:12px;color:var(--ink3);font-style:italic;line-height:1.5;}
+    .mi-price{font-family:var(--font-d);font-size:16px;color:var(--tc);flex-shrink:0;padding-top:2px;}
+
+    .menu-note{background:var(--ink);border-radius:16px;padding:2.5rem;margin-top:4rem;}
+    .mn-title{font-family:var(--font-d);font-size:18px;color:var(--tc);margin-bottom:.875rem;}
+    .mn-body{font-size:14px;color:rgba(250,246,238,.65);line-height:1.8;}
+    .mn-ps{font-family:var(--font-d);font-size:13px;color:var(--tc);font-style:italic;margin-top:1rem;}
+
+    /* PACK CTA */
+    .pack-cta{background:var(--tc);padding:5rem 0;text-align:center;position:relative;overflow:hidden;}
+    .pack-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(28,16,7,.1) 0%,transparent 70%);}
+    .pack-cta .wrap{position:relative;z-index:2;}
+    .pack-cta-title{font-family:var(--font-d);font-size:clamp(26px,4vw,44px);color:#FAF6EE;line-height:1.2;margin:.5rem 0 1rem;}
+    .pack-cta-sub{font-size:15px;color:rgba(250,246,238,.72);line-height:1.7;max-width:440px;margin:0 auto 2rem;}
+    .pack-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+
+    /* FOOTER */
+    footer{background:var(--ink);padding:5rem 0 2rem;}
+    .foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(250,246,238,.07);margin-bottom:2rem;}
+    .foot-logo{font-family:var(--font-d);font-size:34px;color:var(--tc);letter-spacing:-1px;margin-bottom:.75rem;}
+    .foot-tagline{font-size:13px;color:rgba(250,246,238,.4);line-height:1.7;max-width:240px;margin-bottom:1.5rem;}
+    .foot-ps{font-family:var(--font-d);font-size:13px;color:var(--tc);font-style:italic;}
+    .foot-col-t{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,246,238,.3);margin-bottom:1.25rem;}
+    .foot-links{list-style:none;display:flex;flex-direction:column;gap:.75rem;}
+    .foot-links a{font-size:13px;color:rgba(250,246,238,.5);transition:color .2s;}
+    .foot-links a:hover{color:#FAF6EE;}
+    .foot-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .foot-copy{font-size:12px;color:rgba(250,246,238,.25);}
+    .foot-legal{display:flex;gap:1.5rem;}
+    .foot-legal a{font-size:12px;color:rgba(250,246,238,.25);transition:color .2s;}
+    .foot-legal a:hover{color:rgba(250,246,238,.55);}
+
+    @media(max-width:960px){
+      .nav-links{display:none;}.ham{display:flex;}
+      .menu-grid{grid-template-columns:1fr;}
+      .menu-cat-hd{flex-direction:column;align-items:flex-start;gap:.5rem;}
+      .menu-cat-desc{text-align:left;}
+      .foot-top{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:600px){
+      .foot-top{grid-template-columns:1fr;}
+      .foot-bot{flex-direction:column;align-items:flex-start;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-i">
+      <a href="index.html" class="nav-logo">P.S.</a>
+      <ul class="nav-links">
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#locations">Find a P.S.</a></li>
+        <li><a href="index.html#pack" class="nav-cta">Get the Pack</a></li>
+      </ul>
+      <div class="ham" id="ham" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="nav-mob" id="nav-mob">
+    <a href="menu.html" onclick="closeNav()">Menu</a>
+    <a href="story.html" onclick="closeNav()">Our Story</a>
+    <a href="about.html" onclick="closeNav()">About</a>
+    <a href="app.html" onclick="closeNav()">Our App</a>
+    <a href="corporate.html" onclick="closeNav()">Partner with us</a>
+    <a href="index.html#locations" onclick="closeNav()">Find a P.S.</a>
+    <a href="index.html#pack" class="nav-cta" onclick="closeNav()">Get the Pack</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="pg-hero">
+  <div class="wrap">
+    <p class="pg-ey">P.S. = Proudly Specialty</p>
+    <h1 class="pg-title">A menu with<br>nothing to hide.</h1>
+    <p class="pg-sub">Every item on this page is made with 100% Arabica. No fine print. No Robusta hiding in a blend. No ₹320 latte tax. Just the coffee.</p>
+    <div class="pg-actions">
+      <a href="#hot" class="btn-cream">
+        See hot drinks
+        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#cold" class="btn-outline-cream">Cold &amp; iced</a>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="mq-wrap" aria-hidden="true">
+  <div class="mq-track">
+    <div class="mq-item"><span class="mq-dot"></span>100% Arabica</div>
+    <div class="mq-item"><span class="mq-dot"></span>From ₹89</div>
+    <div class="mq-item"><span class="mq-dot"></span>No Robusta</div>
+    <div class="mq-item"><span class="mq-dot"></span>No Chicory</div>
+    <div class="mq-item"><span class="mq-dot"></span>Oat Milk — No Surcharge</div>
+    <div class="mq-item"><span class="mq-dot"></span>Proudly Specialty</div>
+    <div class="mq-item"><span class="mq-dot"></span>Chikmagalur · Coorg</div>
+    <div class="mq-item"><span class="mq-dot"></span>In Under 90 Seconds</div>
+    <div class="mq-item"><span class="mq-dot"></span>100% Arabica</div>
+    <div class="mq-item"><span class="mq-dot"></span>From ₹89</div>
+    <div class="mq-item"><span class="mq-dot"></span>No Robusta</div>
+    <div class="mq-item"><span class="mq-dot"></span>No Chicory</div>
+    <div class="mq-item"><span class="mq-dot"></span>Oat Milk — No Surcharge</div>
+    <div class="mq-item"><span class="mq-dot"></span>Proudly Specialty</div>
+    <div class="mq-item"><span class="mq-dot"></span>Chikmagalur · Coorg</div>
+    <div class="mq-item"><span class="mq-dot"></span>In Under 90 Seconds</div>
+  </div>
+</div>
+
+<!-- MENU BODY -->
+<main class="menu-body">
+  <div class="wrap">
+
+    <div class="menu-intro fade">
+      <p class="eyebrow">What's in the cup</p>
+      <h2 class="menu-intro-title">Same bean. Every drink. No exceptions.</h2>
+      <p class="menu-intro-desc">Whether you order an espresso or a cold brew, the bean doesn't change. 100% Arabica, single-origin from the estates we've named and visited. What changes is the method. What stays the same is the standard.</p>
+    </div>
+
+    <!-- HOT CLASSICS -->
+    <div class="menu-cat fade d1" id="hot">
+      <div class="menu-cat-hd">
+        <h2 class="menu-cat-name">Hot classics</h2>
+        <p class="menu-cat-desc">Made properly. In under 90 seconds. Every time.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Espresso</p>
+            <p class="mi-desc">The original P.S. Short, honest, final.</p>
+          </div>
+          <span class="mi-price">₹89</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Americano</p>
+            <p class="mi-desc">Espresso, long. For people who take their time.</p>
+          </div>
+          <span class="mi-price">₹99</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Cappuccino</p>
+            <p class="mi-desc">The one most of you come back for. We know.</p>
+          </div>
+          <span class="mi-price">₹109</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Flat White</p>
+            <p class="mi-desc">More coffee. Less foam. No compromise.</p>
+          </div>
+          <span class="mi-price">₹119</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Latte</p>
+            <p class="mi-desc">Gentle. Consistent. The one that became a daily thing.</p>
+          </div>
+          <span class="mi-price">₹119</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Cortado</p>
+            <p class="mi-desc">Equal parts espresso and warm milk. No dilution.</p>
+          </div>
+          <span class="mi-price">₹109</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLD & ICED -->
+    <div class="menu-cat fade d1" id="cold">
+      <div class="menu-cat-hd">
+        <h2 class="menu-cat-name">Cold &amp; iced</h2>
+        <p class="menu-cat-desc">Same Arabica. Colder. Because the habit doesn't take summers off.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Iced Americano</p>
+            <p class="mi-desc">Cold, clean, Arabica. The afternoon anchor.</p>
+          </div>
+          <span class="mi-price">₹109</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Cold Brew</p>
+            <p class="mi-desc">12 hours. Slow. Smoother than you'd expect.</p>
+          </div>
+          <span class="mi-price">₹129</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Iced Latte</p>
+            <p class="mi-desc">The summer P.S. It still counts.</p>
+          </div>
+          <span class="mi-price">₹119</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Iced Cappuccino</p>
+            <p class="mi-desc">Cold foam, full espresso. No compromise in the cold.</p>
+          </div>
+          <span class="mi-price">₹119</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Iced Flat White</p>
+            <p class="mi-desc">Concentrated, cold, clean. For when you mean it.</p>
+          </div>
+          <span class="mi-price">₹129</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Cold Brew Tonic</p>
+            <p class="mi-desc">Cold brew over tonic water. The one that sounds wrong until it doesn't.</p>
+          </div>
+          <span class="mi-price">₹149</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- P.S. SPECIALS -->
+    <div class="menu-cat fade d2" id="specials">
+      <div class="menu-cat-hd">
+        <h2 class="menu-cat-name">P.S. specials</h2>
+        <p class="menu-cat-desc">The drinks that started as afterthoughts and stayed as favourites.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Spanish Latte</p>
+            <p class="mi-desc">Condensed milk. Not apologising for it.</p>
+          </div>
+          <span class="mi-price">₹139</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Jaggery Latte</p>
+            <p class="mi-desc">Arabica meets gur. A P.S. original.</p>
+          </div>
+          <span class="mi-price">₹129</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Affogato</p>
+            <p class="mi-desc">Espresso over ice cream. The best kind of afterthought.</p>
+          </div>
+          <span class="mi-price">₹159</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Cardamom Latte</p>
+            <p class="mi-desc">The bridge between chai culture and coffee. Properly made.</p>
+          </div>
+          <span class="mi-price">₹129</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Brown Sugar Latte</p>
+            <p class="mi-desc">Caramel without the artificial version. Worth planning your 3pm around.</p>
+          </div>
+          <span class="mi-price">₹139</span>
+        </div>
+        <div class="mi">
+          <div class="mi-left">
+            <p class="mi-name">Turmeric Latte</p>
+            <p class="mi-desc">Haldi with Arabica. A P.S. — Perhaps Surprisingly good.</p>
+          </div>
+          <span class="mi-price">₹129</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENU NOTE -->
+    <div class="menu-note fade d3">
+      <p class="mn-title">The P.S. standard — on every cup.</p>
+      <p class="mn-body">All espresso drinks are made with 100% Arabica single-origin beans from Chikmagalur or Coorg. Oat milk is available at every deck — no surcharge, ever. Whole milk is the default. Soy on request at select locations.</p>
+      <p class="mn-body" style="margin-top:.75rem;">Seasonal single-origin rotations are listed at the deck. When the bean changes, the name changes with it. We'll always tell you what's in the cup.</p>
+      <p class="mn-ps">P.S. — We don't do decaf. We do Arabica, properly. If you want half the coffee, order an Americano.</p>
+    </div>
+
+  </div>
+</main>
+
+<!-- PACK CTA -->
+<section class="pack-cta">
+  <div class="wrap">
+    <p class="eyebrow-light" style="margin-bottom:.75rem;">P.S. = Plain &amp; Simple</p>
+    <h2 class="pack-cta-title">Drink it every day.<br>Pay less every day.</h2>
+    <p class="pack-cta-sub">The P.S. Pack: prepay 10 or 20 cups, save up to 20%, and never have a bad coffee morning. No expiry. No auto-renewal. Just the habit.</p>
+    <div class="pack-btns">
+      <a href="index.html#pack" class="btn-cream">
+        Get the Pack
+        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="index.html#locations" class="btn-outline-cream">Find a P.S. near you</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <p class="foot-logo">P.S.</p>
+        <p class="foot-tagline">Specialty coffee for people with places to be. 100% Arabica. From ₹89. In your building.</p>
+        <p class="foot-ps">P.S. — Thank you for coming back.</p>
+      </div>
+      <div>
+        <p class="foot-col-t">Menu</p>
+        <ul class="foot-links">
+          <li><a href="#hot">Hot Classics</a></li>
+          <li><a href="#cold">Cold &amp; Iced</a></li>
+          <li><a href="#specials">P.S. Specials</a></li>
+          <li><a href="index.html#pack">The P.S. Pack</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="foot-col-t">Company</p>
+        <ul class="foot-links">
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#beans">Our Beans</a></li>
+          <li><a href="corporate.html">Partner with us</a></li>
+          <li><a href="app.html">Our App</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="foot-col-t">Get in touch</p>
+        <ul class="foot-links">
+          <li><a href="mailto:hello@ps.coffee">hello@ps.coffee</a></li>
+          <li><a href="#">@pscoffee.in</a></li>
+          <li><a href="index.html#locations">Find a P.S.</a></li>
+          <li><a href="corporate.html">Suggest a location</a></li>
+        </ul>
+        <p class="foot-col-t" style="margin-top:1.75rem;">Download the app</p>
+        <ul class="foot-links">
+          <li><a href="app.html">App Store</a></li>
+          <li><a href="app.html">Google Play</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <p class="foot-copy">© 2025 P.S. Coffee. All rights reserved. Specialty Coffee QSR, Ahmedabad.</p>
+      <div class="foot-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Allergen Info</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  const ham = document.getElementById('ham');
+  const navMob = document.getElementById('nav-mob');
+  window.addEventListener('scroll', () => { nav.classList.toggle('stuck', window.scrollY > 24); }, { passive: true });
+  function toggleNav() { ham.classList.toggle('open'); navMob.classList.toggle('open'); }
+  function closeNav() { ham.classList.remove('open'); navMob.classList.remove('open'); }
+  const fadeEls = document.querySelectorAll('.fade');
+  const fadeObs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }); }, { threshold: 0.1 });
+  fadeEls.forEach(el => fadeObs.observe(el));
+</script>
+</body>
+</html>
