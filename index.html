@@ -502,18 +502,17 @@
     .foot-legal a:hover { color: rgba(250,246,238,.55); }
 
     /* ─── CROWD SECTION ─────────────────────────────────────────── */
-    #crowd { position:relative; overflow:hidden; background:var(--ink); height:680px; }
+    #crowd { position:relative; overflow:hidden; background:var(--ink); height:680px; isolation:isolate; }
     @media(max-width:700px){ #crowd{ height:520px; } }
 
     /* peeps grid */
     .crowd-grid {
-      position:absolute; inset:0;
+      position:absolute; inset:-1px;
       display:grid; gap:0;
     }
     .peep-cell {
-      background-image: url('crowd.jpg');
-      filter: invert(1) sepia(1) saturate(5.5) hue-rotate(345deg) brightness(1.08);
-      mix-blend-mode: screen;
+      background-image: url('crowd.png');
+      filter: invert(1) brightness(0.65) sepia(1) saturate(6) hue-rotate(335deg) brightness(2.5);
       animation: peep-bob var(--dur,3s) ease-in-out var(--dly,0s) infinite;
       will-change: transform;
     }
@@ -524,7 +523,7 @@
       78%      { transform: translate(1.2px,0.6px) rotate(0.18deg) scale(1.003); }
     }
 
-    /* dark vignette in center only — characters visible at edges */
+/* dark vignette in center only — characters visible at edges */
     .c-veil {
       position:absolute; inset:0; z-index:5;
       display:flex; align-items:center; justify-content:center;
