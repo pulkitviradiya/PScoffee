@@ -1,461 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="P.S. Coffee is a specialty coffee QSR built for Ahmedabad's working generation. 100% Arabica from ₹89, inside co-working spaces, offices, and campuses.">
-  <meta name="theme-color" content="#E8400C">
-  <title>About | P.S. Coffee — Built for people who drink coffee to get things done</title>
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ps.coffee/about">
-  <meta property="og:title" content="About P.S. Coffee — Built for people who drink coffee to get things done">
-  <meta property="og:description" content="P.S. Coffee is a specialty coffee QSR built for Ahmedabad's working generation. 100% Arabica from ₹89, inside co-working spaces, offices, and campuses.">
-  <meta property="og:image" content="https://ps.coffee/og-image.jpg">
-  <meta property="og:image:alt" content="About P.S. Coffee — specialty coffee QSR Ahmedabad">
-  <meta property="og:site_name" content="P.S. Coffee">
-  <meta property="og:locale" content="en_IN">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@pscoffee_in">
-  <meta name="twitter:title" content="About P.S. Coffee — Built for people who drink coffee to get things done">
-  <meta name="twitter:description" content="Specialty coffee QSR. 100% Arabica. ₹89. Inside your building. Built for Ahmedabad's working generation.">
-  <meta name="twitter:image" content="https://ps.coffee/og-image.jpg">
-  <!-- Technical SEO -->
-  <link rel="canonical" href="https://ps.coffee/about">
-  <meta name="robots" content="index, follow">
-  <meta name="keywords" content="about P.S. Coffee, specialty coffee QSR India, arabica coffee brand India, coffee startup Ahmedabad, Pulkit Viradiya coffee">
-  <link rel="alternate" hreflang="en-IN" href="https://ps.coffee/about">
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ps.coffee/" },
-          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://ps.coffee/about" }
-        ]
-      },
-      {
-        "@type": "AboutPage",
-        "@id": "https://ps.coffee/about#page",
-        "name": "About P.S. Coffee",
-        "description": "P.S. Coffee is a specialty coffee QSR serving 100% Arabica from ₹89 inside co-working spaces, offices, and university campuses in Ahmedabad.",
-        "url": "https://ps.coffee/about",
-        "publisher": {
-          "@type": "Organization",
-          "@id": "https://ps.coffee/#organization",
-          "name": "P.S. Coffee",
-          "founder": {
-            "@type": "Person",
-            "@id": "https://ps.coffee/#founder",
-            "name": "Pulkit Viradiya"
-          },
-          "foundingLocation": {
-            "@type": "Place",
-            "name": "Ahmedabad, Gujarat, India"
-          },
-          "description": "Specialty coffee QSR. 100% Arabica. ₹89. In your building."
-        }
-      }
-    ]
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root{--tc:#E8400C;--tc-dark:#B8300A;--tc-deep:#8A220A;--cream:#FAF6EE;--cream2:#F2EBD9;--cream3:#E8DCC8;--ink:#1C1007;--ink2:#3D2810;--ink3:#6B4A28;--font-d:'Aldrich',sans-serif;--font-b:'Inter',sans-serif;--mw:1180px;--px:clamp(1.25rem,5vw,3.5rem);}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;}
-    body{font-family:var(--font-b);background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-    a{text-decoration:none;color:inherit;}
-    img,svg{display:block;}
-    .wrap{max-width:var(--mw);margin:0 auto;padding:0 var(--px);}
-    .eyebrow{font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);}
-    .eyebrow-light{font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,246,238,.5);}
-    .fade{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
-    .fade.in{opacity:1;transform:none;}
-    .fade.d1{transition-delay:.1s;}.fade.d2{transition-delay:.2s;}.fade.d3{transition-delay:.3s;}.fade.d4{transition-delay:.45s;}
-
-    /* NAV */
-    #nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--cream);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s;}
-    #nav.stuck{border-color:var(--cream3);box-shadow:0 2px 24px rgba(28,16,7,.06);}
-    .nav-i{display:flex;align-items:center;justify-content:space-between;height:62px;}
-    .nav-logo{font-family:var(--font-d);font-size:26px;color:var(--tc);letter-spacing:-1px;}
-    .nav-links{display:flex;align-items:center;gap:1.25rem;list-style:none;}
-    .nav-links a{font-size:13px;color:var(--ink2);transition:color .2s;}
-    .nav-links a:hover,.nav-links a.active{color:var(--tc);}
-    .nav-cta{background:var(--tc);color:#FAF6EE !important;padding:8px 20px;border-radius:7px;font-weight:500 !important;transition:background .2s !important;}
-    .nav-cta:hover{background:var(--tc-dark) !important;}
-    .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
-    .ham span{display:block;width:22px;height:1.5px;background:var(--ink);border-radius:2px;transition:all .3s;}
-    .ham.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px);}
-    .ham.open span:nth-child(2){opacity:0;}
-    .ham.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px);}
-    .nav-mob{display:none;flex-direction:column;background:var(--cream);border-top:1px solid var(--cream3);padding:1.5rem var(--px) 2rem;gap:1.25rem;}
-    .nav-mob.open{display:flex;}
-    .nav-mob a{font-size:15px;color:var(--ink2);}
-    .nav-mob .nav-cta{text-align:center;border-radius:8px;padding:12px;color:#FAF6EE !important;}
-
-    /* BUTTONS */
-    .btn-cream{display:inline-flex;align-items:center;gap:8px;background:#FAF6EE;color:var(--tc);padding:13px 26px;border-radius:8px;font-size:14px;font-weight:600;transition:background .2s,transform .2s;}
-    .btn-cream:hover{background:var(--cream2);transform:translateY(-1px);}
-    .btn-tc{display:inline-flex;align-items:center;gap:8px;background:var(--tc);color:#FAF6EE;padding:13px 26px;border-radius:8px;font-size:14px;font-weight:600;transition:background .2s,transform .2s;border:none;cursor:pointer;}
-    .btn-tc:hover{background:var(--tc-dark);transform:translateY(-1px);}
-    .btn-outline-cream{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(250,246,238,.45);color:#FAF6EE;padding:13px 26px;border-radius:8px;font-size:14px;font-weight:500;transition:border-color .2s,background .2s;}
-    .btn-outline-cream:hover{border-color:rgba(250,246,238,.9);background:rgba(250,246,238,.07);}
-    .arrow-icon{width:16px;height:16px;flex-shrink:0;}
-
-    /* PAGE HERO */
-    .pg-hero{background:var(--tc);padding:6rem 0 4.5rem;margin-top:62px;position:relative;overflow:hidden;}
-    .pg-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 85% 15%,rgba(250,246,238,.07) 0%,transparent 60%),radial-gradient(ellipse 50% 60% at 15% 85%,rgba(28,16,7,.14) 0%,transparent 60%);pointer-events:none;}
-    .pg-hero::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");}
-    .pg-hero .wrap{position:relative;z-index:2;}
-    .pg-ey{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,238,.55);margin-bottom:1rem;}
-    .pg-title{font-family:var(--font-d);font-size:clamp(30px,5vw,58px);color:#FAF6EE;line-height:1.1;margin-bottom:1rem;}
-    .pg-sub{font-size:clamp(14px,1.8vw,17px);color:rgba(250,246,238,.72);line-height:1.75;max-width:560px;}
-    .pg-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:2rem;}
-
-    /* MISSION */
-    .mission-sec{padding:7rem 0;background:var(--cream);}
-    .mission-inner{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center;}
-    .mission-big{font-family:var(--font-d);font-size:clamp(56px,10vw,112px);color:var(--tc);line-height:.9;letter-spacing:-3px;opacity:.12;}
-    .mission-title{font-family:var(--font-d);font-size:clamp(26px,4vw,44px);color:var(--ink);line-height:1.1;margin:.5rem 0 1.5rem;}
-    .mission-copy{font-size:16px;color:var(--ink2);line-height:1.85;}
-    .mission-copy p+p{margin-top:1.25rem;}
-    .mission-ps{font-size:15px;color:var(--tc);font-style:italic;font-family:var(--font-d);margin-top:1.5rem;}
-
-    /* WHAT WE ARE */
-    .what-sec{background:var(--cream2);padding:6rem 0;}
-    .what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--cream3);border-radius:18px;overflow:hidden;margin-top:3rem;}
-    .what-card{background:var(--cream);padding:2.75rem 2rem;transition:background .2s;}
-    .what-card:hover{background:var(--cream2);}
-    .what-abbr{font-family:var(--font-d);font-size:28px;color:var(--tc);margin-bottom:.5rem;letter-spacing:-1px;}
-    .what-full{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:1.25rem;}
-    .what-title{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:.625rem;}
-    .what-desc{font-size:13px;color:var(--ink3);line-height:1.65;}
-
-    /* STANDARD */
-    .standard-sec{background:var(--ink);padding:6rem 0;}
-    .standard-title{font-family:var(--font-d);font-size:clamp(26px,4vw,44px);color:#FAF6EE;line-height:1.1;margin:.5rem 0 3rem;}
-    .standard-lines{display:flex;flex-direction:column;gap:1px;background:rgba(250,246,238,.06);border-radius:14px;overflow:hidden;}
-    .std-line{background:var(--ink);padding:1.5rem 2rem;display:flex;align-items:center;gap:1.5rem;transition:background .2s;}
-    .std-line:hover{background:rgba(250,246,238,.04);}
-    .std-check{width:22px;height:22px;border-radius:50%;background:var(--tc);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .std-text{font-family:var(--font-d);font-size:clamp(14px,2vw,18px);color:#FAF6EE;line-height:1.4;}
-    .std-ps{font-size:14px;color:var(--tc);font-style:italic;font-family:var(--font-d);margin-top:2rem;}
-
-    /* NUMBERS */
-    .numbers-sec{background:var(--cream);padding:6rem 0;}
-    .numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--cream3);border-radius:18px;overflow:hidden;}
-    .num-box{background:var(--cream);padding:2.5rem 1.5rem;text-align:center;}
-    .num-n{font-family:var(--font-d);font-size:clamp(30px,4.5vw,48px);color:var(--tc);margin-bottom:.4rem;}
-    .num-l{font-size:13px;color:var(--ink3);line-height:1.45;}
-
-    /* CTA */
-    .about-cta{background:var(--cream2);padding:5rem 0;text-align:center;}
-    .about-cta-title{font-family:var(--font-d);font-size:clamp(24px,4vw,42px);color:var(--ink);line-height:1.2;margin:.5rem 0 1rem;}
-    .about-cta-sub{font-size:15px;color:var(--ink2);line-height:1.7;max-width:440px;margin:0 auto 2.5rem;}
-    .cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
-    .btn-outline{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--cream3);color:var(--ink2);padding:13px 26px;border-radius:8px;font-size:14px;font-weight:500;transition:border-color .2s,color .2s;}
-    .btn-outline:hover{border-color:var(--tc);color:var(--tc);}
-
-    /* FOOTER */
-    footer{background:var(--ink);padding:5rem 0 2rem;}
-    .foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(250,246,238,.07);margin-bottom:2rem;}
-    .foot-logo{font-family:var(--font-d);font-size:34px;color:var(--tc);letter-spacing:-1px;margin-bottom:.75rem;}
-    .foot-tagline{font-size:13px;color:rgba(250,246,238,.4);line-height:1.7;max-width:240px;margin-bottom:1.5rem;}
-    .foot-ps{font-family:var(--font-d);font-size:13px;color:var(--tc);font-style:italic;}
-    .foot-col-t{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,246,238,.3);margin-bottom:1.25rem;}
-    .foot-links{list-style:none;display:flex;flex-direction:column;gap:.75rem;}
-    .foot-links a{font-size:13px;color:rgba(250,246,238,.5);transition:color .2s;}
-    .foot-links a:hover{color:#FAF6EE;}
-    .foot-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-    .foot-copy{font-size:12px;color:rgba(250,246,238,.25);}
-    .foot-legal{display:flex;gap:1.5rem;}
-    .foot-legal a{font-size:12px;color:rgba(250,246,238,.25);transition:color .2s;}
-    .foot-legal a:hover{color:rgba(250,246,238,.55);}
-
-    @media(max-width:960px){
-      .nav-links{display:none;}.ham{display:flex;}
-      .mission-inner{grid-template-columns:1fr;gap:3rem;}
-      .what-grid{grid-template-columns:1fr;}
-      .numbers-grid{grid-template-columns:1fr 1fr;}
-      .foot-top{grid-template-columns:1fr 1fr;}
-    }
-    @media(max-width:600px){
-      .numbers-grid{grid-template-columns:1fr;}
-      .foot-top{grid-template-columns:1fr;}
-      .foot-bot{flex-direction:column;align-items:flex-start;}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P.S. Coffee — About</title>
+<meta name="description" content="Spot On Quality. Spot On Pricing. Spot On Reachability. We want to be there before you wake till you sleep — which is why we built Pods, not cafes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/ps.css">
+<script>(function(){try{var t=JSON.parse(localStorage.getItem('ps-tweaks')||'{}');var r=document.documentElement;if(t.tc)r.style.setProperty('--tc',t.tc);if(t.paper)r.style.setProperty('--paper',t.paper);if(t.scale)r.style.setProperty('--type-scale',t.scale);if(t.btn)r.style.setProperty('--btn-radius',t.btn);}catch(e){}})();</script>
+<style>
+.about-hero{background:linear-gradient(180deg,var(--panel) 0%,var(--paper) 100%);padding-top:clamp(34px,5vw,64px)}
+.about-hero h1{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(42px,7.6vw,108px);line-height:.92;letter-spacing:-.03em;margin-top:18px}
+.about-hero h1 .tc{color:var(--tc)}
+.prose-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,60px)}
+.prose-2 p{font-size:clamp(15px,1.15vw,17px);color:var(--muted);line-height:1.65}
+.prose-2 p+p{margin-top:16px}
+.lead{font-size:clamp(20px,2vw,28px)!important;color:var(--ink)!important;line-height:1.32;font-family:"Archivo",sans-serif;font-weight:700;letter-spacing:-.02em}
+.promises{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,20px)}
+.promise{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;transition:.25s}
+.promise:hover{border-color:var(--tc);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.promise .pn{font-family:"Archivo",sans-serif;font-weight:800;font-size:13px;color:var(--tc);letter-spacing:.06em}
+.promise h3{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(20px,2vw,26px);margin:14px 0 10px;letter-spacing:-.02em}
+.promise p{font-size:14.5px;color:var(--muted)}
+.seg{display:grid;grid-template-columns:210px 1fr 210px;gap:24px;align-items:baseline;padding:26px 0;border-top:1px solid var(--line)}
+.seg:last-child{border-bottom:1px solid var(--line)}
+.seg .sname{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(19px,1.8vw,24px);line-height:1;letter-spacing:-.02em}
+.seg .sage{font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:12px;color:var(--tc);margin-top:8px}
+.seg .sdesc{font-size:15px;color:var(--ink-2)}
+.seg .sneed{font-size:12.5px;letter-spacing:.02em;color:var(--faint);line-height:1.7;font-weight:600}
+.day{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1.2vw,16px)}
+.day .slot{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:22px 18px;display:flex;flex-direction:column;gap:10px;min-height:165px}
+.day .slot .t{font-family:"Archivo",sans-serif;font-weight:800;font-size:24px;color:var(--tc)}
+.day .slot .w{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(243,241,236,.55);font-weight:600}
+.day .slot .d{font-size:13px;color:rgba(243,241,236,.82);margin-top:auto;line-height:1.45}
+.pods-shot{aspect-ratio:16/8;border-radius:var(--radius);overflow:hidden;background:var(--panel);position:relative;box-shadow:var(--shadow)}
+.pods-shot image-slot{width:100%;height:100%}
+.pods-shot .cap{position:absolute;left:18px;bottom:16px;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--faint)}
+@media(max-width:860px){.prose-2{grid-template-columns:1fr}.promises{grid-template-columns:1fr}.seg{grid-template-columns:1fr;gap:8px}.day{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:480px){.day{grid-template-columns:1fr 1fr}}
+</style>
 </head>
-<body>
+<body data-page="about">
+<div id="ps-nav"></div>
+<div class="page-top"></div>
 
-<!-- NAV -->
-<nav id="nav">
+<header class="section about-hero">
   <div class="wrap">
-    <div class="nav-i">
-      <a href="index.html" class="nav-logo">P.S.</a>
-      <ul class="nav-links">
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="story.html">Our Story</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="app.html">Our App</a></li>
-        <li><a href="corporate.html">Partner</a></li>
-        <li><a href="index.html#locations">Find a P.S.</a></li>
-        <li><a href="index.html#pack" class="nav-cta">Get the Pack</a></li>
-      </ul>
-      <div class="ham" id="ham" onclick="toggleNav()">
-        <span></span><span></span><span></span>
-      </div>
+    <div class="reveal"><span class="eyebrow">P.S. — Before You Wake Till You Sleep · No. 05</span></div>
+    <h1 class="reveal" data-d="1">Before you wake<br><span class="tc">till you sleep.</span></h1>
+    <p class="lede reveal" data-d="2" style="max-width:54ch;margin-top:24px;color:var(--muted)">P.S. is not a morning brand or a workday brand. We want to be there before your first alarm and after your last email — which is why we built Pods, not cafes.</p>
+  </div>
+</header>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">01 — The three promises, in order</span></div>
+    <div class="promises reveal">
+      <div class="promise"><span class="pn">No. 01</span><h3>Spot On Quality</h3><p>100% Arabica, specialty grade. The cup is never the compromise. Better systems, not lower standards.</p></div>
+      <div class="promise"><span class="pn">No. 02</span><h3>Spot On Pricing</h3><p>Premium is a promise, not a position. We stripped out the building and put the savings in the cup. From ₹89.</p></div>
+      <div class="promise"><span class="pn">No. 03</span><h3>Spot On Reachability</h3><p>We go where you already are. Pods planted inside the ecosystem of your daily life, not a neighbourhood we liked.</p></div>
     </div>
   </div>
-  <div class="nav-mob" id="nav-mob">
-    <a href="menu.html" onclick="closeNav()">Menu</a>
-    <a href="story.html" onclick="closeNav()">Our Story</a>
-    <a href="about.html" onclick="closeNav()">About</a>
-    <a href="app.html" onclick="closeNav()">Our App</a>
-    <a href="corporate.html" onclick="closeNav()">Partner with us</a>
-    <a href="index.html#locations" onclick="closeNav()">Find a P.S.</a>
-    <a href="index.html#pack" class="nav-cta" onclick="closeNav()">Get the Pack</a>
-  </div>
-</nav>
+</section>
 
-<!-- PAGE HERO -->
-<div class="pg-hero">
+<section class="section bg-panel">
   <div class="wrap">
-    <p class="pg-ey">About P.S. Coffee</p>
-    <h1 class="pg-title">Built for people who drink<br>coffee to get things done.</h1>
-    <p class="pg-sub">P.S. Coffee is a specialty coffee QSR operating inside Ahmedabad's co-working spaces, corporate offices, and university campuses. 100% Arabica. From ₹89. In under 90 seconds.</p>
-    <div class="pg-actions">
-      <a href="story.html" class="btn-cream">
-        Read our story
-        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="corporate.html" class="btn-outline-cream">Partner with us</a>
-    </div>
-  </div>
-</div>
-
-<!-- MISSION -->
-<section class="mission-sec">
-  <div class="wrap">
-    <div class="mission-inner">
-      <div class="fade">
-        <div class="mission-big" aria-hidden="true">P.S.</div>
-        <h2 class="mission-title">The mission is simple.<br>Embarrassingly so.</h2>
-        <div class="mission-copy">
-          <p>Specialty coffee — 100% Arabica, properly sourced, properly made — at a price the person who actually needs it every day can afford. ₹89. Not ₹320.</p>
-          <p>We are not a lifestyle brand. We are not building a destination café. We are building a habit, at the scale of a city, inside the buildings where that city actually works.</p>
-          <p>The model is lean by design. Small-format decks. Focused menu. Direct sourcing. The result is specialty grade coffee at the price of an ordinary cup — and it's a model we plan to take further than Ahmedabad.</p>
-        </div>
-        <p class="mission-ps">P.S. — Plain &amp; Simple. That's the whole brief.</p>
+    <div class="sec-head reveal"><span class="eyebrow">02 — Who P.S. is for</span><h2>The people who order<br>twice before noon.</h2></div>
+    <div class="reveal">
+      <div class="seg">
+        <div><div class="sname">Corporate</div><div class="sage">25–40 · Office / hybrid</div></div>
+        <div class="sdesc">Drinks coffee twice daily minimum. Currently paying ₹120 for a vending-machine cup that tastes like regret.</div>
+        <div class="sneed">Coffee is infrastructure<br>They need it to function</div>
       </div>
-      <div class="fade d2">
-        <div style="background:var(--ink);border-radius:22px;padding:3rem;">
-          <p class="eyebrow-light" style="color:var(--tc);opacity:.8;margin-bottom:1.5rem;">In one sentence</p>
-          <p style="font-family:var(--font-d);font-size:clamp(18px,2.5vw,26px);color:#FAF6EE;line-height:1.4;">"We're building the coffee habit for India's working generation — the people who drink it not for a photograph, but for a Tuesday."</p>
-          <div style="margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid rgba(250,246,238,.08);">
-            <p style="font-size:13px;font-weight:500;color:#FAF6EE;">Pulkit Viradiya</p>
-            <p style="font-size:12px;color:rgba(250,246,238,.4);margin-top:3px;">Founder, P.S. Coffee · Ahmedabad</p>
-          </div>
-        </div>
+      <div class="seg">
+        <div><div class="sname">Freelancer</div><div class="sage">24–38 · Co-working</div></div>
+        <div class="sdesc">Buys good beans at home. Drinks the co-working machine when they run out. Knows the difference. Hates the compromise.</div>
+        <div class="sneed">Values efficiency<br>Refuses to overpay</div>
+      </div>
+      <div class="seg">
+        <div><div class="sname">Gym Crowd</div><div class="sage">18–35 · Fitness-first</div></div>
+        <div class="sdesc">Pre-workout espresso or post-workout cold brew. Functional drinker. Doesn't want to sit down — wants the hit.</div>
+        <div class="sneed">Speed · Proximity<br>Done. Go.</div>
+      </div>
+      <div class="seg">
+        <div><div class="sname">The Student</div><div class="sage">18–25 · Budget-aware</div></div>
+        <div class="sdesc">Drinks coffee to study, not to socialise. Talks arabica vs robusta because they genuinely know. ₹89 is sustainable; ₹280 is not.</div>
+        <div class="sneed">Quality and affordability<br>No longer a choice</div>
+      </div>
+      <div class="seg">
+        <div><div class="sname">Daily Drinker</div><div class="sage">28–45 · Serious</div></div>
+        <div class="sdesc">Has a home espresso setup. Knows what a 9-bar pull feels like. Needs a reliable daily cup that doesn't require a pilgrimage.</div>
+        <div class="sneed">Coffee is identity<br>Will not compromise</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT WE ARE -->
-<section class="what-sec">
+<section class="section" id="pods">
   <div class="wrap">
-    <div class="fade">
-      <p class="eyebrow" style="margin-bottom:.75rem;">What "P.S." stands for</p>
-      <h2 style="font-family:var(--font-d);font-size:clamp(26px,4vw,44px);color:var(--ink);line-height:1.1;margin:.5rem 0 .5rem;">Eight meanings. One standard.</h2>
-      <p style="font-size:16px;color:var(--ink2);max-width:520px;line-height:1.75;">The name means what you need it to mean — depending on where you are in the cup.</p>
+    <div class="sec-head reveal"><span class="eyebrow">03 — Why "Pods"</span><h2>Not cafes.<br>Not kiosks. Pods.</h2></div>
+    <div class="prose-2" style="margin-bottom:clamp(34px,4vw,54px)">
+      <div class="reveal"><p class="lead">A pod is the smallest self-contained unit of something essential. A coffee pod. A sleep pod. A growth pod. It does exactly one thing, completely.</p></div>
+      <div class="reveal" data-d="1">
+        <p>Each Pod is a complete specialty coffee operation in 50–200 sq ft. It fits where a photocopier used to be. It's there because we measured foot traffic, not because we liked the neighbourhood.</p>
+        <p>A gym-adjacent Pod captures the early morning. A co-working Pod captures mid-day. A campus Pod captures evenings. The goal is always the same — to be the nearest quality cup to wherever you are, at whatever hour you need one.</p>
+      </div>
     </div>
-    <div class="what-grid">
-      <div class="what-card fade d1">
-        <p class="what-abbr">P.S.</p>
-        <p class="what-full">Postscript</p>
-        <p class="what-title">The afterthought that matters most.</p>
-        <p class="what-desc">The thought you add after you think you're done. The cup you grabbed that changed how the morning went.</p>
-      </div>
-      <div class="what-card fade d2">
-        <p class="what-abbr">P.S.</p>
-        <p class="what-full">Plain &amp; Simple</p>
-        <p class="what-title">No pretense. No theatre.</p>
-        <p class="what-desc">Great coffee doesn't need a ceremony. It needs good beans, made right, at a price that doesn't make you think twice.</p>
-      </div>
-      <div class="what-card fade d3">
-        <p class="what-abbr">P.S.</p>
-        <p class="what-full">Perfectly Sourced</p>
-        <p class="what-title">100% Arabica. Origin-traceable.</p>
-        <p class="what-desc">Every bean named. Every estate visited. Chikmagalur, Coorg, and the Western Ghats estates that built Indian coffee.</p>
-      </div>
-      <div class="what-card fade d1">
-        <p class="what-abbr">P.S.</p>
-        <p class="what-full">Proudly Specialty</p>
-        <p class="what-title">Specialty grade. No asterisk.</p>
-        <p class="what-desc">Every item on the menu qualifies as specialty coffee. Not "café style." Not "premium blend." Actually specialty.</p>
-      </div>
-      <div class="what-card fade d2">
-        <p class="what-abbr">P.S.</p>
-        <p class="what-full">Pour Slowly</p>
-        <p class="what-title">The care, even at QSR speed.</p>
-        <p class="what-desc">Fast doesn't mean careless. The shot still pulls properly. The milk still steams right. 90 seconds, done well.</p>
-      </div>
-      <div class="what-card fade d3">
-        <p class="what-abbr">P.S.</p>
-        <p class="what-full">Pretty Serious</p>
-        <p class="what-title">We're that serious about this.</p>
-        <p class="what-desc">Yes, it's "just coffee." And yes, we've thought about it more than most. The two aren't in conflict.</p>
-      </div>
+    <div class="pods-shot reveal">
+      <image-slot id="about-pod" placeholder="Pod / placement shot — wide" fit="cover"></image-slot>
+      <div class="cap">A Pod fits where a photocopier used to be</div>
     </div>
   </div>
 </section>
 
-<!-- THE STANDARD -->
-<section class="standard-sec">
+<section class="section bg-ink">
   <div class="wrap">
-    <div class="fade">
-      <p class="eyebrow-light" style="color:var(--tc);opacity:.8;margin-bottom:.75rem;">What we've committed to</p>
-      <h2 class="standard-title">The P.S. standard.<br>Publicly stated. Always kept.</h2>
-    </div>
-    <div class="standard-lines fade d1">
-      <div class="std-line">
-        <div class="std-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
-        <p class="std-text">We will never put Robusta in a P.S. cup.</p>
-      </div>
-      <div class="std-line">
-        <div class="std-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
-        <p class="std-text">We will never use a blend we can't name.</p>
-      </div>
-      <div class="std-line">
-        <div class="std-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
-        <p class="std-text">We will never charge a premium for a mediocre bean.</p>
-      </div>
-      <div class="std-line">
-        <div class="std-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
-        <p class="std-text">We will never add a surcharge for oat milk.</p>
-      </div>
-      <div class="std-line">
-        <div class="std-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
-        <p class="std-text">We will never raise the price without telling you why.</p>
-      </div>
-      <div class="std-line">
-        <div class="std-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
-        <p class="std-text">We will never auto-renew a Pack subscription without your explicit go-ahead.</p>
-      </div>
-    </div>
-    <p class="std-ps fade d2">P.S. — Written here, not on a wall behind us.</p>
-  </div>
-</section>
-
-<!-- NUMBERS -->
-<section class="numbers-sec">
-  <div class="wrap">
-    <div class="fade" style="margin-bottom:3rem;">
-      <p class="eyebrow" style="margin-bottom:.5rem;">By the numbers</p>
-      <h2 style="font-family:var(--font-d);font-size:clamp(26px,4vw,42px);color:var(--ink);line-height:1.1;">The habit, quantified.</h2>
-    </div>
-    <div class="numbers-grid fade d1">
-      <div class="num-box">
-        <p class="num-n">₹89</p>
-        <p class="num-l">Entry price. Always. Not a promotion.</p>
-      </div>
-      <div class="num-box">
-        <p class="num-n">100%</p>
-        <p class="num-l">Arabica in every cup. Zero exceptions.</p>
-      </div>
-      <div class="num-box">
-        <p class="num-n">90s</p>
-        <p class="num-l">Order to hand. The fastest part of your morning.</p>
-      </div>
-      <div class="num-box">
-        <p class="num-n">50 ft²</p>
-        <p class="num-l">Minimum deck footprint. We fit where others don't.</p>
-      </div>
+    <div class="sec-head reveal"><span class="eyebrow" style="color:var(--tc)">04 — A day with P.S.</span><h2 style="color:#fff">Every loop,<br>covered.</h2></div>
+    <div class="day reveal">
+      <div class="slot"><span class="t">6am</span><span class="w">Gym lobby</span><span class="d">The gym can wait. The coffee cannot.</span></div>
+      <div class="slot"><span class="t">9am</span><span class="w">Pre-meeting</span><span class="d">It's a two-cup morning. You already know.</span></div>
+      <div class="slot"><span class="t">11am</span><span class="w">Second cup</span><span class="d">The meeting went long. We've been waiting.</span></div>
+      <div class="slot"><span class="t">3pm</span><span class="w">The slump</span><span class="d">The 3pm slump is a myth. Here's your coffee anyway.</span></div>
+      <div class="slot"><span class="t">6pm</span><span class="w">Post-work</span><span class="d">The workday is done. The coffee is not.</span></div>
+      <div class="slot"><span class="t">9pm</span><span class="w">Matcha pivot</span><span class="d">Matcha tonight. Coffee tomorrow.</span></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="about-cta">
-  <div class="wrap">
-    <p class="eyebrow" style="margin-bottom:.75rem;text-align:center;">What's next</p>
-    <h2 class="about-cta-title">Want P.S. in your building?<br>Or just want the coffee?</h2>
-    <p class="about-cta-sub">Whether you're looking to bring a deck to your space or just find your nearest cup — both are easy from here.</p>
-    <div class="cta-btns">
-      <a href="corporate.html" class="btn-tc">
-        Partner with us
-        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="index.html#locations" class="btn-outline">Find a P.S. near you</a>
+<section class="section">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap">
+    <p class="statement reveal" style="max-width:16ch"><span class="tc">P.S.</span> — Where should<br>a Pod open?</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap" class="reveal" data-d="1">
+      <a href="index.html#waitlist" class="btn lg">Suggest a location <span class="ar">→</span></a>
+      <a href="partnership.html" class="btn ghost lg">Host a Pod</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div>
-        <p class="foot-logo">P.S.</p>
-        <p class="foot-tagline">Specialty coffee for people with places to be. 100% Arabica. From ₹89. In your building.</p>
-        <p class="foot-ps">P.S. — Thank you for coming back.</p>
-      </div>
-      <div>
-        <p class="foot-col-t">Menu</p>
-        <ul class="foot-links">
-          <li><a href="menu.html">Full Menu</a></li>
-          <li><a href="index.html#pack">The P.S. Pack</a></li>
-          <li><a href="index.html#beans">Our Beans</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="foot-col-t">Company</p>
-        <ul class="foot-links">
-          <li><a href="story.html">Our Story</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="corporate.html">Partner with us</a></li>
-          <li><a href="app.html">Our App</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="foot-col-t">Get in touch</p>
-        <ul class="foot-links">
-          <li><a href="mailto:hello@ps.coffee">hello@ps.coffee</a></li>
-          <li><a href="#">@pscoffee.in</a></li>
-          <li><a href="index.html#locations">Find a P.S.</a></li>
-          <li><a href="corporate.html">Suggest a location</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bot">
-      <p class="foot-copy">© 2025 P.S. Coffee. All rights reserved. Specialty Coffee QSR, Ahmedabad.</p>
-      <div class="foot-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Allergen Info</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-  const nav = document.getElementById('nav');
-  const ham = document.getElementById('ham');
-  const navMob = document.getElementById('nav-mob');
-  window.addEventListener('scroll', () => { nav.classList.toggle('stuck', window.scrollY > 24); }, { passive: true });
-  function toggleNav() { ham.classList.toggle('open'); navMob.classList.toggle('open'); }
-  function closeNav() { ham.classList.remove('open'); navMob.classList.remove('open'); }
-  const fadeEls = document.querySelectorAll('.fade');
-  const fadeObs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }); }, { threshold: 0.1 });
-  fadeEls.forEach(el => fadeObs.observe(el));
-</script>
+<div id="ps-footer"></div>
+<script src="assets/image-slot.js"></script>
+<script src="assets/ps.js"></script>
 </body>
 </html>
