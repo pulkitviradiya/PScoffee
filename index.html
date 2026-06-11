@@ -8,85 +8,64 @@
 <link rel="canonical" href="https://www.pscoffee.in/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/ps.css">
 <link rel="stylesheet" href="assets/wh.css">
 <script>(function(){try{var t=JSON.parse(localStorage.getItem('ps-tweaks')||'{}');var r=document.documentElement;if(t.tc)r.style.setProperty('--tc',t.tc);}catch(e){}})()</script>
 </head>
-<body data-page="home" data-darkhero>
+<body data-page="home">
 
 <div id="ps-nav"></div>
+<div class="page-top"></div>
 
-<!-- ══ HERO ══ -->
-<section class="wh-hero" id="hero">
-  <div class="wh-hero-media">
-    <image-slot id="hero-img" placeholder="Hero — atmospheric P.S. Pod exterior, dusk lighting, cinematic dark editorial" fit="cover"></image-slot>
-    <div class="wh-hero-grad"></div>
-  </div>
-  <div class="wh-hero-body">
-    <p class="wh-hero-eyebrow">Specialty coffee · Pod format · From ₹89</p>
-    <h1>Pourers of the<br><em>world's best</em><br>coffees.</h1>
-    <p class="wh-hero-sub">100% Arabica, specialty grade. In a Pod, not a cafe. Ready before you arrive — at the gym, the desk, the campus.</p>
-    <div class="wh-hero-ctas">
-      <a href="menu.html" class="wh-btn white">Shop coffee</a>
-      <a href="about.html#pods" class="wh-btn outline-white">Our Pods</a>
-    </div>
-  </div>
-  <div class="wh-scroll-cue" aria-hidden="true">
-    <span>Scroll</span>
-    <div class="wh-scroll-bar"></div>
-  </div>
-</section>
-
-<!-- ══ DUAL BANNERS ══ -->
+<!-- ══ HERO BANNERS  (WatchHouse split-panel style) ══ -->
 <div class="wh-banners">
+
+  <!-- Left: caption panel — body copy over dark image -->
   <a class="wh-banner" href="menu.html">
     <div class="wh-banner-img">
-      <image-slot placeholder="Coffee — overhead espresso shot, dark ceramic cup, marble surface, editorial" fit="cover"></image-slot>
+      <image-slot placeholder="Coffee beans — close-up macro overhead, deep dark roast, atmospheric editorial" fit="cover"></image-slot>
     </div>
     <div class="wh-banner-body">
-      <div class="wh-banner-label">
-        <p class="wh-banner-kicker">Shop coffee</p>
-        <p class="wh-banner-sub">100% Arabica · Specialty grade · From ₹89</p>
-      </div>
-      <span class="wh-link">Discover <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <p class="wh-banner-caption">Pourers of the world's best coffees and providers of the format that brings them from our Pod to yours.</p>
+      <span class="wh-banner-cta">Shop coffee. &nbsp;→</span>
     </div>
   </a>
+
+  <!-- Right: large-heading panel — WatchHouse "Our Houses." style -->
   <a class="wh-banner" href="about.html#pods">
     <div class="wh-banner-img">
-      <image-slot placeholder="Pod — interior of a P.S. Pod, modern minimal, barista at machine, warm light" fit="cover"></image-slot>
+      <image-slot placeholder="P.S. Pod interior — modern minimal coffee kiosk, warm light, barista at espresso machine" fit="cover"></image-slot>
     </div>
     <div class="wh-banner-body">
-      <div class="wh-banner-label">
-        <p class="wh-banner-kicker">Our Pods</p>
-        <p class="wh-banner-sub">50–200 sq ft · Placed where you already are</p>
-      </div>
-      <span class="wh-link">Discover <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <h2 class="wh-banner-heading">P.S. Pods.</h2>
+      <span class="wh-banner-cta">Find your nearest Pod. &nbsp;→</span>
     </div>
   </a>
+
 </div>
 
 <!-- ══ CATEGORY TILES ══ -->
 <div class="wh-cats">
   <a class="wh-cat" href="menu.html">
     <div class="wh-cat-img"><image-slot placeholder="Coffee beans — close-up macro, golden brown, dark surface" fit="cover"></image-slot></div>
-    <div class="wh-cat-label"><span class="wh-cat-name">Coffee</span><span class="wh-cat-disc">Discover</span></div>
+    <div class="wh-cat-label"><span class="wh-cat-name">Coffee.</span><span class="wh-cat-disc">Discover</span></div>
   </a>
   <a class="wh-cat" href="matcha.html">
     <div class="wh-cat-img"><image-slot placeholder="Matcha — vibrant green powder mound on slate, soft focus" fit="cover"></image-slot></div>
-    <div class="wh-cat-label"><span class="wh-cat-name">Matcha</span><span class="wh-cat-disc">Discover</span></div>
+    <div class="wh-cat-label"><span class="wh-cat-name">Matcha.</span><span class="wh-cat-disc">Discover</span></div>
   </a>
   <a class="wh-cat" href="menu.html#food">
     <div class="wh-cat-img"><image-slot placeholder="Food — artisan croissant, golden, overhead on linen" fit="cover"></image-slot></div>
-    <div class="wh-cat-label"><span class="wh-cat-name">Food</span><span class="wh-cat-disc">Discover</span></div>
+    <div class="wh-cat-label"><span class="wh-cat-name">Food.</span><span class="wh-cat-disc">Discover</span></div>
   </a>
   <a class="wh-cat" href="pack.html">
     <div class="wh-cat-img"><image-slot placeholder="The P.S. Pack — branded subscription box, flat lay, minimal" fit="cover"></image-slot></div>
-    <div class="wh-cat-label"><span class="wh-cat-name">The Pack</span><span class="wh-cat-disc">Discover</span></div>
+    <div class="wh-cat-label"><span class="wh-cat-name">The Pack.</span><span class="wh-cat-disc">Discover</span></div>
   </a>
   <a class="wh-cat" href="app.html">
     <div class="wh-cat-img"><image-slot placeholder="App — phone showing P.S. app, hands holding, soft background" fit="cover"></image-slot></div>
-    <div class="wh-cat-label"><span class="wh-cat-name">The App</span><span class="wh-cat-disc">Discover</span></div>
+    <div class="wh-cat-label"><span class="wh-cat-name">The App.</span><span class="wh-cat-disc">Discover</span></div>
   </a>
 </div>
 
@@ -117,7 +96,7 @@
       </div>
     </div>
     <div class="wh-athome-cta reveal" data-d="1">
-      <a href="pack.html" class="wh-btn dark">Shop the P.S. Pack <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="pack.html" class="wh-btn dark">Shop the P.S. Pack &nbsp;→</a>
     </div>
   </div>
 </section>
@@ -134,9 +113,9 @@
     <div class="wh-favs-top">
       <h2 class="wh-h2 reveal">Pod<br>favourites.</h2>
       <div class="wh-tabs" role="tablist">
-        <button class="wh-tab on" data-wtab="coffee" role="tab" aria-selected="true">Coffee</button>
-        <button class="wh-tab" data-wtab="matcha" role="tab" aria-selected="false">Matcha</button>
-        <button class="wh-tab" data-wtab="food" role="tab" aria-selected="false">Food</button>
+        <button class="wh-tab on" data-wtab="coffee" role="tab" aria-selected="true">Coffee.</button>
+        <button class="wh-tab" data-wtab="matcha" role="tab" aria-selected="false">Matcha.</button>
+        <button class="wh-tab" data-wtab="food" role="tab" aria-selected="false">Food.</button>
       </div>
     </div>
     <div class="wh-fav-grid" id="wh-fav-grid">
@@ -145,7 +124,7 @@
         <div class="wh-fav-img"><image-slot placeholder="Espresso — rich crema, dark ceramic espresso cup, overhead" fit="cover"></image-slot></div>
         <div class="wh-fav-body">
           <span class="wh-fav-type">Espresso</span>
-          <h3 class="wh-fav-name">Classic Espresso</h3>
+          <h3 class="wh-fav-name">Classic Espresso.</h3>
           <p class="wh-fav-notes">Dark chocolate · Caramel · Hazelnut</p>
           <div class="wh-fav-foot"><span class="wh-fav-price">from ₹89</span><button class="wh-btn sm dark" data-add="Classic Espresso">Add</button></div>
         </div>
@@ -154,7 +133,7 @@
         <div class="wh-fav-img"><image-slot placeholder="Cappuccino — perfect microfoam rosetta, overhead, warm tones" fit="cover"></image-slot></div>
         <div class="wh-fav-body">
           <span class="wh-fav-type">Cappuccino</span>
-          <h3 class="wh-fav-name">Cappuccino</h3>
+          <h3 class="wh-fav-name">Cappuccino.</h3>
           <p class="wh-fav-notes">Velvety milk · Balanced · Citrus finish</p>
           <div class="wh-fav-foot"><span class="wh-fav-price">from ₹129</span><button class="wh-btn sm dark" data-add="Cappuccino">Add</button></div>
         </div>
@@ -163,7 +142,7 @@
         <div class="wh-fav-img"><image-slot placeholder="Cold brew — tall glass with ice, dark coffee, condensation" fit="cover"></image-slot></div>
         <div class="wh-fav-body">
           <span class="wh-fav-type">Cold Brew</span>
-          <h3 class="wh-fav-name">Cold Brew</h3>
+          <h3 class="wh-fav-name">Cold Brew.</h3>
           <p class="wh-fav-notes">Smooth · Low acid · 12-hour steep</p>
           <div class="wh-fav-foot"><span class="wh-fav-price">from ₹149</span><button class="wh-btn sm dark" data-add="Cold Brew">Add</button></div>
         </div>
@@ -172,7 +151,7 @@
         <div class="wh-fav-img"><image-slot placeholder="Flat white — double ristretto, silky microfoam in small cup" fit="cover"></image-slot></div>
         <div class="wh-fav-body">
           <span class="wh-fav-type">Flat White</span>
-          <h3 class="wh-fav-name">Flat White</h3>
+          <h3 class="wh-fav-name">Flat White.</h3>
           <p class="wh-fav-notes">Double ristretto · Silky · Clean finish</p>
           <div class="wh-fav-foot"><span class="wh-fav-price">from ₹139</span><button class="wh-btn sm dark" data-add="Flat White">Add</button></div>
         </div>
@@ -182,7 +161,7 @@
         <div class="wh-fav-img"><image-slot placeholder="Matcha latte — vibrant green, ceramic cup, dark marble surface" fit="cover"></image-slot></div>
         <div class="wh-fav-body">
           <span class="wh-fav-type m">Ceremonial</span>
-          <h3 class="wh-fav-name">Matcha Latte</h3>
+          <h3 class="wh-fav-name">Matcha Latte.</h3>
           <p class="wh-fav-notes">Ceremonial grade · Oat milk · Honey</p>
           <div class="wh-fav-foot"><span class="wh-fav-price">from ₹179</span><button class="wh-btn sm matcha" data-add="Matcha Latte">Add</button></div>
         </div>
@@ -191,7 +170,7 @@
         <div class="wh-fav-img"><image-slot placeholder="Iced matcha — tall glass, vivid green over ice, overhead" fit="cover"></image-slot></div>
         <div class="wh-fav-body">
           <span class="wh-fav-type m">Iced</span>
-          <h3 class="wh-fav-name">Iced Matcha</h3>
+          <h3 class="wh-fav-name">Iced Matcha.</h3>
           <p class="wh-fav-notes">Bright · Grassy · Cooling finish</p>
           <div class="wh-fav-foot"><span class="wh-fav-price">from ₹169</span><button class="wh-btn sm matcha" data-add="Iced Matcha">Add</button></div>
         </div>
@@ -200,7 +179,7 @@
         <div class="wh-fav-img"><image-slot placeholder="Hojicha latte — warm amber colour, steam rising, ceramic" fit="cover"></image-slot></div>
         <div class="wh-fav-body">
           <span class="wh-fav-type m">Hojicha</span>
-          <h3 class="wh-fav-name">Hojicha Latte</h3>
+          <h3 class="wh-fav-name">Hojicha Latte.</h3>
           <p class="wh-fav-notes">Roasted · Nutty · Low caffeine</p>
           <div class="wh-fav-foot"><span class="wh-fav-price">from ₹159</span><button class="wh-btn sm matcha" data-add="Hojicha Latte">Add</button></div>
         </div>
@@ -209,7 +188,7 @@
         <div class="wh-fav-img"><image-slot placeholder="Matcha powder — fine sift over dark slate, macro" fit="cover"></image-slot></div>
         <div class="wh-fav-body">
           <span class="wh-fav-type m">Pure</span>
-          <h3 class="wh-fav-name">Matcha Shot</h3>
+          <h3 class="wh-fav-name">Matcha Shot.</h3>
           <p class="wh-fav-notes">Ceremonial grade · No milk · Potent</p>
           <div class="wh-fav-foot"><span class="wh-fav-price">from ₹129</span><button class="wh-btn sm matcha" data-add="Matcha Shot">Add</button></div>
         </div>
@@ -219,7 +198,7 @@
         <div class="wh-fav-img"><image-slot placeholder="Butter croissant — golden flaky layers, overhead on linen" fit="cover"></image-slot></div>
         <div class="wh-fav-body">
           <span class="wh-fav-type">Baked</span>
-          <h3 class="wh-fav-name">Butter Croissant</h3>
+          <h3 class="wh-fav-name">Butter Croissant.</h3>
           <p class="wh-fav-notes">Laminated · Flaky · Pairs with espresso</p>
           <div class="wh-fav-foot"><span class="wh-fav-price">from ₹79</span><button class="wh-btn sm dark" data-add="Butter Croissant">Add</button></div>
         </div>
@@ -228,7 +207,7 @@
         <div class="wh-fav-img"><image-slot placeholder="Banana bread — moist slice with walnut, close-up, warm light" fit="cover"></image-slot></div>
         <div class="wh-fav-body">
           <span class="wh-fav-type">Baked</span>
-          <h3 class="wh-fav-name">Banana Bread</h3>
+          <h3 class="wh-fav-name">Banana Bread.</h3>
           <p class="wh-fav-notes">Moist · Walnut crunch · Classic</p>
           <div class="wh-fav-foot"><span class="wh-fav-price">from ₹89</span><button class="wh-btn sm dark" data-add="Banana Bread">Add</button></div>
         </div>
@@ -237,7 +216,7 @@
         <div class="wh-fav-img"><image-slot placeholder="Granola bar — natural oat texture, dark wood surface" fit="cover"></image-slot></div>
         <div class="wh-fav-body">
           <span class="wh-fav-type">Grab &amp; Go</span>
-          <h3 class="wh-fav-name">Granola Bar</h3>
+          <h3 class="wh-fav-name">Granola Bar.</h3>
           <p class="wh-fav-notes">Oat · Honey · Mixed seeds</p>
           <div class="wh-fav-foot"><span class="wh-fav-price">from ₹59</span><button class="wh-btn sm dark" data-add="Granola Bar">Add</button></div>
         </div>
@@ -246,14 +225,14 @@
         <div class="wh-fav-img"><image-slot placeholder="Overnight oats — jar with berries, minimal, top-down" fit="cover"></image-slot></div>
         <div class="wh-fav-body">
           <span class="wh-fav-type">Breakfast</span>
-          <h3 class="wh-fav-name">Overnight Oats</h3>
+          <h3 class="wh-fav-name">Overnight Oats.</h3>
           <p class="wh-fav-notes">Cold-set · Chia · Seasonal fruit</p>
           <div class="wh-fav-foot"><span class="wh-fav-price">from ₹109</span><button class="wh-btn sm dark" data-add="Overnight Oats">Add</button></div>
         </div>
       </div>
     </div>
     <div class="wh-favs-foot reveal">
-      <a href="menu.html" class="wh-link" style="color:var(--wh-ink)">View full menu <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="menu.html" class="wh-link" style="color:var(--wh-ink)">View full menu &nbsp;→</a>
     </div>
   </div>
 </section>
@@ -268,7 +247,7 @@
       </div>
       <div class="wh-sh-row">
         <h2 class="wh-h2">Find a<br>P.S. Pod.</h2>
-        <a href="about.html#pods" class="wh-link" style="color:var(--wh-ink);align-self:flex-end">View all locations <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="about.html#pods" class="wh-link" style="color:var(--wh-ink);align-self:flex-end">View all locations &nbsp;→</a>
       </div>
     </div>
   </div>
@@ -276,23 +255,23 @@
     <div class="wh-pods-track">
       <a class="wh-pod-card" href="about.html#pods">
         <div class="wh-pod-img"><image-slot placeholder="Co-working lobby — Ahmedabad CBD, modern interior, natural light" fit="cover"></image-slot></div>
-        <div class="wh-pod-info"><span class="wh-pod-name">Ahmedabad CBD</span><span class="wh-pod-sub">Co-working · Opening 2026</span></div>
+        <div class="wh-pod-info"><span class="wh-pod-name">Ahmedabad CBD.</span><span class="wh-pod-sub">Co-working · Opening 2026</span></div>
       </a>
       <a class="wh-pod-card" href="about.html#pods">
         <div class="wh-pod-img"><image-slot placeholder="University campus — student hub, open space" fit="cover"></image-slot></div>
-        <div class="wh-pod-info"><span class="wh-pod-name">Campus Pod</span><span class="wh-pod-sub">University · Opening 2026</span></div>
+        <div class="wh-pod-info"><span class="wh-pod-name">Campus Pod.</span><span class="wh-pod-sub">University · Opening 2026</span></div>
       </a>
       <a class="wh-pod-card" href="about.html#pods">
         <div class="wh-pod-img"><image-slot placeholder="Gym lobby — modern fitness centre entrance, minimal" fit="cover"></image-slot></div>
-        <div class="wh-pod-info"><span class="wh-pod-name">Fitness Hub</span><span class="wh-pod-sub">Gym · Opening 2026</span></div>
+        <div class="wh-pod-info"><span class="wh-pod-name">Fitness Hub.</span><span class="wh-pod-sub">Gym · Opening 2026</span></div>
       </a>
       <a class="wh-pod-card" href="about.html#pods">
         <div class="wh-pod-img"><image-slot placeholder="Tech park atrium — corporate office lobby, Ahmedabad" fit="cover"></image-slot></div>
-        <div class="wh-pod-info"><span class="wh-pod-name">Tech Park</span><span class="wh-pod-sub">Office · Opening 2026</span></div>
+        <div class="wh-pod-info"><span class="wh-pod-name">Tech Park.</span><span class="wh-pod-sub">Office · Opening 2026</span></div>
       </a>
       <a class="wh-pod-cta-card" href="partnership.html">
         <p>Host a Pod at your location.</p>
-        <span class="wh-link">Find out more <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="wh-link">Find out more &nbsp;→</span>
       </a>
     </div>
   </div>
@@ -329,8 +308,8 @@
         <div><span class="wh-pack-feat-lbl">Skip, pause, cancel</span><p>Three taps. No phone calls, no hidden fees, no commitments you didn't sign up for.</p></div>
       </div>
       <div class="wh-pack-ctas reveal" data-d="2">
-        <a href="pack.html" class="wh-btn white">Build your pack</a>
-        <a href="pack.html#office" class="wh-btn outline-white">Office packs</a>
+        <a href="pack.html" class="wh-btn white">Build your pack.</a>
+        <a href="pack.html#office" class="wh-btn outline-white">Office packs.</a>
       </div>
     </div>
   </div>
@@ -341,15 +320,15 @@
   <a class="wh-twoup-block" href="menu.html">
     <div class="wh-twoup-img"><image-slot placeholder="Menu flat-lay — coffee menu items overhead, dark ceramic, editorial" fit="cover"></image-slot></div>
     <div class="wh-twoup-label">
-      <div class="wh-twoup-meta"><p class="wh-twoup-kicker">What we serve</p><p class="wh-twoup-title">Menu</p></div>
-      <span class="wh-link" style="color:var(--wh-ink)">Explore <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div class="wh-twoup-meta"><p class="wh-twoup-kicker">What we serve</p><p class="wh-twoup-title">Menu.</p></div>
+      <span class="wh-link" style="color:var(--wh-ink)">Explore &nbsp;→</span>
     </div>
   </a>
   <a class="wh-twoup-block" href="story.html">
     <div class="wh-twoup-img"><image-slot placeholder="Story — founder at espresso machine, editorial black and white, depth of field" fit="cover"></image-slot></div>
     <div class="wh-twoup-label">
       <div class="wh-twoup-meta"><p class="wh-twoup-kicker">The founding idea</p><p class="wh-twoup-title">About P.S.</p></div>
-      <span class="wh-link" style="color:var(--wh-ink)">Read more <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="wh-link" style="color:var(--wh-ink)">Read more &nbsp;→</span>
     </div>
   </a>
 </div>
@@ -367,7 +346,7 @@
     <form class="wh-signup-form reveal" data-d="3" data-ps-form="newsletter">
       <div class="wh-signup-row">
         <input type="email" name="email" placeholder="Your email address" required>
-        <button type="submit" class="wh-btn white">Subscribe</button>
+        <button type="submit" class="wh-btn white">Subscribe.</button>
       </div>
       <p class="wh-signup-fine">P.S. — We send maybe 4 emails a year. Your inbox is safe.</p>
     </form>

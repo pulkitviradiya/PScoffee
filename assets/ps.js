@@ -27,23 +27,26 @@
     var links = PAGES.filter(function(p){return p.primary;}).map(function(p){
       var act = (p.href === here) ? " active" : "";
       var cls = p.cls ? (" "+p.cls) : "";
-      return '<a href="'+p.href+'" class="'+(act+cls).trim()+'">'+p.label+'</a>';
+      return '<a href="'+p.href+'" class="'+(act+cls).trim()+'">'+p.label+'.</a>';
     }).join("");
-    return '<nav class="nav" id="psNav">'+
-      '<a href="index.html" class="nav-logo" aria-label="P.S. Coffee home"><span class="seg a">P.S.</span><span class="seg b">COFFEE</span></a>'+
-      '<div class="nav-links">'+links+'</div>'+
-      '<div class="nav-tools">'+
-        '<a href="index.html#feedback" class="ntool" title="Give feedback" aria-label="Give feedback">'+ICO.chat+'</a>'+
-        '<a href="index.html#waitlist" class="ntool" title="Join waitlist" aria-label="Join waitlist">'+ICO.user+'</a>'+
-        '<a href="menu.html" class="ntool" title="Favourites" aria-label="Favourites">'+ICO.heart+'</a>'+
-        '<a href="menu.html" class="ntool cart-tool" title="Your cart" aria-label="Your cart">'+ICO.cart+'<span class="cart-count" id="psCartCount">0</span></a>'+
-        '<button class="nav-burger" id="psBurger" aria-label="Menu"><span></span><span></span><span></span></button>'+
+    return '<div class="wh-announce">'+
+        '<span>○&nbsp;&nbsp;Specialty coffee · Pod format · From ₹89</span>'+
+        '&emsp;<a href="pack.html">Subscribe &amp; save 10% →</a>'+
       '</div>'+
-    '</nav>'+
-    '<div class="drawer" id="psDrawer">'+
-      PAGES.map(function(p){return '<a href="'+p.href+'"><span>'+p.label+'</span><span class="n">'+p.n+'</span></a>';}).join("")+
-      '<a href="index.html#feedback"><span>Feedback</span><span class="n">→</span></a>'+
-    '</div>';
+      '<nav class="nav" id="psNav">'+
+        '<a href="index.html" class="nav-logo" aria-label="P.S. Coffee home">P.S. Coffee.</a>'+
+        '<div class="nav-links">'+links+'</div>'+
+        '<div class="nav-tools">'+
+          '<a href="index.html#feedback" class="ntool ntool-text" title="Give feedback">Feedback.</a>'+
+          '<a href="menu.html" class="ntool ntool-text" title="Menu">Menu.</a>'+
+          '<a href="menu.html" class="ntool cart-tool" title="Your cart" aria-label="Your cart">'+ICO.cart+'<span class="cart-count" id="psCartCount">0</span></a>'+
+          '<button class="nav-burger" id="psBurger" aria-label="Menu"><span></span><span></span><span></span></button>'+
+        '</div>'+
+      '</nav>'+
+      '<div class="drawer" id="psDrawer">'+
+        PAGES.map(function(p){return '<a href="'+p.href+'"><span>'+p.label+'.</span><span class="n">'+p.n+'</span></a>';}).join("")+
+        '<a href="index.html#feedback"><span>Feedback.</span><span class="n">→</span></a>'+
+      '</div>';
   }
 
   function footHTML(){
@@ -88,6 +91,7 @@
   /* ---------- nav behaviour ---------- */
   function navBehaviour(){
     var nav = document.getElementById("psNav");
+    var wrap = document.getElementById("ps-nav");
     var burger = document.getElementById("psBurger");
     var drawer = document.getElementById("psDrawer");
     if(burger && drawer){
@@ -102,21 +106,12 @@
         });
       });
     }
-    if(nav){
+    if(nav && wrap){
       var last = 0;
-      var isHome = (document.body.getAttribute("data-page") === "home") || document.body.hasAttribute("data-darkhero");
-      var hero = document.querySelector("header.hero-dark, header.hero-matcha");
-      function overState(){
-        if(!isHome) return;
-        var threshold = hero ? (hero.offsetHeight - 150) : 460;
-        nav.classList.toggle("over", window.scrollY < threshold);
-      }
-      if(isHome){ nav.classList.add("over"); overState(); window.addEventListener("resize", overState); }
       window.addEventListener("scroll", function(){
         var y = window.scrollY;
-        if(y > last && y > 260){ nav.classList.add("hide"); } else { nav.classList.remove("hide"); }
+        if(y > last && y > 260){ wrap.classList.add("hide"); } else { wrap.classList.remove("hide"); }
         last = y;
-        overState();
       }, {passive:true});
     }
   }
