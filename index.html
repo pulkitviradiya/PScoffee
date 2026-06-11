@@ -3,470 +3,402 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>P.S. Coffee — Your coffee is ready.</title>
-<meta name="description" content="An instant coffee brand without the instant coffee. 100% Arabica specialty espresso, ready before you arrive. From ₹89. Start with the P.S. Pack. Pre-launch — tell us what you think.">
+<title>P.S. Coffee — Specialty coffee. Pod format. From ₹89.</title>
+<meta name="description" content="An instant coffee brand without the instant coffee. 100% Arabica specialty espresso from P.S. Coffee Pods, ready before you arrive. From ₹89. Pre-launch.">
+<link rel="canonical" href="https://www.pscoffee.in/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/ps.css">
-<script>(function(){try{var t=JSON.parse(localStorage.getItem('ps-tweaks')||'{}');var r=document.documentElement;if(t.tc)r.style.setProperty('--tc',t.tc);if(t.paper)r.style.setProperty('--paper',t.paper);if(t.scale)r.style.setProperty('--type-scale',t.scale);if(t.btn)r.style.setProperty('--btn-radius',t.btn);}catch(e){}})();</script>
-<style>
-/* ░░ DARK EDITORIAL HERO ░░ */
-.hero-dark{position:relative;background:var(--ink);color:#F3EEE3;overflow:hidden;padding-block:clamp(106px,14vh,164px) clamp(54px,8vw,100px)}
-.hero-dark .wrap{position:relative;z-index:2}
-.hero-dark .glow{position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:radial-gradient(58% 64% at 80% 14%,rgba(232,64,12,.22),transparent 62%),
-             radial-gradient(46% 58% at 8% 100%,rgba(232,64,12,.10),transparent 60%)}
-.hero-dark .grain{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;
-  background-image:radial-gradient(rgba(243,238,227,.04) 1px,transparent 1px);background-size:3px 3px}
-.h-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,72px);align-items:center}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:"Archivo",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:rgba(243,238,227,.82);margin-bottom:26px}
-.hero-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--tc);box-shadow:0 0 0 4px rgba(232,64,12,.22);flex:none}
-.hero-dark h1{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(44px,6.9vw,104px);line-height:.9;letter-spacing:-.038em;color:#fff}
-.hero-dark h1 .tc{color:var(--tc)}
-.hero-dark .lede{color:rgba(243,238,227,.74);margin-top:26px;max-width:46ch;font-size:clamp(16px,1.3vw,19px)}
-.hero-dark .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-.btn.line-light{background:transparent;border-color:rgba(243,238,227,.5);color:#F3EEE3}
-.btn.line-light:hover{background:#F3EEE3;border-color:#F3EEE3;color:var(--ink)}
-.hero-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px;font-family:"Archivo",sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.02em;color:rgba(243,238,227,.6)}
-.hero-meta b{color:#fff;font-weight:800}
-.hero-meta .sep{width:5px;height:5px;border-radius:50%;background:var(--tc)}
-.hero-meta span{white-space:nowrap}
-.h-fig{position:relative;border-radius:24px;aspect-ratio:4/5;overflow:hidden;
-  background:linear-gradient(165deg,#251f16 0%,#16140f 100%);box-shadow:0 50px 100px -34px rgba(0,0,0,.65),inset 0 0 0 1px rgba(243,238,227,.06)}
-.h-fig image-slot{width:100%;height:100%}
-.h-fig .badge{position:absolute;top:20px;left:20px;box-shadow:var(--shadow-sm)}
-.h-fig .callout{top:20px;right:20px}
-.scroll-cue{display:inline-flex;align-items:center;gap:10px;margin-top:clamp(38px,6vw,68px);font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:rgba(243,238,227,.5)}
-.scroll-cue .ln{width:46px;height:1px;background:rgba(243,238,227,.4);position:relative;overflow:hidden}
-.scroll-cue .ln::after{content:"";position:absolute;inset:0;width:40%;background:var(--tc);animation:cue 2.2s ease-in-out infinite}
-@keyframes cue{0%{transform:translateX(-100%)}60%,100%{transform:translateX(260%)}}
-@media (prefers-reduced-motion:no-preference){
-  .hero-dark h1,.hero-dark .hero-eyebrow,.hero-dark .lede,.hero-dark .cta-row,.hero-dark .hero-meta,.h-fig{opacity:0;animation:heroUp .8s cubic-bezier(.2,.7,.2,1) forwards}
-  .hero-dark .hero-eyebrow{animation-delay:.05s}
-  .hero-dark h1{animation-delay:.12s}
-  .hero-dark .lede{animation-delay:.24s}
-  .hero-dark .cta-row{animation-delay:.32s}
-  .hero-dark .hero-meta{animation-delay:.4s}
-  .h-fig{animation-delay:.2s}
-}
-@keyframes heroUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-
-/* ░░ founding idea ░░ */
-.split-stat{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,46px);align-items:start}
-.split-stat .s .n{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(34px,4.4vw,58px);line-height:.9;color:var(--ink);letter-spacing:-.03em}
-.split-stat .s .n .u{color:var(--tc)}
-.split-stat .s .l{color:var(--muted);font-size:14px;margin-top:10px;max-width:24ch}
-.idea-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,70px);align-items:center}
-.eqcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow-sm)}
-.eqcard .ln{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--ink-2)}
-.eqcard .ln .op{font-family:"Archivo",sans-serif;font-weight:800;color:var(--tc);width:18px;text-align:center;flex:none}
-.eqcard .ln.tot{border-top:1px dashed var(--line-2);padding-top:14px;margin-top:4px;font-family:"Archivo",sans-serif;font-weight:700;color:var(--ink)}
-
-/* ░░ P.S. Pack band (hero-positioned subscription) ░░ */
-.packband{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,68px);align-items:center}
-.packband .pb-kick{display:inline-flex;align-items:center;gap:10px;font-family:"Archivo",sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--tc)}
-.packband h2{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(30px,4.4vw,58px);line-height:.96;letter-spacing:-.03em;margin-top:18px}
-.packband h2 .tc{color:var(--tc)}
-.packband .pb-lede{color:var(--muted);margin-top:20px;max-width:42ch;font-size:clamp(15px,1.2vw,18px)}
-.packcard{background:var(--ink);color:#F3EEE3;border-radius:var(--radius);padding:clamp(28px,3.4vw,42px);box-shadow:var(--shadow);position:relative;overflow:hidden}
-.packcard .pc-glow{position:absolute;inset:0;background:radial-gradient(70% 80% at 88% 6%,rgba(232,64,12,.26),transparent 60%);pointer-events:none}
-.packcard .pc-in{position:relative;z-index:1}
-.packcard .pc-tag{font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:rgba(243,238,227,.6)}
-.packcard .pc-price{display:flex;align-items:baseline;gap:14px;margin-top:14px}
-.packcard .pc-price .pp{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(46px,6vw,74px);line-height:.9;letter-spacing:-.04em;color:#fff}
-.packcard .pc-price .was{font-size:17px;color:rgba(243,238,227,.5);text-decoration:line-through}
-.packcard .pc-meta{display:flex;flex-direction:column;gap:11px;margin-top:24px;padding-top:22px;border-top:1px solid rgba(243,238,227,.14)}
-.packcard .pc-meta .row{display:flex;align-items:center;gap:11px;font-size:14.5px;color:rgba(243,238,227,.84)}
-.packcard .pc-meta .row .ck{flex:none;width:20px;height:20px;border-radius:50%;background:var(--tc);display:grid;place-items:center}
-.packcard .pc-meta .row .ck svg{width:11px;height:11px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
-.packcard .pc-foot{font-size:12.5px;color:rgba(243,238,227,.55);margin-top:18px}
-
-/* ░░ matcha standalone band ░░ */
-.matchaband{position:relative;overflow:hidden}
-.matchaband .mb-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:center}
-.matchaband .mb-fig{border-radius:var(--radius);overflow:hidden;aspect-ratio:5/4;box-shadow:var(--shadow);position:relative;background:rgba(255,255,255,.08)}
-.matchaband .mb-fig image-slot{width:100%;height:100%}
-.matchaband .mb-kick{font-family:"Archivo",sans-serif;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:#CFE0BE}
-.matchaband h2{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(30px,4.6vw,62px);line-height:.94;letter-spacing:-.03em;color:#fff;margin-top:16px}
-.matchaband .mb-lede{color:rgba(234,241,219,.78);margin-top:22px;max-width:42ch;font-size:clamp(15px,1.2vw,18px)}
-.matchaband .btn.on-matcha{background:#fff;border-color:#fff;color:var(--matcha)}
-.matchaband .btn.on-matcha:hover{background:transparent;color:#fff}
-.matchaband .mb-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
-.matchaband .mb-tags span{font-family:"Archivo",sans-serif;font-weight:600;font-size:12px;padding:8px 14px;border:1px solid rgba(234,241,219,.32);border-radius:999px;color:#EAF1DB}
-
-@media(max-width:920px){.h-grid{grid-template-columns:1fr;gap:34px}.h-fig{order:-1;aspect-ratio:4/3;max-height:46vh}}
-@media(max-width:860px){.idea-grid,.packband,.matchaband .mb-grid{grid-template-columns:1fr}.matchaband .mb-fig{order:-1}}
-</style>
+<link rel="stylesheet" href="assets/wh.css">
+<script>(function(){try{var t=JSON.parse(localStorage.getItem('ps-tweaks')||'{}');var r=document.documentElement;if(t.tc)r.style.setProperty('--tc',t.tc);}catch(e){}})()</script>
 </head>
-<body data-page="home">
+<body data-page="home" data-darkhero>
+
 <div id="ps-nav"></div>
 
-<!-- ░░░ DARK EDITORIAL HERO ░░░ -->
-<header class="hero-dark">
-  <span class="glow"></span><span class="grain"></span>
-  <div class="wrap">
-    <div class="h-grid">
-      <div>
-        <div class="hero-eyebrow"><span class="dot"></span>Pre-launch · Ahmedabad · Est. 2026</div>
-        <h1>Other coffees<br>get marked up.<br><span class="tc">This one stays&nbsp;₹89.</span></h1>
-        <p class="lede">An instant coffee brand — without the instant coffee. 100% Arabica specialty espresso, pulled fresh and waiting before you arrive. We lowered the rent, not the beans.</p>
-        <div class="cta-row">
-          <a href="pack.html" class="btn accent lg">Start with the P.S. Pack <span class="ar">→</span></a>
-          <a href="menu.html" class="btn line-light lg">See the menu</a>
-        </div>
-        <div class="hero-meta">
-          <span>From <b>₹89</b></span><span class="sep"></span>
-          <span><b>100%</b> Arabica</span><span class="sep"></span>
-          <span>Ready on <b>arrival</b></span>
-        </div>
+<!-- ══ HERO ══ -->
+<section class="wh-hero" id="hero">
+  <div class="wh-hero-media">
+    <image-slot id="hero-img" placeholder="Hero — atmospheric P.S. Pod exterior, dusk lighting, cinematic dark editorial" fit="cover"></image-slot>
+    <div class="wh-hero-grad"></div>
+  </div>
+  <div class="wh-hero-body">
+    <p class="wh-hero-eyebrow">Specialty coffee · Pod format · From ₹89</p>
+    <h1>Pourers of the<br><em>world's best</em><br>coffees.</h1>
+    <p class="wh-hero-sub">100% Arabica, specialty grade. In a Pod, not a cafe. Ready before you arrive — at the gym, the desk, the campus.</p>
+    <div class="wh-hero-ctas">
+      <a href="menu.html" class="wh-btn white">Shop coffee</a>
+      <a href="about.html#pods" class="wh-btn outline-white">Our Pods</a>
+    </div>
+  </div>
+  <div class="wh-scroll-cue" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="wh-scroll-bar"></div>
+  </div>
+</section>
+
+<!-- ══ DUAL BANNERS ══ -->
+<div class="wh-banners">
+  <a class="wh-banner" href="menu.html">
+    <div class="wh-banner-img">
+      <image-slot placeholder="Coffee — overhead espresso shot, dark ceramic cup, marble surface, editorial" fit="cover"></image-slot>
+    </div>
+    <div class="wh-banner-body">
+      <div class="wh-banner-label">
+        <p class="wh-banner-kicker">Shop coffee</p>
+        <p class="wh-banner-sub">100% Arabica · Specialty grade · From ₹89</p>
       </div>
-      <div class="h-fig">
-        <image-slot id="hero-1" placeholder="Hero — signature cup / product render on dark surface" fit="cover"></image-slot>
-        <span class="badge"><span class="b-ico"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 16.5 6.5 18.2l1-5.5-4-3.9L9 8z"/></svg></span> 100% Arabica <span class="b-sub">Specialty</span></span>
-        <span class="callout"><span><span class="big">₹89</span><span class="sm">every day</span></span></span>
+      <span class="wh-link">Discover <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+  </a>
+  <a class="wh-banner" href="about.html#pods">
+    <div class="wh-banner-img">
+      <image-slot placeholder="Pod — interior of a P.S. Pod, modern minimal, barista at machine, warm light" fit="cover"></image-slot>
+    </div>
+    <div class="wh-banner-body">
+      <div class="wh-banner-label">
+        <p class="wh-banner-kicker">Our Pods</p>
+        <p class="wh-banner-sub">50–200 sq ft · Placed where you already are</p>
+      </div>
+      <span class="wh-link">Discover <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </div>
+  </a>
+</div>
+
+<!-- ══ CATEGORY TILES ══ -->
+<div class="wh-cats">
+  <a class="wh-cat" href="menu.html">
+    <div class="wh-cat-img"><image-slot placeholder="Coffee beans — close-up macro, golden brown, dark surface" fit="cover"></image-slot></div>
+    <div class="wh-cat-label"><span class="wh-cat-name">Coffee</span><span class="wh-cat-disc">Discover</span></div>
+  </a>
+  <a class="wh-cat" href="matcha.html">
+    <div class="wh-cat-img"><image-slot placeholder="Matcha — vibrant green powder mound on slate, soft focus" fit="cover"></image-slot></div>
+    <div class="wh-cat-label"><span class="wh-cat-name">Matcha</span><span class="wh-cat-disc">Discover</span></div>
+  </a>
+  <a class="wh-cat" href="menu.html#food">
+    <div class="wh-cat-img"><image-slot placeholder="Food — artisan croissant, golden, overhead on linen" fit="cover"></image-slot></div>
+    <div class="wh-cat-label"><span class="wh-cat-name">Food</span><span class="wh-cat-disc">Discover</span></div>
+  </a>
+  <a class="wh-cat" href="pack.html">
+    <div class="wh-cat-img"><image-slot placeholder="The P.S. Pack — branded subscription box, flat lay, minimal" fit="cover"></image-slot></div>
+    <div class="wh-cat-label"><span class="wh-cat-name">The Pack</span><span class="wh-cat-disc">Discover</span></div>
+  </a>
+  <a class="wh-cat" href="app.html">
+    <div class="wh-cat-img"><image-slot placeholder="App — phone showing P.S. app, hands holding, soft background" fit="cover"></image-slot></div>
+    <div class="wh-cat-label"><span class="wh-cat-name">The App</span><span class="wh-cat-disc">Discover</span></div>
+  </a>
+</div>
+
+<!-- ══ P.S. AT HOME ══ -->
+<section class="wh-sec">
+  <div class="wh-wrap">
+    <div class="wh-sh reveal">
+      <div class="wh-sh-meta">
+        <span class="wh-sh-label">P.S. at home</span>
+        <span class="wh-sh-num">No. 01</span>
+      </div>
+      <div class="wh-sh-row">
+        <h2 class="wh-h2">Specialty grade.<br><em>From our Pod<br>to yours.</em></h2>
+        <p class="wh-body-text">The P.S. Pack brings the Pod home. Specialty-grade espresso capsules, a handheld brewer, and everything you need for a great cup — before your Monday alarm.</p>
       </div>
     </div>
-    <a href="#idea" class="scroll-cue"><span class="ln"></span>Scroll — the whole idea in three</a>
+    <div class="wh-athome-grid">
+      <div class="wh-athome-main reveal">
+        <image-slot placeholder="Lifestyle — home coffee setup, P.S. Pack on kitchen counter, warm morning light, editorial" fit="cover"></image-slot>
+      </div>
+      <div class="wh-athome-side">
+        <div class="wh-athome-sm reveal" data-d="1">
+          <image-slot placeholder="Close-up — P.S. capsule being placed in handheld brewer, hands, natural light" fit="cover"></image-slot>
+        </div>
+        <div class="wh-athome-sm reveal" data-d="2">
+          <image-slot placeholder="Lifestyle — person holding P.S. coffee cup, relaxed home setting, natural light" fit="cover"></image-slot>
+        </div>
+      </div>
+    </div>
+    <div class="wh-athome-cta reveal" data-d="1">
+      <a href="pack.html" class="wh-btn dark">Shop the P.S. Pack <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
   </div>
-</header>
+</section>
 
-<!-- ░░░ TRUST STRIP ░░░ -->
-<div class="trust">
-  <div class="wrap">
-    <span class="t-lab">Built into your day at</span>
-    <span class="t-item"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h6M9 12h6M9 16h3"/></svg> Co-working floors</span>
-    <span class="t-item"><svg class="i" viewBox="0 0 24 24"><path d="M3 10l9-5 9 5-9 5z"/><path d="M7 12v5c0 1 5 3 5 3s5-2 5-3v-5"/></svg> Campuses</span>
-    <span class="t-item"><svg class="i" viewBox="0 0 24 24"><path d="M4 9v6M20 9v6M7 12h10M7 8v8M17 8v8"/></svg> Gym lobbies</span>
-    <span class="t-item"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M8 4v16M3 9h5M3 14h5"/></svg> Corporate campuses</span>
+<!-- ══ POD FAVOURITES ══ -->
+<section class="wh-sec bg-alt" id="menu-preview">
+  <div class="wh-wrap">
+    <div class="wh-sh reveal">
+      <div class="wh-sh-meta">
+        <span class="wh-sh-label">Menu</span>
+        <span class="wh-sh-num">No. 02</span>
+      </div>
+    </div>
+    <div class="wh-favs-top">
+      <h2 class="wh-h2 reveal">Pod<br>favourites.</h2>
+      <div class="wh-tabs" role="tablist">
+        <button class="wh-tab on" data-wtab="coffee" role="tab" aria-selected="true">Coffee</button>
+        <button class="wh-tab" data-wtab="matcha" role="tab" aria-selected="false">Matcha</button>
+        <button class="wh-tab" data-wtab="food" role="tab" aria-selected="false">Food</button>
+      </div>
+    </div>
+    <div class="wh-fav-grid" id="wh-fav-grid">
+      <!-- coffee -->
+      <div class="wh-fav-card" data-wtab-content="coffee">
+        <div class="wh-fav-img"><image-slot placeholder="Espresso — rich crema, dark ceramic espresso cup, overhead" fit="cover"></image-slot></div>
+        <div class="wh-fav-body">
+          <span class="wh-fav-type">Espresso</span>
+          <h3 class="wh-fav-name">Classic Espresso</h3>
+          <p class="wh-fav-notes">Dark chocolate · Caramel · Hazelnut</p>
+          <div class="wh-fav-foot"><span class="wh-fav-price">from ₹89</span><button class="wh-btn sm dark" data-add="Classic Espresso">Add</button></div>
+        </div>
+      </div>
+      <div class="wh-fav-card" data-wtab-content="coffee">
+        <div class="wh-fav-img"><image-slot placeholder="Cappuccino — perfect microfoam rosetta, overhead, warm tones" fit="cover"></image-slot></div>
+        <div class="wh-fav-body">
+          <span class="wh-fav-type">Cappuccino</span>
+          <h3 class="wh-fav-name">Cappuccino</h3>
+          <p class="wh-fav-notes">Velvety milk · Balanced · Citrus finish</p>
+          <div class="wh-fav-foot"><span class="wh-fav-price">from ₹129</span><button class="wh-btn sm dark" data-add="Cappuccino">Add</button></div>
+        </div>
+      </div>
+      <div class="wh-fav-card" data-wtab-content="coffee">
+        <div class="wh-fav-img"><image-slot placeholder="Cold brew — tall glass with ice, dark coffee, condensation" fit="cover"></image-slot></div>
+        <div class="wh-fav-body">
+          <span class="wh-fav-type">Cold Brew</span>
+          <h3 class="wh-fav-name">Cold Brew</h3>
+          <p class="wh-fav-notes">Smooth · Low acid · 12-hour steep</p>
+          <div class="wh-fav-foot"><span class="wh-fav-price">from ₹149</span><button class="wh-btn sm dark" data-add="Cold Brew">Add</button></div>
+        </div>
+      </div>
+      <div class="wh-fav-card" data-wtab-content="coffee">
+        <div class="wh-fav-img"><image-slot placeholder="Flat white — double ristretto, silky microfoam in small cup" fit="cover"></image-slot></div>
+        <div class="wh-fav-body">
+          <span class="wh-fav-type">Flat White</span>
+          <h3 class="wh-fav-name">Flat White</h3>
+          <p class="wh-fav-notes">Double ristretto · Silky · Clean finish</p>
+          <div class="wh-fav-foot"><span class="wh-fav-price">from ₹139</span><button class="wh-btn sm dark" data-add="Flat White">Add</button></div>
+        </div>
+      </div>
+      <!-- matcha -->
+      <div class="wh-fav-card" data-wtab-content="matcha" hidden>
+        <div class="wh-fav-img"><image-slot placeholder="Matcha latte — vibrant green, ceramic cup, dark marble surface" fit="cover"></image-slot></div>
+        <div class="wh-fav-body">
+          <span class="wh-fav-type m">Ceremonial</span>
+          <h3 class="wh-fav-name">Matcha Latte</h3>
+          <p class="wh-fav-notes">Ceremonial grade · Oat milk · Honey</p>
+          <div class="wh-fav-foot"><span class="wh-fav-price">from ₹179</span><button class="wh-btn sm matcha" data-add="Matcha Latte">Add</button></div>
+        </div>
+      </div>
+      <div class="wh-fav-card" data-wtab-content="matcha" hidden>
+        <div class="wh-fav-img"><image-slot placeholder="Iced matcha — tall glass, vivid green over ice, overhead" fit="cover"></image-slot></div>
+        <div class="wh-fav-body">
+          <span class="wh-fav-type m">Iced</span>
+          <h3 class="wh-fav-name">Iced Matcha</h3>
+          <p class="wh-fav-notes">Bright · Grassy · Cooling finish</p>
+          <div class="wh-fav-foot"><span class="wh-fav-price">from ₹169</span><button class="wh-btn sm matcha" data-add="Iced Matcha">Add</button></div>
+        </div>
+      </div>
+      <div class="wh-fav-card" data-wtab-content="matcha" hidden>
+        <div class="wh-fav-img"><image-slot placeholder="Hojicha latte — warm amber colour, steam rising, ceramic" fit="cover"></image-slot></div>
+        <div class="wh-fav-body">
+          <span class="wh-fav-type m">Hojicha</span>
+          <h3 class="wh-fav-name">Hojicha Latte</h3>
+          <p class="wh-fav-notes">Roasted · Nutty · Low caffeine</p>
+          <div class="wh-fav-foot"><span class="wh-fav-price">from ₹159</span><button class="wh-btn sm matcha" data-add="Hojicha Latte">Add</button></div>
+        </div>
+      </div>
+      <div class="wh-fav-card" data-wtab-content="matcha" hidden>
+        <div class="wh-fav-img"><image-slot placeholder="Matcha powder — fine sift over dark slate, macro" fit="cover"></image-slot></div>
+        <div class="wh-fav-body">
+          <span class="wh-fav-type m">Pure</span>
+          <h3 class="wh-fav-name">Matcha Shot</h3>
+          <p class="wh-fav-notes">Ceremonial grade · No milk · Potent</p>
+          <div class="wh-fav-foot"><span class="wh-fav-price">from ₹129</span><button class="wh-btn sm matcha" data-add="Matcha Shot">Add</button></div>
+        </div>
+      </div>
+      <!-- food -->
+      <div class="wh-fav-card" data-wtab-content="food" hidden>
+        <div class="wh-fav-img"><image-slot placeholder="Butter croissant — golden flaky layers, overhead on linen" fit="cover"></image-slot></div>
+        <div class="wh-fav-body">
+          <span class="wh-fav-type">Baked</span>
+          <h3 class="wh-fav-name">Butter Croissant</h3>
+          <p class="wh-fav-notes">Laminated · Flaky · Pairs with espresso</p>
+          <div class="wh-fav-foot"><span class="wh-fav-price">from ₹79</span><button class="wh-btn sm dark" data-add="Butter Croissant">Add</button></div>
+        </div>
+      </div>
+      <div class="wh-fav-card" data-wtab-content="food" hidden>
+        <div class="wh-fav-img"><image-slot placeholder="Banana bread — moist slice with walnut, close-up, warm light" fit="cover"></image-slot></div>
+        <div class="wh-fav-body">
+          <span class="wh-fav-type">Baked</span>
+          <h3 class="wh-fav-name">Banana Bread</h3>
+          <p class="wh-fav-notes">Moist · Walnut crunch · Classic</p>
+          <div class="wh-fav-foot"><span class="wh-fav-price">from ₹89</span><button class="wh-btn sm dark" data-add="Banana Bread">Add</button></div>
+        </div>
+      </div>
+      <div class="wh-fav-card" data-wtab-content="food" hidden>
+        <div class="wh-fav-img"><image-slot placeholder="Granola bar — natural oat texture, dark wood surface" fit="cover"></image-slot></div>
+        <div class="wh-fav-body">
+          <span class="wh-fav-type">Grab &amp; Go</span>
+          <h3 class="wh-fav-name">Granola Bar</h3>
+          <p class="wh-fav-notes">Oat · Honey · Mixed seeds</p>
+          <div class="wh-fav-foot"><span class="wh-fav-price">from ₹59</span><button class="wh-btn sm dark" data-add="Granola Bar">Add</button></div>
+        </div>
+      </div>
+      <div class="wh-fav-card" data-wtab-content="food" hidden>
+        <div class="wh-fav-img"><image-slot placeholder="Overnight oats — jar with berries, minimal, top-down" fit="cover"></image-slot></div>
+        <div class="wh-fav-body">
+          <span class="wh-fav-type">Breakfast</span>
+          <h3 class="wh-fav-name">Overnight Oats</h3>
+          <p class="wh-fav-notes">Cold-set · Chia · Seasonal fruit</p>
+          <div class="wh-fav-foot"><span class="wh-fav-price">from ₹109</span><button class="wh-btn sm dark" data-add="Overnight Oats">Add</button></div>
+        </div>
+      </div>
+    </div>
+    <div class="wh-favs-foot reveal">
+      <a href="menu.html" class="wh-link" style="color:var(--wh-ink)">View full menu <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FIND A POD ══ -->
+<section class="wh-sec wh-pods-outer">
+  <div class="wh-wrap">
+    <div class="wh-sh reveal">
+      <div class="wh-sh-meta">
+        <span class="wh-sh-label">Our Pods</span>
+        <span class="wh-sh-num">No. 03</span>
+      </div>
+      <div class="wh-sh-row">
+        <h2 class="wh-h2">Find a<br>P.S. Pod.</h2>
+        <a href="about.html#pods" class="wh-link" style="color:var(--wh-ink);align-self:flex-end">View all locations <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="wh-pods-scroller" id="podsScroller">
+    <div class="wh-pods-track">
+      <a class="wh-pod-card" href="about.html#pods">
+        <div class="wh-pod-img"><image-slot placeholder="Co-working lobby — Ahmedabad CBD, modern interior, natural light" fit="cover"></image-slot></div>
+        <div class="wh-pod-info"><span class="wh-pod-name">Ahmedabad CBD</span><span class="wh-pod-sub">Co-working · Opening 2026</span></div>
+      </a>
+      <a class="wh-pod-card" href="about.html#pods">
+        <div class="wh-pod-img"><image-slot placeholder="University campus — student hub, open space" fit="cover"></image-slot></div>
+        <div class="wh-pod-info"><span class="wh-pod-name">Campus Pod</span><span class="wh-pod-sub">University · Opening 2026</span></div>
+      </a>
+      <a class="wh-pod-card" href="about.html#pods">
+        <div class="wh-pod-img"><image-slot placeholder="Gym lobby — modern fitness centre entrance, minimal" fit="cover"></image-slot></div>
+        <div class="wh-pod-info"><span class="wh-pod-name">Fitness Hub</span><span class="wh-pod-sub">Gym · Opening 2026</span></div>
+      </a>
+      <a class="wh-pod-card" href="about.html#pods">
+        <div class="wh-pod-img"><image-slot placeholder="Tech park atrium — corporate office lobby, Ahmedabad" fit="cover"></image-slot></div>
+        <div class="wh-pod-info"><span class="wh-pod-name">Tech Park</span><span class="wh-pod-sub">Office · Opening 2026</span></div>
+      </a>
+      <a class="wh-pod-cta-card" href="partnership.html">
+        <p>Host a Pod at your location.</p>
+        <span class="wh-link">Find out more <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRESS ══ -->
+<div class="wh-press">
+  <div class="wh-press-inner">
+    <span class="wh-press-label">As seen in</span>
+    <div class="wh-press-strip">
+      <span>YourStory</span><span>Inc42</span><span>Forbes India</span><span>Vogue India</span><span>Economic Times</span><span>Condé Nast Traveller</span><span>Mint Lounge</span>
+    </div>
   </div>
 </div>
 
-<!-- ░░░ FOUNDING IDEA ░░░ -->
-<section class="section" id="idea">
-  <div class="wrap idea-grid">
-    <div class="reveal">
-      <span class="eyebrow">The Founding Idea</span>
-      <p class="statement" style="margin-top:18px">We lowered our <span class="tc">rent.</span><br>Not our <span class="tc">beans.</span></p>
-      <p class="lede" style="margin-top:24px;max-width:46ch;color:var(--muted)">The people who drink coffee every day are paying for the people who drink it once a week. We removed everything that inflates the price without improving the cup — the real estate, the interior budget, the ambiance tax — and put the savings back where they belong.</p>
-      <a href="story.html" class="tlink" style="margin-top:28px">Read the full story <span class="ar">→</span></a>
-    </div>
-    <div class="eqcard reveal" data-d="1">
-      <span class="kicker" style="margin-bottom:6px">The founding equation</span>
-      <div class="ln"><span class="op">+</span> 100% Arabica specialty beans</div>
-      <div class="ln"><span class="op">+</span> Minimal-overhead Pod format</div>
-      <div class="ln"><span class="op">+</span> Three-tap ordering, ready on arrival</div>
-      <div class="ln tot"><span class="op">=</span> Honest pricing, from ₹89.</div>
-    </div>
+<!-- ══ THE P.S. PACK ══ -->
+<section class="wh-pack">
+  <div class="wh-pack-media">
+    <image-slot placeholder="The P.S. Pack — subscription box in home setting, warm tones, overhead" fit="cover"></image-slot>
+    <div class="wh-pack-veil"></div>
   </div>
-</section>
-
-<!-- ░░░ P.S. PACK — hero-positioned subscription ░░░ -->
-<section class="section bg-panel">
-  <div class="wrap packband">
-    <div class="reveal">
-      <span class="pb-kick"><svg class="i" viewBox="0 0 24 24" style="width:16px;height:16px"><rect x="3" y="6" width="18" height="12" rx="2.5"/><path d="M3 10h18M7 14h4"/></svg> The subscription</span>
-      <h2>Pay once.<br>Drink daily. <span class="tc">Repeat.</span></h2>
-      <p class="pb-lede">The P.S. Pack is the easiest way to make a good cup a daily habit. Prepay your cups, save up to 20%, and never reach for your wallet at the Pod again. Your coffee's already paid for — which means it's already yours.</p>
-      <div class="cta-row" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:30px">
-        <a href="pack.html" class="btn accent lg">Explore the P.S. Pack <span class="ar">→</span></a>
-        <a href="app.html" class="btn ghost lg">See how it works</a>
-      </div>
-    </div>
-    <div class="packcard reveal" data-d="1">
-      <span class="pc-glow"></span>
-      <div class="pc-in">
-        <div class="pc-tag">P.S. Pack · 10 cups</div>
-        <div class="pc-price"><span class="pp">₹799</span><span class="was">₹890</span></div>
-        <div class="pc-meta">
-          <div class="row"><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> ₹80 per cup · save 10%</div>
-          <div class="row"><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> Credits auto-applied · any drink</div>
-          <div class="row"><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> No expiry stress · cancel anytime</div>
-        </div>
-        <p class="pc-foot">P.S. — Go 20 cups and it drops to ₹71 a cup.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░░ CATEGORY CARDS ░░░ -->
-<section class="section">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">The P.S. Menu</span>
-      <h2>One menu.<br><span class="tc">Thoughtfully divided.</span></h2>
-      <p>Three things, done completely. No 40-item board you have to decode before 9am. Coffee, matcha, food — every drink 100% Arabica, no exceptions.</p>
-    </div>
-    <div class="cats">
-      <a href="menu.html" class="catcard empty reveal">
-        <div class="cc-art"><image-slot id="cat-coffee" placeholder="Coffee category"></image-slot></div>
-        <span class="cc-no">01 — Coffee</span>
-        <h3>The daily<br>cup</h3>
-        <p class="cc-desc">Espresso, cappuccino, cold brew. Pulled fresh, every order. From ₹89.</p>
-        <span class="cc-go">Browse coffee →</span>
-      </a>
-      <a href="matcha.html" class="catcard empty matcha reveal" data-d="1">
-        <div class="cc-art"><image-slot id="cat-matcha" placeholder="Matcha category"></image-slot></div>
-        <span class="cc-no">02 — Matcha</span>
-        <h3>The evening<br>pivot</h3>
-        <p class="cc-desc">Ceremonial grade, whisked properly. The 9pm answer to a late deadline.</p>
-        <span class="cc-go">Browse matcha →</span>
-      </a>
-      <a href="menu.html#food" class="catcard empty reveal" data-d="2">
-        <div class="cc-art"><image-slot id="cat-food" placeholder="Food category"></image-slot></div>
-        <span class="cc-no">03 — Food</span>
-        <h3>The quick<br>bite</h3>
-        <p class="cc-desc">Croissants, bakes, and bites — baked daily, warm on arrival.</p>
-        <span class="cc-go">Browse food →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ░░░ FEATURE BLOCK — MEET THE CUP ░░░ -->
-<section class="section bg-panel">
-  <div class="wrap feature">
-    <div class="feature-fig reveal">
-      <image-slot id="feat-shot" placeholder="The signature cup — close, on cream" fit="cover"></image-slot>
-    </div>
-    <div class="reveal" data-d="1">
-      <span class="eyebrow">Meet the cup</span>
-      <h2 class="display" style="font-size:clamp(28px,3.8vw,48px);margin-top:14px">A specialty-grade cup<br>that doesn't cost like one.</h2>
-      <div class="value-list">
-        <div class="value">
-          <span class="v-ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 16.5 6.5 18.2l1-5.5-4-3.9L9 8z"/></svg></span>
-          <div><h4>Perfectly Sourced</h4><p>100% Arabica, specialty grade. Not blended, not bulked with Robusta, not cut with chicory. The standard never moves.</p></div>
-        </div>
-        <div class="value">
-          <span class="v-ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-          <div><h4>Plain &amp; Simple Pricing</h4><p>Premium is a promise, not a position. When a ₹300 latte funds 800 sq ft you didn't ask for, you're paying for the building. From ₹89.</p></div>
-        </div>
-        <div class="value">
-          <span class="v-ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-          <div><h4>Always Within Reach</h4><p>We don't build cafes and hope you find us. We go where you already are — your floor, your campus, your gym. We call them Pods.</p></div>
+  <div class="wh-pack-body">
+    <div class="wh-wrap">
+      <div class="wh-sh reveal">
+        <div class="wh-sh-meta">
+          <span class="wh-sh-label">The P.S. Pack</span>
+          <span class="wh-sh-num">No. 04</span>
         </div>
       </div>
-      <a href="about.html" class="btn lg" style="margin-top:32px">Why P.S. exists <span class="ar">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ░░░ FEATURED PRODUCTS ░░░ -->
-<section class="section">
-  <div class="wrap">
-    <div class="sec-head reveal" style="flex-direction:row;align-items:flex-end;justify-content:space-between;max-width:none">
-      <div><span class="eyebrow">Spot On Quality</span><h2 style="margin-top:12px">The everyday line-up</h2></div>
-      <a href="menu.html" class="tlink">Full menu <span class="ar">→</span></a>
-    </div>
-    <div class="grid g-4">
-      <article class="item reveal">
-        <div class="shot"><image-slot id="p1" placeholder="Cappuccino"></image-slot><span class="tag ghost">Bestseller</span><button class="fav" aria-label="Save"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 20s-7-4.4-9.2-8.5C1.2 8.3 2.6 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.4 0 4.8 3.3 3.2 6.5C19 15.6 12 20 12 20z"/></svg></button></div>
-        <div class="meta"><span class="iname">Cappuccino</span><span class="ingr">Espresso / Steamed milk / Foam</span><span class="stars">★★★★★</span><div class="buyrow"><span class="price">₹89</span><button class="add" data-add="Cappuccino"><svg class="i" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M12 5v14M5 12h14"/></svg> Add</button></div></div>
-      </article>
-      <article class="item reveal" data-d="1">
-        <div class="shot"><image-slot id="p2" placeholder="Cold Brew"></image-slot><span class="tag">Popular</span><button class="fav" aria-label="Save"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 20s-7-4.4-9.2-8.5C1.2 8.3 2.6 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.4 0 4.8 3.3 3.2 6.5C19 15.6 12 20 12 20z"/></svg></button></div>
-        <div class="meta"><span class="iname">Cold Brew</span><span class="ingr">18hr steep / Black / Ice</span><span class="stars">★★★★★</span><div class="buyrow"><span class="price">₹119</span><button class="add" data-add="Cold Brew"><svg class="i" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M12 5v14M5 12h14"/></svg> Add</button></div></div>
-      </article>
-      <article class="item matcha reveal" data-d="2">
-        <div class="shot" style="background:var(--matcha-tint)"><image-slot id="p3" placeholder="Iced Matcha"></image-slot><span class="tag matcha">Ceremonial</span><button class="fav" aria-label="Save"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 20s-7-4.4-9.2-8.5C1.2 8.3 2.6 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.4 0 4.8 3.3 3.2 6.5C19 15.6 12 20 12 20z"/></svg></button></div>
-        <div class="meta"><span class="iname">Iced Matcha Latte</span><span class="ingr">Ceremonial / Oat milk / Ice</span><span class="stars">★★★★★</span><div class="buyrow"><span class="price">₹149</span><button class="add" data-add="Iced Matcha Latte"><svg class="i" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M12 5v14M5 12h14"/></svg> Add</button></div></div>
-      </article>
-      <article class="item reveal" data-d="3">
-        <div class="shot"><image-slot id="p4" placeholder="Butter Croissant"></image-slot><span class="tag" style="background:var(--ink)">Baked daily</span><button class="fav" aria-label="Save"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 20s-7-4.4-9.2-8.5C1.2 8.3 2.6 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.4 0 4.8 3.3 3.2 6.5C19 15.6 12 20 12 20z"/></svg></button></div>
-        <div class="meta"><span class="iname">Butter Croissant</span><span class="ingr">Baked daily / Flaky / Warm</span><span class="stars">★★★★☆</span><div class="buyrow"><span class="price">₹99</span><button class="add" data-add="Butter Croissant"><svg class="i" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M12 5v14M5 12h14"/></svg> Add</button></div></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ░░░ COMPARISON ░░░ -->
-<section class="section bg-panel">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Why it works differently</span>
-      <h2>The ₹300 latte,<br><span class="tc">itemised.</span></h2>
-      <p>Same specialty beans. We just stopped charging you for everything around them.</p>
-    </div>
-    <div class="compare reveal" data-d="1">
-      <div class="compare-row compare-head">
-        <div class="c-feat">What you pay for</div>
-        <div class="c-them">The ₹300 cafe</div>
-        <div class="c-us">P.S. Coffee</div>
+      <h2 class="wh-h2 light reveal">Coffee on<br><em>subscription.</em></h2>
+      <div class="wh-pack-feats reveal" data-d="1">
+        <div><span class="wh-pack-feat-lbl">10% off, always</span><p>Specialty grade espresso delivered to your door. From ₹799/month. Never run out again.</p></div>
+        <div><span class="wh-pack-feat-lbl">30 capsules + brewer</span><p>One handheld brewer, 30 specialty capsules, and a reusable tote. Everything in one box.</p></div>
+        <div><span class="wh-pack-feat-lbl">Skip, pause, cancel</span><p>Three taps. No phone calls, no hidden fees, no commitments you didn't sign up for.</p></div>
       </div>
-      <div class="compare-row">
-        <div class="c-feat">100% Arabica specialty beans</div>
-        <div class="c-them"><span class="ic yes" style="background:#cfcabf;color:#fff">✓</span> Sometimes</div>
-        <div class="c-us"><span class="ic yes">✓</span> Always</div>
-      </div>
-      <div class="compare-row">
-        <div class="c-feat">800 sq ft of real estate</div>
-        <div class="c-them"><span class="ic no">✕</span> In your cup</div>
-        <div class="c-us"><span class="ic yes">✓</span> Removed</div>
-      </div>
-      <div class="compare-row">
-        <div class="c-feat">Queue &amp; counter wait</div>
-        <div class="c-them"><span class="ic no">✕</span> 6–10 min</div>
-        <div class="c-us"><span class="ic yes">✓</span> Ready on arrival</div>
-      </div>
-      <div class="compare-row">
-        <div class="c-feat">Daily-drinker price</div>
-        <div class="c-them"><span class="ic no">✕</span> ₹280+</div>
-        <div class="c-us"><span class="ic yes">✓</span> From ₹89</div>
+      <div class="wh-pack-ctas reveal" data-d="2">
+        <a href="pack.html" class="wh-btn white">Build your pack</a>
+        <a href="pack.html#office" class="wh-btn outline-white">Office packs</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ░░░ MATCHA STANDALONE BAND ░░░ -->
-<section class="section bg-matcha matchaband">
-  <div class="wrap mb-grid">
-    <div class="mb-fig reveal">
-      <image-slot id="matcha-home" placeholder="Iced ceremonial matcha — close, on green" fit="cover"></image-slot>
+<!-- ══ TWO-UP ══ -->
+<div class="wh-twoup">
+  <a class="wh-twoup-block" href="menu.html">
+    <div class="wh-twoup-img"><image-slot placeholder="Menu flat-lay — coffee menu items overhead, dark ceramic, editorial" fit="cover"></image-slot></div>
+    <div class="wh-twoup-label">
+      <div class="wh-twoup-meta"><p class="wh-twoup-kicker">What we serve</p><p class="wh-twoup-title">Menu</p></div>
+      <span class="wh-link" style="color:var(--wh-ink)">Explore <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </div>
-    <div class="reveal" data-d="1">
-      <span class="mb-kick">P.S. — Precisely Steeped</span>
-      <h2>Matcha tonight.<br>Coffee tomorrow.</h2>
-      <p class="mb-lede">A whole second ritual, taken just as seriously as the first. Ceremonial-grade matcha, whisked properly — even at Pod speed. The evening pivot for late deadlines and early starts. Not the powder. Not even close.</p>
-      <div class="mb-tags"><span>Ceremonial grade</span><span>Whisked, not shaken</span><span>From ₹129</span></div>
-      <a href="matcha.html" class="btn on-matcha lg" style="margin-top:30px">Enter the matcha menu <span class="ar">→</span></a>
+  </a>
+  <a class="wh-twoup-block" href="story.html">
+    <div class="wh-twoup-img"><image-slot placeholder="Story — founder at espresso machine, editorial black and white, depth of field" fit="cover"></image-slot></div>
+    <div class="wh-twoup-label">
+      <div class="wh-twoup-meta"><p class="wh-twoup-kicker">The founding idea</p><p class="wh-twoup-title">About P.S.</p></div>
+      <span class="wh-link" style="color:var(--wh-ink)">Read more <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 11.5L11.5 1.5M11.5 1.5H4.5M11.5 1.5V8.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </div>
-  </div>
-</section>
-
-<!-- ░░░ BENEFITS ░░░ -->
-<section class="section bg-ink">
-  <div class="wrap">
-    <div class="sec-head center reveal"><span class="eyebrow" style="color:var(--tc)">Before you wake till you sleep</span><h2 style="color:#fff">Built for every loop<br>of your day.</h2></div>
-    <div class="benefits">
-      <div class="benefit reveal"><span class="b-ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 9v6M20 9v6M7 12h10M7 8v8M17 8v8"/></svg></span><h4>6am gym crowd</h4><p>Pre-workout sorted. Pod by the entrance.</p></div>
-      <div class="benefit reveal" data-d="1"><span class="b-ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h4>9am pre-meeting</h4><p>Ready before your first call. No queue.</p></div>
-      <div class="benefit reveal" data-d="2"><span class="b-ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2 2M16.4 16.4l2 2M18.4 5.6l-2 2M7.6 16.4l-2 2"/><circle cx="12" cy="12" r="3.5"/></svg></span><h4>3pm slump rescue</h4><p>The second cup, before you think to ask.</p></div>
-      <div class="benefit reveal" data-d="3"><span class="b-ico"><svg class="i" viewBox="0 0 24 24"><path d="M20 13a8 8 0 1 1-9-8 6 6 0 0 0 9 8z"/></svg></span><h4>9pm matcha pivot</h4><p>Late deadline fuel that won't wreck sleep.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░░ POD / HOW IT WORKS ░░░ -->
-<section class="section">
-  <div class="wrap feature">
-    <div class="reveal">
-      <span class="eyebrow">The Format</span>
-      <h2 class="display" style="font-size:clamp(30px,4.4vw,58px);margin-top:14px">Not cafes.<br><span class="tc">Pods.</span></h2>
-      <p class="lede" style="margin-top:22px;max-width:44ch;color:var(--muted)">A Pod is the smallest self-contained unit of something essential. 50–200 sq ft of precision — fit where a photocopier used to be, planted inside the building you're already in. It does exactly one thing, completely: your coffee, fresh, ready, now.</p>
-      <div class="split-stat" style="margin-top:38px">
-        <div class="s"><div class="n">50–200<span class="u"> ft²</span></div><div class="l">Per Pod footprint</div></div>
-        <div class="s"><div class="n">90<span class="u">s</span></div><div class="l">From tap to cup in hand</div></div>
-        <div class="s"><div class="n">3</div><div class="l">Taps to order, start to finish</div></div>
-      </div>
-      <a href="about.html#pods" class="tlink" style="margin-top:34px">How the Pods work <span class="ar">→</span></a>
-    </div>
-    <div class="feature-fig reveal" data-d="1">
-      <image-slot id="pod-shot" placeholder="A Pod / compact counter" fit="cover"></image-slot>
-    </div>
-  </div>
-</section>
-
-<!-- ░░░ TESTIMONIALS ░░░ -->
-<section class="section bg-panel">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">From the cup-testing rounds</span>
-      <h2>What early tasters<br>told us.</h2>
-      <p>P.S. isn't live yet. These are notes from our first tasting sessions — the honest ones we're building the menu around.</p>
-    </div>
-    <div class="testi-grid">
-      <div class="testi reveal">
-        <span class="stars">★★★★★</span>
-        <blockquote>"I genuinely didn't believe the price until I tasted it. This is my co-working machine coffee's worst nightmare."</blockquote>
-        <div class="who"><span class="ava">R</span><div><div class="nm">Rhea M.</div><div class="rl">Freelance designer · taster round 02</div></div></div>
-      </div>
-      <div class="testi reveal" data-d="1">
-        <span class="stars">★★★★★</span>
-        <blockquote>"Pre-workout coffee that's actually good, right by the gym door — that's the whole product for me. Sold."</blockquote>
-        <div class="who"><span class="ava">A</span><div><div class="nm">Arjun K.</div><div class="rl">Gym regular · taster round 01</div></div></div>
-      </div>
-      <div class="testi reveal" data-d="2">
-        <span class="stars">★★★★★</span>
-        <blockquote>"₹89 specialty grade means I don't have to choose between quality and my budget anymore. Finally."</blockquote>
-        <div class="who"><span class="ava">S</span><div><div class="nm">Sneha P.</div><div class="rl">Student · taster round 02</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░░ FAQ ░░░ -->
-<section class="section">
-  <div class="wrap">
-    <div class="sec-head center reveal"><span class="eyebrow">Plain &amp; simple</span><h2>Questions, answered<br>without the theatre.</h2></div>
-    <div class="faq reveal" data-d="1">
-      <div class="faq-item open"><button class="faq-q">How is it specialty grade at ₹89? <span class="pm"></span></button><div class="faq-a" style="max-height:none"><div class="inner">We didn't lower the bean standard — we lowered everything else. No 800 sq ft of real estate, no interior budget, no table service. A Pod is 50–200 sq ft and goes where you already are. The savings go into the cup, not the rent.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Is this instant coffee? <span class="pm"></span></button><div class="faq-a"><div class="inner">No. It's a 100% espresso shot from 100% genuine specialty Arabica beans — pulled fresh, ready before you arrive. "Instant" describes the convenience, never the ingredient.</div></div></div>
-      <div class="faq-item"><button class="faq-q">What is the P.S. Pack? <span class="pm"></span></button><div class="faq-a"><div class="inner">It's our subscription. Prepay 10 or 20 cups, save up to 20%, and your credits apply automatically on any drink — so a daily cup needs zero friction. <a href="pack.html" style="color:var(--tc);font-weight:600">See the Pack →</a></div></div></div>
-      <div class="faq-item"><button class="faq-q">Where will the Pods be? <span class="pm"></span></button><div class="faq-a"><div class="inner">Inside the buildings you're already in — co-working floors, corporate campuses, university food courts, gym lobbies. We place by measured foot traffic, not neighbourhood charm. Tell us where you'd want one on the waitlist.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Are you live yet? <span class="pm"></span></button><div class="faq-a"><div class="inner">Not yet — we're in the cup-testing phase. This site is here to gauge interest and collect honest feedback. The add-to-cart buttons are a visual preview, not a live store. Join the waitlist and you'll be first to know when a Pod opens near you.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Can I host a Pod in my space? <span class="pm"></span></button><div class="faq-a"><div class="inner">Yes — that's exactly how we grow. If you run a co-working space, campus, gym or office, a Pod brings specialty coffee to your people with zero kitchen overhead for you. Start on the <a href="partnership.html" style="color:var(--tc);font-weight:600">Partnership</a> page.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░░ FEEDBACK + WAITLIST ░░░ -->
-<section class="section bg-panel" id="feedback">
-  <div class="wrap">
-    <div class="sec-head center reveal"><span class="eyebrow">We're not live yet</span><h2>Help us get the<br>first cup right.</h2><p>P.S. is still in the cup-testing phase. Your honest read shapes the menu, the pricing, and where the first Pods land.</p></div>
-    <div class="grid g-2">
-
-      <div class="formcard reveal" data-form-wrap>
-        <h3>Tell us<br>what you think.</h3>
-        <p class="sub">Bad coffee mornings are the enemy. Tell us what would make you order daily.</p>
-        <form class="form" data-ps-form="feedback">
-          <div class="field"><label for="fb-name">Name</label><input id="fb-name" name="name" required placeholder="Your name"><span class="err">Please add your name</span></div>
-          <div class="field"><label>Which of you is this?</label>
-            <div class="chips"><span class="chip">Corporate</span><span class="chip">Freelancer</span><span class="chip">Gym crowd</span><span class="chip">Student</span><span class="chip">Daily drinker</span></div>
-          </div>
-          <div class="field"><label for="fb-msg">What would make you order daily?</label><textarea id="fb-msg" name="message" required placeholder="Be honest — we'd rather hear it now"></textarea><span class="err">A line or two would help</span></div>
-          <button class="btn lg block" type="submit">Send feedback <span class="ar">→</span></button>
-        </form>
-        <div class="form-success">
-          <p class="ps-line"><span class="ps">P.S.</span> — Noted. Genuinely.</p>
-          <p style="color:var(--muted);max-width:36ch">Thank you. Every line goes into the build. We'll make the first cup count.</p>
-        </div>
-      </div>
-
-      <div class="formcard reveal" data-d="1" id="waitlist" data-form-wrap>
-        <h3>Join the<br>waitlist.</h3>
-        <p class="sub">Be first to know when a Pod opens near you. No spam — the occasional postscript.</p>
-        <form class="form" data-ps-form="waitlist">
-          <div class="row-2">
-            <div class="field"><label for="wl-name">Name</label><input id="wl-name" name="name" required placeholder="Your name"><span class="err">Required</span></div>
-            <div class="field"><label for="wl-email">Email</label><input id="wl-email" name="email" type="email" required placeholder="you@email.com"><span class="err">Valid email please</span></div>
-          </div>
-          <div class="field"><label for="wl-where">Where should a Pod open?</label><input id="wl-where" name="where" placeholder="e.g. Kharvel Nagar co-working, or my gym"></div>
-          <div class="field"><label>I'd come for</label>
-            <div class="chips"><span class="chip">Coffee</span><span class="chip">Matcha</span><span class="chip">Cold brew</span><span class="chip">Food</span></div>
-          </div>
-          <button class="btn accent lg block" type="submit">Join the waitlist <span class="ar">→</span></button>
-        </form>
-        <div class="form-success">
-          <p class="ps-line"><span class="ps">P.S.</span> — You're on the list.</p>
-          <p style="color:var(--muted);max-width:36ch">We'll be in touch the moment your nearest Pod is ready. See you in the morning.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ░░░ MARQUEE ░░░ -->
-<div class="marquee">
-  <div class="marquee-track">
-    <span class="m-item">Spot On Quality <span class="dot">●</span> Spot On Pricing <span class="dot">●</span> Spot On Reachability <span class="dot">●</span> Before You Wake Till You Sleep <span class="dot">●</span></span>
-    <span class="m-item">Spot On Quality <span class="dot">●</span> Spot On Pricing <span class="dot">●</span> Spot On Reachability <span class="dot">●</span> Before You Wake Till You Sleep <span class="dot">●</span></span>
-  </div>
+  </a>
 </div>
+
+<!-- ══ EMAIL SIGNUP ══ -->
+<section class="wh-signup" id="waitlist">
+  <div class="wh-signup-media">
+    <image-slot placeholder="Newsletter — coffee cup by window, morning mist, soft focus, atmospheric" fit="cover"></image-slot>
+    <div class="wh-signup-veil"></div>
+  </div>
+  <div class="wh-signup-body wh-wrap">
+    <p class="wh-signup-eyebrow reveal">Stay in the loop</p>
+    <h2 class="wh-signup-h2 reveal" data-d="1">New Pods. Seasonal<br><em>menus. First to know.</em></h2>
+    <p class="wh-signup-sub reveal" data-d="2">And 10% off your first pack, when you subscribe.</p>
+    <form class="wh-signup-form reveal" data-d="3" data-ps-form="newsletter">
+      <div class="wh-signup-row">
+        <input type="email" name="email" placeholder="Your email address" required>
+        <button type="submit" class="wh-btn white">Subscribe</button>
+      </div>
+      <p class="wh-signup-fine">P.S. — We send maybe 4 emails a year. Your inbox is safe.</p>
+    </form>
+  </div>
+</section>
 
 <div id="ps-footer"></div>
-
 <script src="assets/image-slot.js"></script>
 <script src="assets/ps.js"></script>
+<script>
+(function(){
+  /* tab switcher */
+  var tabs  = document.querySelectorAll('.wh-tab');
+  var cards = document.querySelectorAll('.wh-fav-card');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click',function(){
+      var t=tab.dataset.wtab;
+      tabs.forEach(function(x){x.classList.remove('on');x.setAttribute('aria-selected','false');});
+      tab.classList.add('on');tab.setAttribute('aria-selected','true');
+      cards.forEach(function(c){c.hidden=c.dataset.wtabContent!==t;});
+    });
+  });
+  /* drag scroll pods */
+  var sc=document.getElementById('podsScroller');
+  if(sc){
+    var down=false,sx,sl;
+    sc.addEventListener('mousedown',function(e){down=true;sx=e.pageX-sc.offsetLeft;sl=sc.scrollLeft;sc.style.cursor='grabbing';});
+    document.addEventListener('mouseup',function(){down=false;if(sc)sc.style.cursor='grab';});
+    sc.addEventListener('mousemove',function(e){if(!down)return;e.preventDefault();sc.scrollLeft=sl-(e.pageX-sc.offsetLeft-sx);});
+  }
+})();
+</script>
 </body>
 </html>
