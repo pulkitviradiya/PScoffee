@@ -86,7 +86,7 @@ h1,h2,h3,h4,
 @media(max-width:680px){ .wh-sh-row { grid-template-columns: 1fr; } }
 
 /* section heading sizes — WatchHouse large serif */
-.wh-h2 { font-size: clamp(40px,5.8vw,90px); color: var(--wh-ink); font-weight: 600; }
+.wh-h2 { font-size: clamp(36px,4.2vw,64px); color: var(--wh-ink); font-weight: 600; }
 .wh-h2 em { font-style: italic; font-weight: 400; }
 .wh-h2.light { color: #F5F0E8; }
 .wh-body-text {
@@ -212,6 +212,8 @@ a:hover > .wh-link::after { transform: scaleX(1); }
   padding: 0 !important;
   transform: none !important;
   transition: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 /* Logo: bold serif, WatchHouse-style with period */
@@ -246,47 +248,52 @@ a:hover > .wh-link::after { transform: scaleX(1); }
   justify-content: center;
 }
 .nav-links a {
-  display: flex;
-  align-items: center;
-  padding: 0 clamp(10px,1.3vw,20px);
-  font-family: var(--wh-sans);
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--wh-ink);
-  text-decoration: none;
-  position: relative;
-  transition: opacity .2s;
-  white-space: nowrap;
-  letter-spacing: .01em;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 clamp(10px,1.3vw,20px) !important;
+  font-family: var(--wh-sans) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: var(--wh-ink) !important;
+  text-decoration: none !important;
+  position: relative !important;
+  transition: opacity .2s !important;
+  white-space: nowrap !important;
+  letter-spacing: .01em !important;
+  text-transform: none !important;
   opacity: .75;
 }
 .nav-links a::after {
-  content: '';
-  position: absolute;
+  content: '' !important;
+  position: absolute !important;
   bottom: 0; left: clamp(10px,1.3vw,20px); right: clamp(10px,1.3vw,20px);
-  height: 1px;
-  background: var(--wh-ink);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .25s ease;
+  height: 1px !important;
+  width: auto !important;
+  background: var(--wh-ink) !important;
+  transform: scaleX(0) !important;
+  transform-origin: left !important;
+  transition: transform .25s ease !important;
 }
-.nav-links a:hover { opacity: 1; }
+.nav-links a:hover { opacity: 1 !important; color: var(--wh-ink) !important; }
 .nav-links a:hover::after,
-.nav-links a.active::after { transform: scaleX(1); }
-.nav-links a.active { opacity: 1; }
+.nav-links a.active::after { transform: scaleX(1) !important; }
+.nav-links a.active { opacity: 1 !important; }
+/* Remove orange pack-link from ps.css */
+.nav-links a.pack-link { color: var(--wh-ink) !important; }
+.nav-links a.pack-link::after { background: var(--wh-ink) !important; width: auto !important; }
 
 /* Right tool links — WatchHouse text style */
 .nav-tools {
   display: flex;
   align-items: stretch;
   padding-right: var(--wh-gut);
-  gap: 0;
+  gap: 2px;
 }
 .ntool {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 10px;
+  padding: 0 12px;
   color: var(--wh-ink);
   text-decoration: none;
   font-family: var(--wh-sans);
@@ -423,7 +430,7 @@ a:hover > .wh-link::after { transform: scaleX(1); }
 .wh-hero h1 {
   font-family: var(--wh-serif);
   font-weight: 700;
-  font-size: clamp(58px,9vw,140px);
+  font-size: clamp(52px,7.5vw,110px);
   line-height: .88;
   letter-spacing: -.025em;
   color: #F5F0E8;
@@ -502,16 +509,18 @@ a:hover > .wh-link::after { transform: scaleX(1); }
 .wh-banner-img {
   position: absolute;
   inset: 0;
+  background: #1a1712;
   transition: transform .7s cubic-bezier(.25,.46,.45,.94);
 }
 .wh-banner:hover .wh-banner-img { transform: scale(1.04); }
-.wh-banner-img image-slot { width: 100%; height: 100%; }
+.wh-banner-img image-slot { width: 100%; height: 100%; display: block; }
 .wh-banner::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(17,17,17,.72) 0%, rgba(17,17,17,.1) 55%, transparent 100%);
+  background: linear-gradient(to top, rgba(17,17,17,.82) 0%, rgba(17,17,17,.38) 45%, rgba(17,17,17,.18) 100%);
   z-index: 1;
+  pointer-events: none;
 }
 .wh-banner-body {
   position: absolute;
@@ -532,7 +541,7 @@ a:hover > .wh-link::after { transform: scaleX(1); }
 /* Large heading banner (right) — WatchHouse "Our Houses." style */
 .wh-banner-heading {
   font-family: var(--wh-serif);
-  font-size: clamp(44px,6.5vw,96px);
+  font-size: clamp(38px,5vw,76px);
   font-weight: 700;
   line-height: .9;
   letter-spacing: -.02em;
@@ -786,7 +795,7 @@ a:hover > .wh-link::after { transform: scaleX(1); }
 .wh-pack-body .wh-sh-meta { border-top-color: rgba(244,238,227,.18); }
 .wh-pack-body .wh-sh-label,
 .wh-pack-body .wh-sh-num { color: rgba(244,238,227,.45); }
-.wh-pack-body .wh-h2 { font-size: clamp(46px,7.5vw,112px); margin-top: 12px; margin-bottom: clamp(32px,4vw,52px); }
+.wh-pack-body .wh-h2 { font-size: clamp(40px,6vw,90px); margin-top: 12px; margin-bottom: clamp(32px,4vw,52px); }
 .wh-pack-feats {
   display: grid;
   grid-template-columns: repeat(3,1fr);
