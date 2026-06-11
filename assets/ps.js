@@ -5,13 +5,13 @@
   "use strict";
 
   var PAGES = [
-    {href:"pack.html",        label:"The Pack",    n:"01", primary:true, cls:"pack-link"},
+    {href:"pack.html",        label:"Subscribe",   n:"01", primary:true, cls:"pack-link"},
     {href:"menu.html",        label:"Menu",        n:"02", primary:true},
-    {href:"matcha.html",      label:"Matcha",      n:"03", primary:true},
+    {href:"about.html#pods",  label:"Visit us",    n:"03", primary:true},
     {href:"app.html",         label:"App",         n:"04", primary:true},
-    {href:"about.html",       label:"About",       n:"05", primary:true},
-    {href:"story.html",       label:"Story",       n:"06", primary:false},
-    {href:"partnership.html", label:"Partnership", n:"07", primary:false}
+    {href:"story.html",       label:"About",       n:"05", primary:true},
+    {href:"partnership.html", label:"Partner",     n:"06", primary:true},
+    {href:"about.html",       label:"Pods",        n:"07", primary:true}
   ];
   var here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
@@ -30,22 +30,23 @@
       return '<a href="'+p.href+'" class="'+(act+cls).trim()+'">'+p.label+'.</a>';
     }).join("");
     return '<div class="wh-announce">'+
-        '<span>○&nbsp;&nbsp;Specialty coffee · Pod format · From ₹89</span>'+
-        '&emsp;<a href="pack.html">Subscribe &amp; save 10% →</a>'+
+        '<span>○ 100% Arabica. From ₹89. Your coffee is ready before you arrive.</span>'+
+        '<span class="wh-region">₹ INR&nbsp;&nbsp;|&nbsp;&nbsp;India</span>'+
       '</div>'+
       '<nav class="nav" id="psNav">'+
-        '<a href="index.html" class="nav-logo" aria-label="P.S. Coffee home">P.S. Coffee.</a>'+
+        '<a href="index.html" class="nav-logo" aria-label="P.S. Coffee home"><span class="ps-wordmark-ps">P.S.</span> <span class="ps-wordmark-coffee">Coffee.</span></a>'+
         '<div class="nav-links">'+links+'</div>'+
         '<div class="nav-tools">'+
-          '<a href="index.html#feedback" class="ntool ntool-text" title="Give feedback">Feedback.</a>'+
-          '<a href="menu.html" class="ntool ntool-text" title="Menu">Menu.</a>'+
-          '<a href="menu.html" class="ntool cart-tool" title="Your cart" aria-label="Your cart">'+ICO.cart+'<span class="cart-count" id="psCartCount">0</span></a>'+
+          '<a href="menu.html" class="ntool ntool-text" title="Search">Search.</a>'+
+          '<a href="app.html" class="ntool ntool-text" title="Login">Login.</a>'+
+          '<a href="pack.html" class="ntool ntool-text" title="Wishlist">Wishlist.</a>'+
+          '<a href="menu.html" class="ntool ntool-text cart-tool" title="Your cart" aria-label="Your cart">Cart [0]</a>'+
           '<button class="nav-burger" id="psBurger" aria-label="Menu"><span></span><span></span><span></span></button>'+
         '</div>'+
       '</nav>'+
       '<div class="drawer" id="psDrawer">'+
         PAGES.map(function(p){return '<a href="'+p.href+'"><span>'+p.label+'.</span><span class="n">'+p.n+'</span></a>';}).join("")+
-        '<a href="index.html#feedback"><span>Feedback.</span><span class="n">→</span></a>'+
+        '<a href="index.html#waitlist"><span>Waitlist.</span><span class="n">→</span></a>'+
       '</div>';
   }
 
@@ -54,28 +55,31 @@
       '<div class="wrap">'+
         '<div class="f-top">'+
           '<div class="f-col f-brand">'+
-            '<div class="display">P.S.</div>'+
-            '<p>An instant coffee brand — without the instant coffee. 100% Arabica, ready before you arrive. From ₹89.</p>'+
+            '<div class="display ps-wordmark"><span class="ps-wordmark-ps">P.S.</span> <span class="ps-wordmark-coffee">Coffee.</span></div>'+
+            '<a href="story.html">Story</a><a href="story.html">Journal</a><a href="partnership.html">Careers</a><a href="mailto:hello@pscoffee.in">Media &amp; PR</a><a href="partnership.html">Franchise</a>'+
+          '</div>'+
+          '<div class="f-col"><h4>Pods.</h4>'+
+            '<a href="about.html#pods">Visit us</a><a href="app.html">Order ahead</a><a href="partnership.html#host">Host a Pod</a><a href="partnership.html">Corporate Packs</a>'+
+          '</div>'+
+          '<div class="f-col"><h4>Help & Info.</h4>'+
+            '<a href="index.html#waitlist">FAQs</a><a href="story.html">Brew guides</a><a href="partnership.html">Shipping</a><a href="mailto:hello@pscoffee.in">Returns</a><a href="mailto:hello@pscoffee.in">Contact</a>'+
+          '</div>'+
+          '<div class="f-col f-mosaic" aria-label="P.S. Coffee imagery">'+
+            '<span></span><span></span><span></span><span></span>'+
+            '<small>@pscoffee</small>'+
+          '</div>'+
+          '<div class="f-col f-email"><h4>P.S. See you in the morning.</h4>'+
+            '<p>New Pods. Usual orders. Pack reminders. No theatre, no daily friction.</p>'+
             '<form class="news" data-ps-form="newsletter">'+
-              '<input name="email" type="email" required placeholder="Email for the occasional postscript">'+
-              '<button class="btn accent sm" type="submit">Notify me</button>'+
+              '<input name="email" type="email" required placeholder="Email address">'+
+              '<button class="btn accent sm" type="submit">Subscribe</button>'+
             '</form>'+
-          '</div>'+
-          '<div class="f-col"><h4>Explore</h4>'+
-            '<a href="menu.html">Menu</a><a href="matcha.html">Matcha</a><a href="pack.html">The Pack</a><a href="app.html">Our App</a><a href="story.html">Story</a><a href="about.html">About</a>'+
-          '</div>'+
-          '<div class="f-col"><h4>The Format</h4>'+
-            '<a href="about.html#pods">The Pods</a><a href="pack.html">P.S. Pack</a><a href="matcha.html">Matcha</a><a href="partnership.html#host">Host a Pod</a>'+
-          '</div>'+
-          '<div class="f-col"><h4>Pre-launch</h4>'+
-            '<a href="index.html#feedback">Give feedback</a><a href="index.html#waitlist">Join the waitlist</a><a href="mailto:hello@pscoffee.in">hello@pscoffee.in</a>'+
-            '<div class="pay"><span>UPI</span><span>VISA</span><span>RuPay</span><span>Mastercard</span></div>'+
           '</div>'+
         '</div>'+
         '<div class="f-bot">'+
-          '<span>© 2026 P.S. Coffee · Ahmedabad · Est. 2026</span>'+
-          '<span>Spot On Quality · Spot On Pricing · Spot On Reachability</span>'+
-          '<span>P.S. — Not live yet. Almost.</span>'+
+          '<span>© P.S. Coffee 2026</span>'+
+          '<span>Terms&nbsp;&nbsp;&nbsp; Privacy&nbsp;&nbsp;&nbsp; Cookies</span>'+
+          '<span>Facebook.&nbsp;&nbsp;&nbsp; Instagram.&nbsp;&nbsp;&nbsp; LinkedIn.</span>'+
         '</div>'+
       '</div>'+
     '</footer>';
@@ -196,16 +200,38 @@
       var target = targetSel ? document.querySelector(targetSel) : tabs.nextElementSibling;
       if(!target) return;
       var items = target.querySelectorAll("[data-cat]");
+      function applyFilter(f){
+        f = f || "all";
+        tabs.querySelectorAll("[data-filter]").forEach(function(p){
+          p.classList.toggle("active", p.getAttribute("data-filter")===f);
+        });
+        items.forEach(function(it){
+          var show = (f==="all") || it.getAttribute("data-cat")===f;
+          it.style.display = show ? "" : "none";
+        });
+      }
       tabs.querySelectorAll("[data-filter]").forEach(function(pill){
         pill.addEventListener("click", function(){
-          tabs.querySelectorAll("[data-filter]").forEach(function(p){p.classList.remove("active");});
-          pill.classList.add("active");
           var f = pill.getAttribute("data-filter");
-          items.forEach(function(it){
-            var show = (f==="all") || it.getAttribute("data-cat")===f;
-            it.style.display = show ? "" : "none";
-          });
+          applyFilter(f);
+          if(history.replaceState){
+            var url = new URL(location.href);
+            url.searchParams.set("cat", f);
+            history.replaceState(null, "", url.pathname + url.search + location.hash);
+          }
         });
+      });
+      var requested = new URLSearchParams(location.search).get("cat");
+      if(!requested && location.hash){
+        var h = location.hash.replace("#menu-","");
+        if(h==="coffee" || h==="matcha" || h==="food") requested = h;
+      }
+      if(requested) applyFilter(requested);
+    });
+    document.querySelectorAll("[data-menu-link]").forEach(function(card){
+      card.addEventListener("click", function(e){
+        if(e.target.closest("button,a")) return;
+        location.href = card.getAttribute("data-menu-link");
       });
     });
   }
@@ -310,13 +336,13 @@
   var ACCENTS = [
     {v:"#E8400C", name:"Electric Terracotta"},
     {v:"#C8431F", name:"Burnt Clay"},
-    {v:"#16140F", name:"Espresso Black"},
+    {v:"#B8300A", name:"Brick Deep"},
     {v:"#2F6B43", name:"Deep Matcha"}
   ];
   var CANVAS = [
-    {v:"#F4EEE3", label:"Cream"},
-    {v:"#FAF6EE", label:"Light"},
-    {v:"#FFFFFF", label:"White"}
+    {v:"#FAF6EE", label:"Steam"},
+    {v:"#F2EBD9", label:"Oat"},
+    {v:"#E8DCC8", label:"Linen"}
   ];
   var SHAPES = [
     {v:"4px", label:"Sharp"},
@@ -328,6 +354,7 @@
   function twApply(t){
     var r=document.documentElement;
     r.style.setProperty("--tc", t.tc);
+    r.style.setProperty("--wh-tc", t.tc);
     r.style.setProperty("--tc-deep", shade(t.tc,-14));
     r.style.setProperty("--tc-tint", tint(t.tc));
     r.style.setProperty("--paper", t.paper);
@@ -392,7 +419,7 @@
   twApply(twRead());
   function init(){
     inject(); navBehaviour(); heroSlider(); faq(); reveal();
-    filters(); chips(); favs(); cart(); forms(); anchors(); buildPanel(); loader();
+    filters(); chips(); favs(); cart(); forms(); anchors(); buildPanel();
   }
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", init);
   else init();

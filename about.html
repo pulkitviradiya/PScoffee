@@ -3,142 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>P.S. Coffee — About</title>
-<meta name="description" content="Spot On Quality. Spot On Pricing. Spot On Reachability. We want to be there before you wake till you sleep — which is why we built Pods, not cafes.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700\&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300\&display=swap" rel="stylesheet">
+<title>P.S. Coffee. | Pods, Not Cafes.</title>
+<meta name="description" content="P.S. Coffee Pods are compact specialty coffee stations inside the buildings you already use.">
 <link rel="stylesheet" href="assets/ps.css">
 <link rel="stylesheet" href="assets/wh.css">
-<script>(function(){try{var t=JSON.parse(localStorage.getItem('ps-tweaks')||'{}');var r=document.documentElement;if(t.tc)r.style.setProperty('--tc',t.tc);if(t.paper)r.style.setProperty('--paper',t.paper);if(t.scale)r.style.setProperty('--type-scale',t.scale);if(t.btn)r.style.setProperty('--btn-radius',t.btn);}catch(e){}})();</script>
-<style>
-.about-hero{background:linear-gradient(180deg,var(--panel) 0%,var(--paper) 100%);padding-top:clamp(34px,5vw,64px)}
-.about-hero h1{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(42px,7.6vw,108px);line-height:.92;letter-spacing:-.03em;margin-top:18px}
-.about-hero h1 .tc{color:var(--tc)}
-.prose-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,60px)}
-.prose-2 p{font-size:clamp(15px,1.15vw,17px);color:var(--muted);line-height:1.65}
-.prose-2 p+p{margin-top:16px}
-.lead{font-size:clamp(20px,2vw,28px)!important;color:var(--ink)!important;line-height:1.32;font-family:"Archivo",sans-serif;font-weight:700;letter-spacing:-.02em}
-.promises{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,20px)}
-.promise{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;transition:.25s}
-.promise:hover{border-color:var(--tc);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
-.promise .pn{font-family:"Archivo",sans-serif;font-weight:800;font-size:13px;color:var(--tc);letter-spacing:.06em}
-.promise h3{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(20px,2vw,26px);margin:14px 0 10px;letter-spacing:-.02em}
-.promise p{font-size:14.5px;color:var(--muted)}
-.seg{display:grid;grid-template-columns:210px 1fr 210px;gap:24px;align-items:baseline;padding:26px 0;border-top:1px solid var(--line)}
-.seg:last-child{border-bottom:1px solid var(--line)}
-.seg .sname{font-family:"Archivo",sans-serif;font-weight:800;font-size:clamp(19px,1.8vw,24px);line-height:1;letter-spacing:-.02em}
-.seg .sage{font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:12px;color:var(--tc);margin-top:8px}
-.seg .sdesc{font-size:15px;color:var(--ink-2)}
-.seg .sneed{font-size:12.5px;letter-spacing:.02em;color:var(--faint);line-height:1.7;font-weight:600}
-.day{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1.2vw,16px)}
-.day .slot{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:22px 18px;display:flex;flex-direction:column;gap:10px;min-height:165px}
-.day .slot .t{font-family:"Archivo",sans-serif;font-weight:800;font-size:24px;color:var(--tc)}
-.day .slot .w{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(243,241,236,.55);font-weight:600}
-.day .slot .d{font-size:13px;color:rgba(243,241,236,.82);margin-top:auto;line-height:1.45}
-.pods-shot{aspect-ratio:16/8;border-radius:var(--radius);overflow:hidden;background:var(--panel);position:relative;box-shadow:var(--shadow)}
-.pods-shot image-slot{width:100%;height:100%}
-.pods-shot .cap{position:absolute;left:18px;bottom:16px;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--faint)}
-@media(max-width:860px){.prose-2{grid-template-columns:1fr}.promises{grid-template-columns:1fr}.seg{grid-template-columns:1fr;gap:8px}.day{grid-template-columns:1fr 1fr 1fr}}
-@media(max-width:480px){.day{grid-template-columns:1fr 1fr}}
-</style>
 </head>
 <body data-page="about">
 <div id="ps-nav"></div>
 <div class="page-top"></div>
 
-<header class="section about-hero">
-  <div class="wrap">
-    <div class="reveal"><span class="eyebrow">P.S. — Before You Wake Till You Sleep · No. 05</span></div>
-    <h1 class="reveal" data-d="1">Before you wake<br><span class="tc">till you sleep.</span></h1>
-    <p class="lede reveal" data-d="2" style="max-width:54ch;margin-top:24px;color:var(--muted)">P.S. is not a morning brand or a workday brand. We want to be there before your first alarm and after your last email — which is why we built Pods, not cafes.</p>
-  </div>
-</header>
+<main class="wh-page">
+  <section class="wh-page-hero">
+    <div class="wh-page-hero-copy">
+      <p class="wh-page-kicker">Pods.</p>
+      <h1>We go where you already are.</h1>
+      <footer>
+        <p>A Pod is small, purposeful, and planted inside the ecosystem of your daily life.</p>
+        <a href="#pods">Find a Pod</a>
+      </footer>
+    </div>
+    <div class="wh-page-hero-media"><image-slot id="about-hero-pod" shape="rect" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1600" placeholder="P.S. Coffee Pod" fit="cover"></image-slot></div>
+  </section>
 
-<section class="section tight">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">01 — The three promises, in order</span></div>
-    <div class="promises reveal">
-      <div class="promise"><span class="pn">No. 01</span><h3>Spot On Quality</h3><p>100% Arabica, specialty grade. The cup is never the compromise. Better systems, not lower standards.</p></div>
-      <div class="promise"><span class="pn">No. 02</span><h3>Spot On Pricing</h3><p>Premium is a promise, not a position. We stripped out the building and put the savings in the cup. From ₹89.</p></div>
-      <div class="promise"><span class="pn">No. 03</span><h3>Spot On Reachability</h3><p>We go where you already are. Pods planted inside the ecosystem of your daily life, not a neighbourhood we liked.</p></div>
-    </div>
-  </div>
-</section>
+  <section class="wh-page-statement">
+    <p>Spot On Reachability.</p>
+    <h2>We do not build cafes and hope you find us. We fit inside the building you are already in.</h2>
+  </section>
 
-<section class="section bg-panel">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">02 — Who P.S. is for</span><h2>The people who order<br>twice before noon.</h2></div>
-    <div class="reveal">
-      <div class="seg">
-        <div><div class="sname">Corporate</div><div class="sage">25–40 · Office / hybrid</div></div>
-        <div class="sdesc">Drinks coffee twice daily minimum. Currently paying ₹120 for a vending-machine cup that tastes like regret.</div>
-        <div class="sneed">Coffee is infrastructure<br>They need it to function</div>
-      </div>
-      <div class="seg">
-        <div><div class="sname">Freelancer</div><div class="sage">24–38 · Co-working</div></div>
-        <div class="sdesc">Buys good beans at home. Drinks the co-working machine when they run out. Knows the difference. Hates the compromise.</div>
-        <div class="sneed">Values efficiency<br>Refuses to overpay</div>
-      </div>
-      <div class="seg">
-        <div><div class="sname">Gym Crowd</div><div class="sage">18–35 · Fitness-first</div></div>
-        <div class="sdesc">Pre-workout espresso or post-workout cold brew. Functional drinker. Doesn't want to sit down — wants the hit.</div>
-        <div class="sneed">Speed · Proximity<br>Done. Go.</div>
-      </div>
-      <div class="seg">
-        <div><div class="sname">The Student</div><div class="sage">18–25 · Budget-aware</div></div>
-        <div class="sdesc">Drinks coffee to study, not to socialise. Talks arabica vs robusta because they genuinely know. ₹89 is sustainable; ₹280 is not.</div>
-        <div class="sneed">Quality and affordability<br>No longer a choice</div>
-      </div>
-      <div class="seg">
-        <div><div class="sname">Daily Drinker</div><div class="sage">28–45 · Serious</div></div>
-        <div class="sdesc">Has a home espresso setup. Knows what a 9-bar pull feels like. Needs a reliable daily cup that doesn't require a pilgrimage.</div>
-        <div class="sneed">Coffee is identity<br>Will not compromise</div>
-      </div>
+  <section class="wh-page-rail">
+    <header><h2>Why Pods.</h2><p>Not cafes. Not kiosks. Not counters. Pods.</p></header>
+    <div class="wh-page-cards">
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="about-card-1" shape="rect" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=900" placeholder="Corporate campus" fit="cover"></image-slot></div><h3>Offices.</h3><p>The 9am meeting rush. The 11am second cup. The coffee habit, one floor away.</p><a href="partnership.html">Host a Pod</a></article>
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="about-card-2" shape="rect" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=900" placeholder="Gym Pod" fit="cover"></image-slot></div><h3>Gyms.</h3><p>Pre-workout sorted. Post-workout cold brew. Speed and proximity are the product.</p><a href="menu.html#menu-coffee">View coffee</a></article>
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="about-card-3" shape="rect" src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&q=80&w=900" placeholder="Campus Pod" fit="cover"></image-slot></div><h3>Campuses.</h3><p>₹89 specialty coffee for deadlines, exams, late nights, and the walks between them.</p><a href="menu.html">View menu</a></article>
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="about-card-4" shape="rect" src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80&w=900" placeholder="Small Pod" fit="cover"></image-slot></div><h3>50-200 sq ft.</h3><p>The Pod is small so the cup can be honest. We chose that deliberately.</p><a href="story.html">Read story</a></article>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="pods">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">03 — Why "Pods"</span><h2>Not cafes.<br>Not kiosks. Pods.</h2></div>
-    <div class="prose-2" style="margin-bottom:clamp(34px,4vw,54px)">
-      <div class="reveal"><p class="lead">A pod is the smallest self-contained unit of something essential. A coffee pod. A sleep pod. A growth pod. It does exactly one thing, completely.</p></div>
-      <div class="reveal" data-d="1">
-        <p>Each Pod is a complete specialty coffee operation in 50–200 sq ft. It fits where a photocopier used to be. It's there because we measured foot traffic, not because we liked the neighbourhood.</p>
-        <p>A gym-adjacent Pod captures the early morning. A co-working Pod captures mid-day. A campus Pod captures evenings. The goal is always the same — to be the nearest quality cup to wherever you are, at whatever hour you need one.</p>
+  <section class="wh-page-list" id="pods">
+    <div class="wh-page-list-grid">
+      <div class="wh-page-list-copy"><h2>Highlighted Pods.</h2></div>
+      <div class="wh-page-list-rows">
+        <p><span>Prahladnagar.</span><span>Ahmedabad · Opening 2026</span></p>
+        <p><span>SG Highway.</span><span>Ahmedabad · Corporate campus</span></p>
+        <p><span>BKC.</span><span>Mumbai · Office Pod</span></p>
+        <p><span>Indiranagar.</span><span>Bengaluru · Gym-adjacent</span></p>
+        <p><span>Cyber Hub.</span><span>Gurugram · Workday loop</span></p>
       </div>
     </div>
-    <div class="pods-shot reveal">
-      <image-slot id="about-pod" placeholder="Pod / placement shot — wide" fit="cover"></image-slot>
-      <div class="cap">A Pod fits where a photocopier used to be</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section bg-ink">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow" style="color:var(--tc)">04 — A day with P.S.</span><h2 style="color:#fff">Every loop,<br>covered.</h2></div>
-    <div class="day reveal">
-      <div class="slot"><span class="t">6am</span><span class="w">Gym lobby</span><span class="d">The gym can wait. The coffee cannot.</span></div>
-      <div class="slot"><span class="t">9am</span><span class="w">Pre-meeting</span><span class="d">It's a two-cup morning. You already know.</span></div>
-      <div class="slot"><span class="t">11am</span><span class="w">Second cup</span><span class="d">The meeting went long. We've been waiting.</span></div>
-      <div class="slot"><span class="t">3pm</span><span class="w">The slump</span><span class="d">The 3pm slump is a myth. Here's your coffee anyway.</span></div>
-      <div class="slot"><span class="t">6pm</span><span class="w">Post-work</span><span class="d">The workday is done. The coffee is not.</span></div>
-      <div class="slot"><span class="t">9pm</span><span class="w">Matcha pivot</span><span class="d">Matcha tonight. Coffee tomorrow.</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap">
-    <p class="statement reveal" style="max-width:16ch"><span class="tc">P.S.</span> — Where should<br>a Pod open?</p>
-    <div style="display:flex;gap:14px;flex-wrap:wrap" class="reveal" data-d="1">
-      <a href="index.html#waitlist" class="btn lg">Suggest a location <span class="ar">→</span></a>
-      <a href="partnership.html" class="btn ghost lg">Host a Pod</a>
-    </div>
-  </div>
-</section>
+  <section class="wh-page-split">
+    <a href="app.html"><image-slot id="about-split-app" shape="rect" src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=1200" placeholder="P.S. app" fit="cover"></image-slot><h2>Order before you arrive.</h2><p>Your coffee is made fresh to your arrival, not sitting on a counter.</p><span>Open the app →</span></a>
+    <a href="partnership.html"><image-slot id="about-split-host" shape="rect" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1200" placeholder="Host a Pod" fit="cover"></image-slot><h2>Host a Pod.</h2><p>Office, gym, campus, or high-footfall building. We handle the coffee.</p><span>Partner with us →</span></a>
+  </section>
+</main>
 
 <div id="ps-footer"></div>
 <script src="assets/image-slot.js"></script>

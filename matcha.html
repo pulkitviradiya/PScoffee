@@ -3,207 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>P.S. Coffee — Matcha</title>
-<meta name="description" content="Matcha, taken seriously. Ceremonial-grade matcha, whisked properly — even at Pod speed. The evening pivot for late deadlines and early starts. Not the powder. Not even close. From ₹129.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700\&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300\&display=swap" rel="stylesheet">
+<title>P.S. Coffee. | Matcha.</title>
+<meta name="description" content="P.S. Matcha. Ceremonial grade. Not the powder. Not even close.">
 <link rel="stylesheet" href="assets/ps.css">
 <link rel="stylesheet" href="assets/wh.css">
-<script>(function(){try{var t=JSON.parse(localStorage.getItem('ps-tweaks')||'{}');var r=document.documentElement;if(t.tc)r.style.setProperty('--tc',t.tc);if(t.paper)r.style.setProperty('--paper',t.paper);if(t.scale)r.style.setProperty('--type-scale',t.scale);if(t.btn)r.style.setProperty('--btn-radius',t.btn);}catch(e){}})();</script>
-<style>
-/* green editorial hero */
-.hero-matcha{position:relative;overflow:hidden;color:#EAF1DB;
-  background:radial-gradient(120% 120% at 80% 0%,#3C7E50 0%,#2F6B43 45%,#235135 100%);
-  padding-block:clamp(112px,15vh,176px) clamp(56px,8vw,104px)}
-.hero-matcha .glow{position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(50% 60% at 12% 100%,rgba(255,255,255,.10),transparent 60%)}
-.hero-matcha .wrap{position:relative;z-index:2}
-.hm-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(32px,5vw,72px);align-items:center}
-.hm-eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:"Archivo",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:rgba(234,241,219,.85);margin-bottom:26px}
-.hm-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#CFE0BE;box-shadow:0 0 0 4px rgba(207,224,190,.22);flex:none}
-.hero-matcha h1{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(46px,7.2vw,108px);line-height:.9;letter-spacing:-.038em;color:#fff}
-.hero-matcha .lede{color:rgba(234,241,219,.8);margin-top:26px;max-width:44ch;font-size:clamp(16px,1.3vw,19px)}
-.hero-matcha .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-.btn.on-matcha{background:#fff;border-color:#fff;color:var(--matcha)}
-.btn.on-matcha:hover{background:transparent;color:#fff}
-.btn.line-matcha{background:transparent;border-color:rgba(234,241,219,.5);color:#EAF1DB}
-.btn.line-matcha:hover{background:#EAF1DB;border-color:#EAF1DB;color:var(--matcha)}
-.hm-fig{position:relative;border-radius:24px;aspect-ratio:4/5;overflow:hidden;background:rgba(255,255,255,.08);box-shadow:0 50px 100px -34px rgba(0,0,0,.4),inset 0 0 0 1px rgba(255,255,255,.1)}
-.hm-fig image-slot{width:100%;height:100%}
-.hm-fig .tag{position:absolute;top:20px;left:20px;background:#fff;color:var(--matcha)}
-.hero-meta{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px;font-family:"Archivo",sans-serif;font-weight:600;font-size:12.5px;color:rgba(234,241,219,.72)}
-.hero-meta b{color:#fff;font-weight:800}
-.hero-meta .sep{width:5px;height:5px;border-radius:50%;background:#CFE0BE}
-.hero-meta span{white-space:nowrap}
-
-/* matcha accent overrides on this page */
-.m-eyebrow{font-family:"Archivo",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--matcha)}
-.sec-head h2 .mg{color:var(--matcha)}
-.prose-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,60px)}
-.prose-2 p{font-size:clamp(15px,1.15vw,17px);color:var(--muted);line-height:1.65}
-.prose-2 p+p{margin-top:16px}
-.lead{font-size:clamp(20px,2vw,28px)!important;color:var(--ink)!important;line-height:1.32;font-family:"Archivo",sans-serif;font-weight:700;letter-spacing:-.02em}
-.lead .mg{color:var(--matcha)}
-
-/* steeping steps */
-.steeps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.8vw,22px)}
-.steep{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;transition:.25s}
-.steep:hover{border-color:var(--matcha);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
-.steep .sn{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:30px;color:var(--matcha);line-height:1}
-.steep h3{font-family:"Archivo",sans-serif;font-weight:700;font-size:17px;margin:14px 0 8px;letter-spacing:-.01em}
-.steep p{font-size:13.5px;color:var(--muted)}
-
-/* grades compare */
-.gcompare{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--surface)}
-.grow{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;align-items:stretch}
-.grow+.grow{border-top:1px solid var(--line)}
-.grow>div{padding:18px clamp(14px,1.8vw,24px);display:flex;align-items:center;font-size:14.5px}
-.grow .gf{font-family:"Archivo",sans-serif;font-weight:600;color:var(--ink)}
-.grow .gp{color:var(--muted);background:var(--panel)}
-.grow .gus{background:var(--matcha-tint);color:#235135;font-weight:600}
-.ghead .gf{background:var(--ink);color:#fff;font-weight:700}
-.ghead .gp{background:var(--panel-2);color:var(--ink);font-family:"Archivo",sans-serif;font-weight:700;font-size:13px}
-.ghead .gus{background:var(--matcha);color:#fff;font-family:"Archivo",sans-serif;font-weight:800}
-
-.matcha-band{background:var(--matcha-tint)}
-.matcha-band .cat-head .ci,.matcha-band .cat-head h2{color:var(--matcha)}
-.cat-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,40px)}
-.cat-head .ci{font-family:"Archivo",sans-serif;font-weight:800;font-size:14px;color:var(--matcha);letter-spacing:.06em}
-.cat-head h2{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(28px,4.4vw,52px);line-height:.95;letter-spacing:-.025em}
-.cat-head .ct{font-size:13px;color:var(--matcha);margin-left:auto;font-weight:600}
-.matcha-band .item .shot{background:#fff}
-
-@media(max-width:960px){.steeps{grid-template-columns:1fr 1fr}.grow{grid-template-columns:1.2fr 1fr 1fr 1fr}.grow>div{font-size:12.5px;padding:14px}}
-@media(max-width:920px){.hm-grid{grid-template-columns:1fr;gap:34px}.hm-fig{order:-1;aspect-ratio:4/3;max-height:46vh}}
-@media(max-width:860px){.prose-2{grid-template-columns:1fr}}
-@media(max-width:560px){.steeps{grid-template-columns:1fr}.grow{grid-template-columns:1fr}.grow .gp,.grow .gus{display:none}.ghead{display:none}}
-</style>
 </head>
-<body data-page="matcha" data-darkhero>
+<body data-page="matcha">
 <div id="ps-nav"></div>
+<div class="page-top"></div>
 
-<!-- ░░ GREEN EDITORIAL HERO ░░ -->
-<header class="hero-matcha">
-  <span class="glow"></span>
-  <div class="wrap">
-    <div class="hm-grid">
-      <div>
-        <div class="hm-eyebrow"><span class="dot"></span>P.S. — Precisely Steeped · No. 03</div>
-        <h1>Matcha,<br>taken seriously.</h1>
-        <p class="lede">A whole second ritual, given the same care as the first. Ceremonial-grade matcha, whisked properly — even at Pod speed. Not the powder. Not even close.</p>
-        <div class="cta-row">
-          <a href="#lineup" class="btn on-matcha lg">See the matcha menu <span class="ar">→</span></a>
-          <a href="#steep" class="btn line-matcha lg">How we steep it</a>
-        </div>
-        <div class="hero-meta">
-          <span>From <b>₹129</b></span><span class="sep"></span>
-          <span><b>Ceremonial</b> grade</span><span class="sep"></span>
-          <span>Whisked, not <b>shaken</b></span>
-        </div>
-      </div>
-      <div class="hm-fig">
-        <image-slot id="matcha-hero" placeholder="Iced ceremonial matcha latte — hero, on green" fit="cover"></image-slot>
-        <span class="tag">Ceremonial</span>
-      </div>
+<main class="wh-page">
+  <section class="wh-page-hero is-light">
+    <div class="wh-page-hero-copy">
+      <p class="wh-page-kicker">Matcha.</p>
+      <h1>Matcha tonight. Coffee tomorrow.</h1>
+      <footer>
+        <p>P.S. Ceremonial grade. Not the powder. Not even close.</p>
+        <a href="#lineup">View matcha</a>
+      </footer>
     </div>
-  </div>
-</header>
+    <div class="wh-page-hero-media"><image-slot id="matcha-hero" shape="rect" src="https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?auto=format&fit=crop&q=80&w=1600" placeholder="Matcha" fit="cover"></image-slot></div>
+  </section>
 
-<!-- ░░ PHILOSOPHY ░░ -->
-<section class="section">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="m-eyebrow">01 — What ceremonial grade means</span></div>
-    <div class="prose-2">
-      <div class="reveal"><p class="lead">The matcha most places serve is a <span class="mg">culinary powder</span> built to survive sugar and ice. Ours is the grade you'd whisk at a tea ceremony — just made at the speed you actually live.</p></div>
-      <div class="reveal" data-d="1">
-        <p>Ceremonial grade is the first spring harvest — the youngest, shade-grown leaves, stone-milled into a powder so fine it suspends in water without a fight. It's vivid green, naturally sweet, and built to be tasted on its own, not buried under syrup.</p>
-        <p>We treat it that way. Sifted, measured, whisked to a proper foam — not shaken from a bottle. The convenience is in the Pod and the app. The matcha itself gets no shortcuts.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <section class="wh-page-statement">
+    <p>Precisely Steeped.</p>
+    <h2>You came for the coffee. The matcha was the surprise.</h2>
+  </section>
 
-<!-- ░░ HOW WE STEEP ░░ -->
-<section class="section bg-panel" id="steep">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="m-eyebrow">02 — How we make it</span><h2>Proper, even at<br><span class="mg">Pod speed.</span></h2></div>
-    <div class="steeps">
-      <div class="steep reveal"><div class="sn">01</div><h3>Sift</h3><p>Ceremonial powder, sifted fine so there's not a single clump before the water touches it.</p></div>
-      <div class="steep reveal" data-d="1"><div class="sn">02</div><h3>Whisk</h3><p>Whisked to a smooth, even foam — never shaken from a pre-mixed bottle. The texture is the tell.</p></div>
-      <div class="steep reveal" data-d="2"><div class="sn">03</div><h3>Pour</h3><p>Over cold milk and ice, or steamed for a hot latte. The grassy sweetness stays intact, not masked.</p></div>
-      <div class="steep reveal" data-d="3"><div class="sn">04</div><h3>Serve</h3><p>Ready before you arrive — the same three-tap order, the same 90 seconds, an entirely different drink.</p></div>
+  <section class="wh-page-rail" id="lineup">
+    <header><h2>The lineup.</h2><p>Ceremonial grade, properly prepared, no green shortcut.</p></header>
+    <div class="wh-page-cards">
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="matcha-card-hot" shape="rect" src="https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?auto=format&fit=crop&q=80&w=900" placeholder="Hot matcha latte" fit="cover"></image-slot></div><h3>Hot Matcha Latte.</h3><p>Precisely whisked. Steamed milk. Quiet evening energy.</p><button type="button" data-add="Hot Matcha Latte">Add to cart <span>₹139 +</span></button></article>
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="matcha-card-iced" shape="rect" src="https://images.unsplash.com/photo-1558857563-b371033873b8?auto=format&fit=crop&q=80&w=900" placeholder="Iced matcha latte" fit="cover"></image-slot></div><h3>Iced Matcha Latte.</h3><p>You switched from coffee to matcha during exams. Interesting.</p><button type="button" data-add="Iced Matcha Latte">Add to cart <span>₹149 +</span></button></article>
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="matcha-card-tonic" shape="rect" src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&q=80&w=900" placeholder="Matcha tonic" fit="cover"></image-slot></div><h3>Matcha Tonic.</h3><p>Light, bright, properly steeped. Not another sugary green drink.</p><button type="button" data-add="Matcha Tonic">Add to cart <span>₹159 +</span></button></article>
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="matcha-card-cold" shape="rect" src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&q=80&w=900" placeholder="Matcha cold foam" fit="cover"></image-slot></div><h3>Cold Foam.</h3><p>P.S. You said you did not like matcha. We noticed.</p><button type="button" data-add="Matcha Cold Foam">Add to cart <span>₹159 +</span></button></article>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ░░ THE LINE-UP ░░ -->
-<section class="section matcha-band" id="lineup">
-  <div class="wrap">
-    <div class="cat-head reveal"><span class="ci">M — Matcha</span><h2>The evening pivot</h2><span class="ct">Ceremonial grade · From ₹129</span></div>
-    <div class="grid g-4">
-      <article class="item matcha reveal"><div class="shot"><image-slot id="x-1" placeholder="Hot Matcha Latte"></image-slot><button class="fav" aria-label="Save"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 20s-7-4.4-9.2-8.5C1.2 8.3 2.6 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.4 0 4.8 3.3 3.2 6.5C19 15.6 12 20 12 20z"/></svg></button></div><div class="meta"><span class="iname">Hot Matcha Latte</span><span class="ingr">Ceremonial / Steamed milk</span><span class="stars">★★★★★</span><div class="buyrow"><span class="price">₹139</span><button class="add" data-add="Hot Matcha Latte"><svg class="i" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M12 5v14M5 12h14"/></svg> Add</button></div></div></article>
-      <article class="item matcha reveal" data-d="1"><div class="shot"><image-slot id="x-2" placeholder="Iced Matcha Latte"></image-slot><span class="tag matcha">Signature</span><button class="fav" aria-label="Save"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 20s-7-4.4-9.2-8.5C1.2 8.3 2.6 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.4 0 4.8 3.3 3.2 6.5C19 15.6 12 20 12 20z"/></svg></button></div><div class="meta"><span class="iname">Iced Matcha Latte</span><span class="ingr">Ceremonial / Oat / Ice</span><span class="stars">★★★★★</span><div class="buyrow"><span class="price">₹149</span><button class="add" data-add="Iced Matcha Latte"><svg class="i" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M12 5v14M5 12h14"/></svg> Add</button></div></div></article>
-      <article class="item matcha reveal" data-d="2"><div class="shot"><image-slot id="x-3" placeholder="Ceremonial Usucha"></image-slot><button class="fav" aria-label="Save"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 20s-7-4.4-9.2-8.5C1.2 8.3 2.6 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.4 0 4.8 3.3 3.2 6.5C19 15.6 12 20 12 20z"/></svg></button></div><div class="meta"><span class="iname">Ceremonial Usucha</span><span class="ingr">Whisked / Water / Neat</span><span class="stars">★★★★☆</span><div class="buyrow"><span class="price">₹129</span><button class="add" data-add="Ceremonial Usucha"><svg class="i" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M12 5v14M5 12h14"/></svg> Add</button></div></div></article>
-      <article class="item matcha reveal" data-d="3"><div class="shot"><image-slot id="x-4" placeholder="Matcha Cold Foam"></image-slot><button class="fav" aria-label="Save"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 20s-7-4.4-9.2-8.5C1.2 8.3 2.6 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.4 0 4.8 3.3 3.2 6.5C19 15.6 12 20 12 20z"/></svg></button></div><div class="meta"><span class="iname">Matcha Cold Foam</span><span class="ingr">Cold brew / Matcha foam</span><span class="stars">★★★★★</span><div class="buyrow"><span class="price">₹159</span><button class="add" data-add="Matcha Cold Foam"><svg class="i" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M12 5v14M5 12h14"/></svg> Add</button></div></div></article>
-      <article class="item matcha reveal"><div class="shot"><image-slot id="x-5" placeholder="Strawberry Matcha"></image-slot><span class="tag matcha" style="background:#C0392B">New</span><button class="fav" aria-label="Save"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 20s-7-4.4-9.2-8.5C1.2 8.3 2.6 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.4 0 4.8 3.3 3.2 6.5C19 15.6 12 20 12 20z"/></svg></button></div><div class="meta"><span class="iname">Strawberry Matcha</span><span class="ingr">Matcha / Strawberry / Milk</span><span class="stars">★★★★★</span><div class="buyrow"><span class="price">₹169</span><button class="add" data-add="Strawberry Matcha"><svg class="i" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M12 5v14M5 12h14"/></svg> Add</button></div></div></article>
-      <article class="item matcha reveal" data-d="1"><div class="shot"><image-slot id="x-6" placeholder="Matcha Tonic"></image-slot><button class="fav" aria-label="Save"><svg class="i" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M12 20s-7-4.4-9.2-8.5C1.2 8.3 2.6 5 6 5c2 0 3.2 1.2 4 2.4C10.8 6.2 12 5 14 5c3.4 0 4.8 3.3 3.2 6.5C19 15.6 12 20 12 20z"/></svg></button></div><div class="meta"><span class="iname">Iced Matcha Tonic</span><span class="ingr">Matcha / Tonic / Citrus</span><span class="stars">★★★★☆</span><div class="buyrow"><span class="price">₹159</span><button class="add" data-add="Iced Matcha Tonic"><svg class="i" viewBox="0 0 24 24" style="width:15px;height:15px"><path d="M12 5v14M5 12h14"/></svg> Add</button></div></div></article>
+  <section class="wh-page-list">
+    <div class="wh-page-list-grid">
+      <div class="wh-page-list-copy"><h2>Green without the theatre.</h2></div>
+      <div class="wh-page-list-rows">
+        <p><span>Grade.</span><span>Ceremonial. Not culinary powder in a costume.</span></p>
+        <p><span>Method.</span><span>Whisked properly. Steeped precisely.</span></p>
+        <p><span>Time.</span><span>Evening pivot. Exam night. Post-work walk.</span></p>
+        <p><span>Format.</span><span>Ready before you arrive, like everything else at the Pod.</span></p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ░░ GRADES COMPARE ░░ -->
-<section class="section">
-  <div class="wrap">
-    <div class="sec-head center reveal"><span class="m-eyebrow">03 — Not all green powder is matcha</span><h2>The grade,<br><span class="mg">itemised.</span></h2><p>What you're actually tasting, and why ours is on the right.</p></div>
-    <div class="gcompare reveal" data-d="1">
-      <div class="grow ghead">
-        <div class="gf">What you get</div>
-        <div class="gp">The bottle mix</div>
-        <div class="gp">Culinary powder</div>
-        <div class="gus">P.S. Ceremonial</div>
-      </div>
-      <div class="grow">
-        <div class="gf">First-harvest leaves</div>
-        <div class="gp">✕ No</div>
-        <div class="gp">✕ Rarely</div>
-        <div class="gus">✓ Always</div>
-      </div>
-      <div class="grow">
-        <div class="gf">Whisked to order</div>
-        <div class="gp">✕ Pre-mixed</div>
-        <div class="gp">✕ Shaken</div>
-        <div class="gus">✓ Whisked fresh</div>
-      </div>
-      <div class="grow">
-        <div class="gf">Tastes good unsweetened</div>
-        <div class="gp">✕ Needs sugar</div>
-        <div class="gp">✕ Bitter</div>
-        <div class="gus">✓ Naturally sweet</div>
-      </div>
-      <div class="grow">
-        <div class="gf">Colour</div>
-        <div class="gp">Dull khaki</div>
-        <div class="gp">Yellow-green</div>
-        <div class="gus">Vivid green</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ EVENING PIVOT ░░ -->
-<section class="section bg-matcha">
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap">
-    <div class="reveal" style="max-width:30ch">
-      <span class="eyebrow" style="color:#CFE0BE">The evening pivot</span>
-      <p class="statement" style="color:#fff;margin-top:14px">Matcha tonight.<br>Coffee tomorrow.</p>
-      <p class="lede" style="color:rgba(234,241,219,.8);margin-top:20px;max-width:38ch">Less caffeine, no crash, and a steadier focus for the late deadline. The 9pm answer that doesn't wreck your sleep.</p>
-    </div>
-    <div style="display:flex;gap:14px;flex-wrap:wrap" class="reveal" data-d="1">
-      <a href="index.html#waitlist" class="btn on-matcha lg">Join the waitlist <span class="ar">→</span></a>
-      <a href="menu.html" class="btn line-matcha lg">Full menu</a>
-    </div>
-  </div>
-</section>
+  <section class="wh-page-split">
+    <a href="menu.html?cat=matcha#menu-matcha"><image-slot id="matcha-split-menu" shape="rect" src="https://images.unsplash.com/photo-1558857563-b371033873b8?auto=format&fit=crop&q=80&w=1200" placeholder="Matcha menu" fit="cover"></image-slot><h2>View matcha.</h2><p>Hot, iced, tonic, foam. Same direct promise.</p><span>Open menu →</span></a>
+    <a href="app.html"><image-slot id="matcha-split-app" shape="rect" src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=1200" placeholder="Order matcha" fit="cover"></image-slot><h2>Order in three taps.</h2><p>Your matcha is ready before you arrive.</p><span>Use the app →</span></a>
+  </section>
+</main>
 
 <div id="ps-footer"></div>
 <script src="assets/image-slot.js"></script>

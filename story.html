@@ -3,147 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>P.S. Coffee — The Story</title>
-<meta name="description" content="An instant coffee brand without the instant coffee. We lowered our rent, not our beans. The thinking behind P.S. Coffee — the postscript, the Pods, the anti-pretense contract.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700\&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300\&display=swap" rel="stylesheet">
+<title>P.S. Coffee. | About.</title>
+<meta name="description" content="P.S. Coffee is specialty-grade Arabica from ₹89, inside the buildings you are already in.">
 <link rel="stylesheet" href="assets/ps.css">
 <link rel="stylesheet" href="assets/wh.css">
-<script>(function(){try{var t=JSON.parse(localStorage.getItem('ps-tweaks')||'{}');var r=document.documentElement;if(t.tc)r.style.setProperty('--tc',t.tc);if(t.paper)r.style.setProperty('--paper',t.paper);if(t.scale)r.style.setProperty('--type-scale',t.scale);if(t.btn)r.style.setProperty('--btn-radius',t.btn);}catch(e){}})();</script>
-<style>
-.story-hero{background:linear-gradient(180deg,var(--panel) 0%,var(--paper) 100%);padding-top:clamp(34px,5vw,64px)}
-.story-hero h1{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(38px,6.6vw,92px);line-height:.96;letter-spacing:-.03em;margin-top:18px;max-width:17ch}
-.story-hero h1 .tc{color:var(--tc)}
-.prose-2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,60px)}
-.prose-2 p{font-size:clamp(15px,1.15vw,17px);color:var(--muted);line-height:1.65}
-.prose-2 p + p{margin-top:16px}
-.lead{font-size:clamp(20px,2vw,28px)!important;color:var(--ink)!important;line-height:1.32;font-family:"Archivo",sans-serif;font-weight:700;letter-spacing:-.02em}
-.bg-ink .prose-2 p{color:rgba(243,241,236,.72)}
-.bg-ink .lead{color:#fff!important}
-.ps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.5vw,18px)}
-.ps-cell{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;display:flex;flex-direction:column;gap:8px;min-height:170px;transition:.25s}
-.ps-cell:hover{border-color:var(--tc);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
-.ps-cell .pm{font-family:"Archivo",sans-serif;font-weight:800;font-size:24px;color:var(--tc)}
-.ps-cell .pt{font-family:"Archivo",sans-serif;font-weight:700;font-size:15px;letter-spacing:-.01em}
-.ps-cell .pd{font-size:13px;color:var(--muted);margin-top:auto;line-height:1.5}
-.story-shot{aspect-ratio:16/7;border-radius:var(--radius);overflow:hidden;background:var(--panel);position:relative;box-shadow:var(--shadow)}
-.story-shot image-slot{width:100%;height:100%}
-.story-shot .cap{position:absolute;left:18px;bottom:16px;font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--faint)}
-.manifesto p{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(22px,3.2vw,42px);line-height:1.04;letter-spacing:-.025em;border-top:1px solid rgba(255,255,255,.14);padding-top:24px;margin-top:24px;color:#fff}
-.manifesto p:first-child{border-top:0;margin-top:0;padding-top:0}
-.manifesto p .ps{color:var(--tc)}
-@media(max-width:860px){.prose-2{grid-template-columns:1fr}.ps-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:440px){.ps-grid{grid-template-columns:1fr}}
-</style>
 </head>
 <body data-page="story">
 <div id="ps-nav"></div>
 <div class="page-top"></div>
 
-<header class="section story-hero">
-  <div class="wrap">
-    <div class="reveal"><span class="eyebrow">P.S. — The Founding Idea · No. 06</span></div>
-    <h1 class="reveal" data-d="1">An instant coffee brand <span class="tc">without the instant coffee.</span></h1>
-    <p class="lede reveal" data-d="2" style="max-width:56ch;margin-top:26px;color:var(--muted)">100% espresso shot from 100% genuine specialty beans — ready before you arrive. Built from a single honest observation about who actually drinks coffee every day.</p>
-  </div>
-</header>
+<main class="wh-page">
+  <section class="wh-page-hero">
+    <div class="wh-page-hero-copy">
+      <p class="wh-page-kicker">About.</p>
+      <h1>We lowered overhead. Not standards.</h1>
+      <footer>
+        <p>P.S. Coffee was built from one honest observation: daily drinkers deserve the better cup, every day.</p>
+        <a href="#pillars">Read the pillars</a>
+      </footer>
+    </div>
+    <div class="wh-page-hero-media"><image-slot id="story-hero" shape="rect" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&q=80&w=1600" placeholder="P.S. Coffee story" fit="cover"></image-slot></div>
+  </section>
 
-<section class="section tight">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">01 — The observation</span></div>
-    <div class="prose-2">
-      <div class="reveal"><p class="lead">The people who drink coffee every day are being asked to pay for the people who drink it once a week.</p></div>
-      <div class="reveal" data-d="1">
-        <p>The co-working professional who needs a 9am cappuccino. The gym member grabbing a cold brew before a 6am session. The student nursing a latte through a three-hour deadline. The freelancer who orders twice before noon without thinking about it. These people are the real coffee market.</p>
-        <p>For years, the industry has been building infrastructure for the wrong customer. The specialty cafe exists to create an experience. We exist to make the experience irrelevant — not by lowering quality, but by removing everything that inflates the price without improving the cup.</p>
+  <section class="wh-page-statement">
+    <p>The founding idea.</p>
+    <h2>The people who drink coffee every day should not pay for the people who drink it once a week.</h2>
+  </section>
+
+  <section class="wh-page-list" id="model">
+    <div class="wh-page-list-grid">
+      <div class="wh-page-list-copy"><h2>The model.</h2></div>
+      <div class="wh-page-list-rows">
+        <p><span>Beans.</span><span>100% Arabica specialty-grade beans. Not blended. Not bulked with Robusta. Not cut with chicory.</span></p>
+        <p><span>Format.</span><span>Pods in 50-200 sq ft. Less rent, less theatre, fewer things you never asked for.</span></p>
+        <p><span>Technology.</span><span>Order in three taps. Choose your pick-up time. Your coffee is ready before you arrive.</span></p>
+        <p><span>Price.</span><span>Starting at ₹89. We stripped the building out. We put the savings in your cup.</span></p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section bg-ink">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow" style="color:var(--tc)">02 — The founding equation</span></div>
-    <p class="statement reveal" style="max-width:22ch;color:#fff">We lowered our <span class="tc">rent.</span> Not our <span class="tc">beans.</span></p>
-    <div class="prose-2" style="margin-top:40px">
-      <p class="reveal">No real estate premium. No interior design budget. No table service. No ambiance tax. We go where the drinker already is, fit inside the building they're already in, and hand them a specialty-grade cup in under 90 seconds.</p>
-      <p class="reveal" data-d="1">We did not lower the ingredient standard to hit the price point. We lowered <em>everything else</em>. That's the entire model — stated plainly, because the cup is the only thing worth performing.</p>
+  <section class="wh-page-rail wh-pillars" id="pillars">
+    <header><h2>Five things we will not compromise.</h2><p>Spot On Quality. Spot On Pricing. Spot On Reachability. Spot On Technology. Spot On Presence.</p></header>
+    <div class="wh-page-cards wh-pillar-grid">
+      <article class="wh-page-card wh-pillar-card"><span>01</span><div class="wh-pillar-image"><image-slot id="pillar-quality" shape="rect" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&q=80&w=900" placeholder="Specialty coffee quality" fit="cover"></image-slot></div><h3><span>Spot On</span><span>Quality.</span></h3><p>100% Arabica specialty-grade beans. The same standard applies to milk, water temperature, grind consistency, and pull time.</p><a href="menu.html">View menu</a></article>
+      <article class="wh-page-card wh-pillar-card"><span>02</span><div class="wh-pillar-image"><image-slot id="pillar-pricing" shape="rect" src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=900" placeholder="Coffee priced honestly" fit="cover"></image-slot></div><h3><span>Spot On</span><span>Pricing.</span></h3><p>A ₹300 latte funds the building. We stripped the building out and put the savings in your cup. Starting at ₹89.</p><a href="pack.html">See packs</a></article>
+      <article class="wh-page-card wh-pillar-card"><span>03</span><div class="wh-pillar-image"><image-slot id="pillar-reachability" shape="rect" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=900" placeholder="Pod inside daily locations" fit="cover"></image-slot></div><h3><span>Spot On</span><span>Reachability.</span></h3><p>We do not build cafes and hope you find us. We go where you already are: offices, campuses, gyms, and daily loops.</p><a href="about.html#pods">Find Pods</a></article>
+      <article class="wh-page-card wh-pillar-card"><span>04</span><div class="wh-pillar-image"><image-slot id="pillar-technology" shape="rect" src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=900" placeholder="Order ahead technology" fit="cover"></image-slot></div><h3><span>Spot On</span><span>Technology.</span></h3><p>Order in three taps. Choose your pick-up time. By the time you reach the Pod, your cup is done.</p><a href="app.html">See app</a></article>
+      <article class="wh-page-card wh-pillar-card"><span>05</span><div class="wh-pillar-image"><image-slot id="pillar-presence" shape="rect" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=900" placeholder="Coffee through the day" fit="cover"></image-slot></div><h3><span>Spot On</span><span>Presence.</span></h3><p>Before your first alarm and after your last email: the 6am gym crowd, 9am rush, 3pm rescue, and post-dinner matcha.</p><a href="matcha.html">View matcha</a></article>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section tight">
-  <div class="wrap">
-    <div class="story-shot reveal">
-      <image-slot id="story-1" placeholder="Editorial Pod / cup shot — wide" fit="cover"></image-slot>
-      <div class="cap">P.S. Pod — 50–200 sq ft of precision</div>
-    </div>
-  </div>
-</section>
+  <section class="wh-page-statement wh-about-manifesto">
+    <p>P.S. — We want to be there before you wake till you sleep.</p>
+    <h2>That is why we built Pods, not cafes.</h2>
+  </section>
 
-<section class="section bg-panel">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">03 — Why "P.S."</span><h2>The postscript<br>psychology.</h2></div>
-    <div class="prose-2">
-      <div class="reveal"><p class="lead">A postscript is the thought that refused to stay quiet. The last line that turns out to be the most important one.</p></div>
-      <div class="reveal" data-d="1">
-        <p>P.S. Coffee is that moment — the cup you almost skipped, the one that changed how the morning felt. We're not trying to be the headline. We're trying to be the P.S.: the thing people realise they cannot do without.</p>
-        <p>The cup lines are written as postscripts. The app notifications end with P.S. The subscription is the P.S. Pack. The cup — grabbed at the Pod, held while walking to the desk — is designed to feel like a quiet, essential addendum to whatever comes next.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">04 — The layered meaning system</span><h2>Every meaning<br>is true at once.</h2></div>
-    <div class="ps-grid reveal">
-      <div class="ps-cell"><span class="pm">P.S.</span><span class="pt">Postscript</span><span class="pd">The thought you add at the end that matters most.</span></div>
-      <div class="ps-cell"><span class="pm">P.S.</span><span class="pt">Perfectly Sourced</span><span class="pd">100% Arabica, traceable, honest supply chain.</span></div>
-      <div class="ps-cell"><span class="pm">P.S.</span><span class="pt">Pour Slowly</span><span class="pd">The care in each pull, even at QSR speed.</span></div>
-      <div class="ps-cell"><span class="pm">P.S.</span><span class="pt">Proudly Specialty</span><span class="pd">Specialty grade. No asterisk.</span></div>
-      <div class="ps-cell"><span class="pm">P.S.</span><span class="pt">Plain &amp; Simple</span><span class="pd">No jargon, no theatre, no explanation needed.</span></div>
-      <div class="ps-cell"><span class="pm">P.S.</span><span class="pt">Pretty Serious</span><span class="pd">Yes, we're that serious about a ₹89 cup.</span></div>
-      <div class="ps-cell"><span class="pm">P.S.</span><span class="pt">Precisely Steeped</span><span class="pd">Ceremonial-grade matcha, properly prepared.</span></div>
-      <div class="ps-cell"><span class="pm">P.S.</span><span class="pt">Personal sign-off</span><span class="pd">Signed like a letter, addressed to you.</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section bg-panel">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">05 — The anti-pretense contract</span></div>
-    <div class="prose-2">
-      <div class="reveal"><p class="lead">We lowered our overheads, not our standards. You get the coffee. We keep the pretense.</p></div>
-      <div class="reveal" data-d="1">
-        <p>Indian specialty coffee has conflated quality with theatre — the pour-over ritual, the single-origin origin story, the barista's explanation of the tasting notes. These have value in the right context. But for a person who needs a cappuccino before a 9am meeting, the theatre is the cover charge for the drink.</p>
-        <p>We are exactly what we say we are. Specialty grade. Grab-and-go. Honest price. The only theatre we allow is the quality itself — and that theatre plays out in the cup, not at the counter.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section bg-ink manifesto">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow" style="color:var(--tc)">06 — The manifesto</span></div>
-    <div style="max-width:26ch;margin-top:10px">
-      <p class="reveal"><span class="ps">P.S.</span> — We're not here to make an Instagrammable cafe. We're here to make your coffee habit possible.</p>
-      <p class="reveal"><span class="ps">P.S.</span> — We want to be there before you wake till you sleep. That's why we built Pods, not cafes.</p>
-      <p class="reveal"><span class="ps">P.S.</span> — The Pod is small so the cup can be honest. We chose that deliberately.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap">
-    <p class="statement reveal" style="max-width:18ch">Help us get the<br>first cup right.</p>
-    <div style="display:flex;gap:14px;flex-wrap:wrap" class="reveal" data-d="1">
-      <a href="index.html#feedback" class="btn lg">Give feedback <span class="ar">→</span></a>
-      <a href="about.html" class="btn ghost lg">Who it's for</a>
-    </div>
-  </div>
-</section>
+  <section class="wh-page-split">
+    <article><image-slot id="story-split-origin" shape="rect" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&q=80&w=1200" placeholder="Origin" fit="cover"></image-slot><h2>Perfectly Sourced.</h2><p>We did not lower the bean standard. We lowered the overhead. Specialty grade. Always.</p><span>P.S. 100% Arabica</span></article>
+    <a href="partnership.html"><image-slot id="story-split-partner" shape="rect" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1200" placeholder="Partner" fit="cover"></image-slot><h2>Pods, not cafes.</h2><p>The Pod is small so the cup can be honest. We chose that deliberately.</p><span>Partner with us →</span></a>
+  </section>
+</main>
 
 <div id="ps-footer"></div>
 <script src="assets/image-slot.js"></script>

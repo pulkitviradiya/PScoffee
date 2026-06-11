@@ -3,240 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>P.S. Coffee — The P.S. Pack</title>
-<meta name="description" content="The P.S. Pack — our subscription. Prepay your cups, save up to 27%, and your coffee's already paid for. Credits auto-apply on any drink, no expiry stress, cancel anytime. From ₹65 a cup.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700\&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300\&display=swap" rel="stylesheet">
+<title>P.S. Coffee. | The P.S. Pack.</title>
+<meta name="description" content="The P.S. Pack. Prepay 10 or 20 cups. Save up to 20%. Pay once, drink daily, repeat.">
 <link rel="stylesheet" href="assets/ps.css">
 <link rel="stylesheet" href="assets/wh.css">
-<script>(function(){try{var t=JSON.parse(localStorage.getItem('ps-tweaks')||'{}');var r=document.documentElement;if(t.tc)r.style.setProperty('--tc',t.tc);if(t.paper)r.style.setProperty('--paper',t.paper);if(t.scale)r.style.setProperty('--type-scale',t.scale);if(t.btn)r.style.setProperty('--btn-radius',t.btn);}catch(e){}})();</script>
-<style>
-/* dark editorial hero (shared pattern with home) */
-.hero-dark{position:relative;background:var(--ink);color:#F3EEE3;overflow:hidden;padding-block:clamp(112px,15vh,176px) clamp(56px,8vw,104px)}
-.hero-dark .glow{position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(54% 60% at 84% 12%,rgba(232,64,12,.22),transparent 62%),radial-gradient(46% 58% at 6% 100%,rgba(232,64,12,.10),transparent 60%)}
-.hero-dark .wrap{position:relative;z-index:2}
-.hd-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(32px,5vw,72px);align-items:center}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:"Archivo",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:rgba(243,238,227,.82);margin-bottom:26px}
-.hero-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--tc);box-shadow:0 0 0 4px rgba(232,64,12,.22);flex:none}
-.hero-dark h1{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(44px,6.6vw,98px);line-height:.9;letter-spacing:-.038em;color:#fff}
-.hero-dark h1 .tc{color:var(--tc)}
-.hero-dark .lede{color:rgba(243,238,227,.74);margin-top:26px;max-width:44ch;font-size:clamp(16px,1.3vw,19px)}
-.hero-dark .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-.btn.line-light{background:transparent;border-color:rgba(243,238,227,.5);color:#F3EEE3}
-.btn.line-light:hover{background:#F3EEE3;border-color:#F3EEE3;color:var(--ink)}
-/* hero mini receipt card */
-.receipt{background:var(--surface);color:var(--ink);border-radius:var(--radius);padding:clamp(24px,2.6vw,34px);box-shadow:var(--shadow)}
-.receipt .rh{display:flex;align-items:center;justify-content:space-between;border-bottom:1px dashed var(--line-2);padding-bottom:14px;margin-bottom:14px}
-.receipt .rh .t{font-family:"Archivo",sans-serif;font-weight:800;font-size:15px;letter-spacing:-.01em}
-.receipt .rh .b{font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--tc);white-space:nowrap}
-.receipt .rr{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0;font-size:14px;color:var(--ink-2)}
-.receipt .rr .k{color:var(--muted);white-space:nowrap}
-.receipt .rr .v{white-space:nowrap;font-variant-numeric:tabular-nums}
-.receipt .rr.big{border-top:1px solid var(--line);margin-top:10px;padding-top:16px;font-family:"Archivo",sans-serif;font-weight:800;font-size:18px;color:var(--ink)}
-.receipt .rr.big .v{color:var(--tc)}
-.receipt .save{margin-top:16px;background:var(--tc-tint);color:var(--tc-deep);border-radius:10px;padding:11px 14px;font-family:"Archivo",sans-serif;font-weight:700;font-size:13px;text-align:center}
-
-/* steps */
-.packsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px);counter-reset:st}
-.pstep{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:.25s}
-.pstep:hover{border-color:var(--tc);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
-.pstep .sn{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:34px;color:var(--tc);line-height:1}
-.pstep h3{font-family:"Archivo",sans-serif;font-weight:700;font-size:19px;margin:16px 0 8px;letter-spacing:-.01em}
-.pstep p{font-size:14.5px;color:var(--muted)}
-
-/* pricing wall */
-.pricewall{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px);align-items:stretch}
-.pricecard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(26px,2.6vw,34px);display:flex;flex-direction:column;gap:6px;position:relative;transition:.25s}
-.pricecard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.pricecard .tier{font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
-.pricecard .cups{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(26px,2.6vw,32px);letter-spacing:-.02em;margin-top:4px}
-.pricecard .pp{display:flex;align-items:baseline;gap:10px;margin-top:18px}
-.pricecard .pp .n{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(38px,4.4vw,52px);line-height:.9;letter-spacing:-.03em}
-.pricecard .pp .was{font-size:15px;color:var(--faint);text-decoration:line-through}
-.pricecard .per{font-size:13.5px;color:var(--muted);margin-top:8px}
-.pricecard .per b{color:var(--tc);font-weight:700}
-.pricecard ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:22px 0 0;padding-top:20px;border-top:1px solid var(--line)}
-.pricecard li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-2)}
-.pricecard li .ck{flex:none;width:18px;height:18px;border-radius:50%;background:var(--tc);display:grid;place-items:center;margin-top:1px}
-.pricecard li .ck svg{width:10px;height:10px;stroke:#fff;fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
-.pricecard .pcta{margin-top:auto;padding-top:24px}
-.pricecard.feat{background:var(--ink);color:#F3EEE3;border-color:var(--ink)}
-.pricecard.feat .tier,.pricecard.feat .per{color:rgba(243,238,227,.62)}
-.pricecard.feat .cups,.pricecard.feat .pp .n{color:#fff}
-.pricecard.feat ul{border-color:rgba(243,238,227,.16)}
-.pricecard.feat li{color:rgba(243,238,227,.84)}
-.pricecard.feat .pp .was{color:rgba(243,238,227,.45)}
-.pricecard .flag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--tc);color:#fff;font-family:"Archivo",sans-serif;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:999px;white-space:nowrap}
-
-/* the math band */
-.mathband{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,64px);align-items:center}
-.mathstat{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.mathstat .ms{background:rgba(255,255,255,.05);border:1px solid rgba(243,238,227,.12);border-radius:14px;padding:24px}
-.mathstat .ms .n{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(30px,3.6vw,46px);color:#fff;line-height:.95;letter-spacing:-.03em}
-.mathstat .ms .n .u{color:var(--tc)}
-.mathstat .ms .l{font-size:12.5px;color:rgba(243,238,227,.6);margin-top:10px;font-weight:600;letter-spacing:.02em}
-
-@media(max-width:920px){.hd-grid{grid-template-columns:1fr;gap:36px}.receipt{order:-1}}
-@media(max-width:860px){.packsteps,.pricewall{grid-template-columns:1fr}.mathband{grid-template-columns:1fr}.pricecard.feat{order:-1}}
-</style>
 </head>
-<body data-page="pack" data-darkhero>
+<body data-page="pack">
 <div id="ps-nav"></div>
+<div class="page-top"></div>
 
-<!-- ░░ DARK HERO ░░ -->
-<header class="hero-dark">
-  <span class="glow"></span>
-  <div class="wrap">
-    <div class="hd-grid">
-      <div>
-        <div class="hero-eyebrow"><span class="dot"></span>P.S. — The Subscription · No. 01</div>
-        <h1>Your coffee,<br><span class="tc">already paid for.</span></h1>
-        <p class="lede">The P.S. Pack is the simplest way to make a good cup a daily habit. Prepay your cups, save up to 27%, and the friction is gone before the morning starts. It's already paid for — which means it's already yours.</p>
-        <div class="cta-row">
-          <a href="#pricing" class="btn accent lg">See the packs <span class="ar">→</span></a>
-          <a href="index.html#waitlist" class="btn line-light lg">Notify me at launch</a>
-        </div>
-      </div>
-      <div class="receipt">
-        <div class="rh"><span class="t">P.S. Pack · 20 cups</span><span class="b">Most chosen</span></div>
-        <div class="rr"><span class="k">20 cups, prepaid</span><span class="v">₹1,780</span></div>
-        <div class="rr"><span class="k">P.S. Pack price</span><span class="v">₹1,420</span></div>
-        <div class="rr"><span class="k">Per cup</span><span class="v">₹71</span></div>
-        <div class="rr big"><span class="k">You keep</span><span class="v">₹360</span></div>
-        <div class="save">P.S. — That's 20% back in your pocket.</div>
-      </div>
+<main class="wh-page">
+  <section class="wh-page-hero">
+    <div class="wh-page-hero-copy">
+      <p class="wh-page-kicker">Subscribe.</p>
+      <h1>Pay once. Drink daily. Repeat.</h1>
+      <footer>
+        <p>The P.S. Pack. Because some habits deserve a commitment.</p>
+        <a href="#plans">Build your pack</a>
+      </footer>
     </div>
-  </div>
-</header>
+    <div class="wh-page-hero-media"><image-slot id="pack-hero" shape="rect" src="https://images.unsplash.com/photo-1522992319-0365e5f11656?auto=format&fit=crop&q=80&w=1600" placeholder="P.S. Pack" fit="cover"></image-slot></div>
+  </section>
 
-<!-- ░░ TRUST STRIP ░░ -->
-<div class="trust">
-  <div class="wrap">
-    <span class="t-lab">One pack, used across every</span>
-    <span class="t-item"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h6M9 12h6M9 16h3"/></svg> Pod</span>
-    <span class="t-item"><svg class="i" viewBox="0 0 24 24"><path d="M5 7h14l-1 12H6z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg> Drink</span>
-    <span class="t-item"><svg class="i" viewBox="0 0 24 24"><path d="M3 10l9-5 9 5-9 5z"/><path d="M7 12v5c0 1 5 3 5 3s5-2 5-3v-5"/></svg> Campus</span>
-    <span class="t-item"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Every hour</span>
-  </div>
-</div>
+  <section class="wh-page-statement">
+    <p>Spot On Pricing.</p>
+    <h2>Your coffee is already paid for. Go to the Pod. No bad coffee mornings.</h2>
+  </section>
 
-<!-- ░░ HOW IT WORKS ░░ -->
-<section class="section">
-  <div class="wrap">
-    <div class="sec-head center reveal"><span class="eyebrow">How the Pack works</span><h2>Three taps to set up.<br><span class="tc">Zero from then on.</span></h2><p>Set it once. After that, a daily coffee is the most frictionless decision in your morning.</p></div>
-    <div class="packsteps">
-      <div class="pstep reveal"><div class="sn">01</div><h3>Pick a pack</h3><p>Choose 10, 20, or 30 cups. The bigger the pack, the lower the per-cup price — down to ₹65.</p></div>
-      <div class="pstep reveal" data-d="1"><div class="sn">02</div><h3>Credits auto-apply</h3><p>Order any drink in the app and your Pack covers it automatically. No wallet, no card, no maths.</p></div>
-      <div class="pstep reveal" data-d="2"><div class="sn">03</div><h3>Reorder in one tap</h3><p>Running low? A single tap tops you back up. We'll remind you with a quiet postscript before you run out.</p></div>
+  <section class="wh-page-rail" id="plans">
+    <header><h2>Choose your Pack.</h2><p>Prepay 10 or 20 cups. Save up to 20%.</p></header>
+    <div class="wh-page-cards">
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="pack-card-10" shape="rect" src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=900" placeholder="10 cup pack" fit="cover"></image-slot></div><h3>10 cups.</h3><p>P.S. Ten cups. No bad coffee mornings. Built for the forming habit.</p><button type="button" data-add="10 Cup P.S. Pack">Add to cart <span>₹799 +</span></button></article>
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="pack-card-20" shape="rect" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=900" placeholder="20 cup pack" fit="cover"></image-slot></div><h3>20 cups.</h3><p>P.S. Subscribe. Stop thinking about it every morning.</p><button type="button" data-add="20 Cup P.S. Pack">Add to cart <span>₹1499 +</span></button></article>
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="pack-card-office" shape="rect" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=900" placeholder="Office pack" fit="cover"></image-slot></div><h3>Office Pack.</h3><p>Pretty serious about a ₹89 cup. Built for teams that drink coffee daily.</p><a href="partnership.html">For teams</a></article>
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="pack-card-app" shape="rect" src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=900" placeholder="App balance" fit="cover"></image-slot></div><h3>Auto-applied.</h3><p>Your pack balance applies automatically. Never open your wallet for a daily coffee again.</p><a href="app.html">See app</a></article>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ░░ PRICING WALL ░░ -->
-<section class="section bg-panel" id="pricing">
-  <div class="wrap">
-    <div class="sec-head center reveal"><span class="eyebrow">Pick your pack</span><h2>The more you commit,<br>the less each cup costs.</h2><p>Every pack works on any drink — coffee, matcha, cold brew. Credits never expire on you, and you can cancel anytime.</p></div>
-    <div class="pricewall">
-      <div class="pricecard reveal">
-        <span class="tier">The Starter</span>
-        <span class="cups">10 Cups</span>
-        <div class="pp"><span class="n">₹799</span><span class="was">₹890</span></div>
-        <div class="per"><b>₹80</b> per cup · save 10%</div>
-        <ul>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> Any drink on the menu</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> Credits auto-applied</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> Cancel anytime</li>
-        </ul>
-        <div class="pcta"><a href="index.html#waitlist" class="btn ghost block">Notify me</a></div>
-      </div>
-      <div class="pricecard feat reveal" data-d="1">
-        <span class="flag">Most popular</span>
-        <span class="tier">The Regular</span>
-        <span class="cups">20 Cups</span>
-        <div class="pp"><span class="n">₹1,420</span><span class="was">₹1,780</span></div>
-        <div class="per"><b style="color:#FFB48F">₹71</b> per cup · save 20%</div>
-        <ul>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> Everything in Starter</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> Priority Pod pick-up window</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> Pause &amp; resume anytime</li>
-        </ul>
-        <div class="pcta"><a href="index.html#waitlist" class="btn on-ink block">Notify me at launch</a></div>
-      </div>
-      <div class="pricecard reveal" data-d="2">
-        <span class="tier">The Daily</span>
-        <span class="cups">30 Cups</span>
-        <div class="pp"><span class="n">₹1,950</span><span class="was">₹2,670</span></div>
-        <div class="per"><b>₹65</b> per cup · save 27%</div>
-        <ul>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> Everything in Regular</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> Lowest per-cup price</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> Frequency perks unlock</li>
-        </ul>
-        <div class="pcta"><a href="index.html#waitlist" class="btn ghost block">Notify me</a></div>
+  <section class="wh-page-list">
+    <div class="wh-page-list-grid">
+      <div class="wh-page-list-copy"><h2>Convenience without the fee.</h2></div>
+      <div class="wh-page-list-rows">
+        <p><span>Save.</span><span>Prepay your daily cup and save up to 20%.</span></p>
+        <p><span>Skip friction.</span><span>Your next order is one tap. Your coffee is already yours.</span></p>
+        <p><span>Pause.</span><span>Change your Pack when the habit changes.</span></p>
+        <p><span>Return.</span><span>Same Pod. Same quality. Same price. That is the point.</span></p>
       </div>
     </div>
-    <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:26px" class="reveal">P.S. — Prices are indicative for launch. The add-to-cart and checkout are a preview, not a live store yet.</p>
-  </div>
-</section>
+  </section>
 
-<!-- ░░ WHY PREPAY ░░ -->
-<section class="section">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Why a pack beats paying per cup</span><h2>Less friction. Less spend.<br>Same specialty cup.</h2></div>
-    <div class="grid g-3">
-      <div class="value reveal" style="flex-direction:column;align-items:flex-start"><span class="v-ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><div><h4>Up to 27% off</h4><p>The per-cup price falls the more you commit — from ₹80 down to ₹65. The discount is the reward for the habit.</p></div></div>
-      <div class="value reveal" data-d="1" style="flex-direction:column;align-items:flex-start"><span class="v-ico"><svg class="i" viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span><div><h4>Zero daily friction</h4><p>No card, no wallet, no decision. Your cup is already paid for, so ordering is one tap and a walk to the Pod.</p></div></div>
-      <div class="value reveal" data-d="2" style="flex-direction:column;align-items:flex-start"><span class="v-ico"><svg class="i" viewBox="0 0 24 24"><path d="M3 12h6l2-5 4 10 2-5h4"/></svg></span><div><h4>Any drink counts</h4><p>Espresso today, iced matcha tonight, cold brew tomorrow. One credit, any drink on the menu. No tiers to track.</p></div></div>
-      <div class="value reveal" style="flex-direction:column;align-items:flex-start"><span class="v-ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><div><h4>No expiry stress</h4><p>Your cups wait for you. We won't quietly burn your balance on a clock — that's not what a postscript does.</p></div></div>
-      <div class="value reveal" data-d="1" style="flex-direction:column;align-items:flex-start"><span class="v-ico"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></span><div><h4>Works across every Pod</h4><p>One pack, used wherever a Pod is — your office floor at 9am, your gym at 6pm. The balance follows you.</p></div></div>
-      <div class="value reveal" data-d="2" style="flex-direction:column;align-items:flex-start"><span class="v-ico"><svg class="i" viewBox="0 0 24 24"><path d="M6 4h12v16l-6-3-6 3z"/></svg></span><div><h4>Cancel anytime</h4><p>No lock-in, no penalty. Pause it, resume it, or stop entirely. The Pack earns its place every single cup.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ THE MATH ░░ -->
-<section class="section bg-ink">
-  <div class="wrap mathband">
-    <div class="reveal">
-      <span class="eyebrow" style="color:var(--tc)">The daily-drinker math</span>
-      <h2 style="color:#fff;margin-top:14px" class="display">Two cups a day,<br>itemised over a month.</h2>
-      <p class="lede" style="color:rgba(243,238,227,.7);margin-top:22px;max-width:42ch">A ₹300 cafe habit is ₹18,000 a month. The same two cups on a P.S. Daily pack? A fraction of it — for the same specialty-grade beans, ready before you arrive.</p>
-      <a href="#pricing" class="btn accent lg" style="margin-top:30px">Pick your pack <span class="ar">→</span></a>
-    </div>
-    <div class="mathstat reveal" data-d="1">
-      <div class="ms"><div class="n">₹18,000<span class="u">/mo</span></div><div class="l">The ₹300 cafe, twice a day</div></div>
-      <div class="ms"><div class="n">₹3,900<span class="u">/mo</span></div><div class="l">P.S. Daily pack, twice a day</div></div>
-      <div class="ms"><div class="n">₹14,100<span class="u">+</span></div><div class="l">Kept in your pocket monthly</div></div>
-      <div class="ms"><div class="n">100<span class="u">%</span></div><div class="l">Arabica · the cup never changes</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ FAQ ░░ -->
-<section class="section bg-panel">
-  <div class="wrap">
-    <div class="sec-head center reveal"><span class="eyebrow">Plain &amp; simple</span><h2>The Pack, answered.</h2></div>
-    <div class="faq reveal" data-d="1">
-      <div class="faq-item open"><button class="faq-q">Do my cups expire? <span class="pm"></span></button><div class="faq-a" style="max-height:none"><div class="inner">No silent clock. Your prepaid cups wait for you. If we ever set a fair-use window, it'll be long and we'll tell you plainly — a postscript, not a trap.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Can I use one pack on any drink? <span class="pm"></span></button><div class="faq-a"><div class="inner">Yes. One credit covers any drink on the menu — espresso, cappuccino, cold brew, or a ceremonial matcha. No tiers, no surcharges to decode.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Does it work at every Pod? <span class="pm"></span></button><div class="faq-a"><div class="inner">Your balance is tied to you, not a location. Use it at your office Pod in the morning and your gym Pod in the evening — the credits follow you.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Can I cancel or pause? <span class="pm"></span></button><div class="faq-a"><div class="inner">Anytime. Pause it for a holiday, resume when you're back, or stop entirely. No lock-in, no penalty — the Pack only stays because it's worth it.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Is the Pack live yet? <span class="pm"></span></button><div class="faq-a"><div class="inner">Not yet — we're pre-launch and cup-testing. Pricing here is indicative. Join the waitlist and you'll be first to set up your Pack when a Pod opens near you.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ CTA ░░ -->
-<section class="section">
-  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap">
-    <p class="statement reveal" style="max-width:20ch"><span class="tc">P.S.</span> — Some habits<br>deserve a commitment.</p>
-    <div style="display:flex;gap:14px;flex-wrap:wrap" class="reveal" data-d="1">
-      <a href="index.html#waitlist" class="btn lg">Join the waitlist <span class="ar">→</span></a>
-      <a href="menu.html" class="btn ghost lg">See the menu</a>
-    </div>
-  </div>
-</section>
+  <section class="wh-page-split">
+    <a href="menu.html"><image-slot id="pack-split-menu" shape="rect" src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&q=80&w=1200" placeholder="Menu" fit="cover"></image-slot><h2>Pick your usual.</h2><p>The app will remember it. You will not have to.</p><span>View menu →</span></a>
+    <a href="about.html#pods"><image-slot id="pack-split-pod" shape="rect" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1200" placeholder="Pod" fit="cover"></image-slot><h2>Go to the Pod.</h2><p>Your coffee is already paid for. We will handle the rest.</p><span>Find a Pod →</span></a>
+  </section>
+</main>
 
 <div id="ps-footer"></div>
 <script src="assets/image-slot.js"></script>

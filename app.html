@@ -3,244 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>P.S. Coffee — The App</title>
-<meta name="description" content="Three taps. That is all. Order in three taps, choose your pick-up time, and your coffee is ready before you arrive. Meet the P.S. app and the P.S. Pack.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700\&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300\&display=swap" rel="stylesheet">
+<title>P.S. Coffee. | The App.</title>
+<meta name="description" content="Order in three taps. Choose your pick-up time. Your P.S. Coffee is ready before you arrive.">
 <link rel="stylesheet" href="assets/ps.css">
 <link rel="stylesheet" href="assets/wh.css">
-<script>(function(){try{var t=JSON.parse(localStorage.getItem('ps-tweaks')||'{}');var r=document.documentElement;if(t.tc)r.style.setProperty('--tc',t.tc);if(t.paper)r.style.setProperty('--paper',t.paper);if(t.scale)r.style.setProperty('--type-scale',t.scale);if(t.btn)r.style.setProperty('--btn-radius',t.btn);}catch(e){}})();</script>
-<style>
-.app-hero{background:linear-gradient(180deg,var(--panel) 0%,var(--paper) 100%);padding-top:clamp(34px,5vw,64px);padding-bottom:0}
-.app-hero h1{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(44px,8vw,116px);line-height:.9;letter-spacing:-.03em;margin-top:16px}
-.app-hero h1 .tc{color:var(--tc)}
-.demo{display:grid;grid-template-columns:336px 1fr;gap:clamp(36px,5vw,80px);align-items:center}
-.phone-wrap{display:flex;justify-content:center}
-.phone{width:316px;height:646px;background:#141414;border-radius:46px;padding:13px;box-shadow:0 40px 90px -20px rgba(20,20,20,.45),inset 0 0 0 2px rgba(255,255,255,.06);position:relative}
-.phone::before{content:"";position:absolute;top:24px;left:50%;transform:translateX(-50%);width:96px;height:7px;background:#000;border-radius:10px;z-index:6}
-.screen{width:100%;height:100%;background:var(--surface);border-radius:34px;overflow:hidden;position:relative}
-.scr{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;transform:translateX(16px);pointer-events:none;transition:opacity .4s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
-.scr.on{opacity:1;transform:none;pointer-events:auto}
-.scr-top{padding:40px 22px 14px;display:flex;align-items:center;justify-content:space-between}
-.scr-top .pmark{font-family:"Archivo",sans-serif;font-weight:800;font-size:18px;color:var(--tc)}
-.scr-top .step{font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase}
-.scr-h{font-family:"Archivo",sans-serif;font-weight:800;font-size:24px;line-height:1.02;letter-spacing:-.02em;padding:0 22px 16px;color:var(--ink)}
-.scr-body{flex:1;overflow:hidden;padding:0 16px;display:flex;flex-direction:column;gap:9px}
-.drink{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;transition:.18s;background:var(--surface)}
-.drink:hover{border-color:var(--tc);transform:translateY(-1px)}
-.drink .dn{font-family:"Archivo",sans-serif;font-weight:700;font-size:15px}
-.drink .di{font-size:11px;color:var(--faint);margin-top:2px}
-.drink .dp{font-family:"Archivo",sans-serif;font-weight:800;font-size:15px;color:var(--tc)}
-.drink.matcha:hover{border-color:var(--matcha)}
-.drink.matcha .dp{color:var(--matcha)}
-.timeopt{padding:16px;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;transition:.18s}
-.timeopt:hover,.timeopt.sel{border-color:var(--tc);background:var(--tc-tint)}
-.timeopt .tl{font-family:"Archivo",sans-serif;font-weight:700;font-size:15px}
-.timeopt .ts{font-size:11px;color:var(--faint);margin-top:2px}
-.scr-foot{padding:14px 16px 26px}
-.scr-btn{width:100%;border:0;cursor:pointer;background:var(--tc);color:#fff;font-family:"Archivo",sans-serif;font-weight:600;font-size:14px;padding:16px;border-radius:12px;transition:.2s}
-.scr-btn:hover{background:var(--tc-deep)}
-.scr-btn.ghost{background:var(--panel);color:var(--ink)}
-.confirm-row{display:flex;justify-content:space-between;padding:14px 4px;border-bottom:1px solid var(--line);font-size:14px}
-.confirm-row .k{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:600}
-.confirm-row .v{font-family:"Archivo",sans-serif;font-weight:700;font-size:14px}
-.ready{align-items:center;justify-content:center;text-align:center;gap:16px;padding:0 28px}
-.ready .check{width:84px;height:84px;border-radius:50%;background:var(--tc);display:flex;align-items:center;justify-content:center}
-.ready .check svg{width:40px;height:40px;stroke:#fff;fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
-.ready h3{font-family:"Archivo",sans-serif;font-weight:800;font-size:26px;color:var(--ink);line-height:1;letter-spacing:-.02em}
-.ready .pod{font-size:12px;letter-spacing:.04em;color:var(--muted);font-weight:600}
-.ready .psl{font-family:"Archivo",sans-serif;font-weight:800;font-size:14px;color:var(--tc)}
-.dots{display:flex;gap:6px;justify-content:center;padding-bottom:14px}
-.dots span{width:6px;height:6px;border-radius:50%;background:var(--line-2);transition:.2s}
-.dots span.on{background:var(--tc);width:18px;border-radius:6px}
-
-.pack{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,60px);align-items:center}
-.pack-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(26px,3vw,40px);box-shadow:var(--shadow)}
-.pack-toggle{display:flex;background:var(--panel);border-radius:999px;padding:5px;margin-bottom:26px}
-.pack-toggle button{flex:1;background:none;border:0;cursor:pointer;padding:12px;font-family:"Archivo",sans-serif;font-weight:600;font-size:13px;color:var(--ink-2);border-radius:999px;transition:.18s}
-.pack-toggle button.on{background:var(--ink);color:#fff}
-.pack-price{display:flex;align-items:baseline;gap:14px}
-.pack-price .pp{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:expanded;font-size:clamp(40px,5vw,64px);color:var(--ink);line-height:1;letter-spacing:-.03em}
-.pack-price .was{font-size:16px;color:var(--faint);text-decoration:line-through}
-.pack-meta{font-size:14px;color:var(--muted);margin-top:16px;line-height:2}
-.pack-meta b{color:var(--tc);font-weight:700}
-
-.notif{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px 18px}
-.notif .ni{width:42px;height:42px;border-radius:11px;background:var(--tc);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Archivo",sans-serif;font-weight:800;font-size:13px;flex-shrink:0}
-.notif .nb .nt{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:rgba(243,241,236,.5);font-weight:600}
-.notif .nb .nm{font-size:14px;color:#F3F1EC;margin-top:4px;line-height:1.45}
-
-@media(max-width:860px){.demo{grid-template-columns:1fr;gap:40px}.pack{grid-template-columns:1fr}}
-</style>
 </head>
 <body data-page="app">
 <div id="ps-nav"></div>
 <div class="page-top"></div>
 
-<header class="section app-hero">
-  <div class="wrap">
-    <div class="reveal"><span class="eyebrow">P.S. — Spot On Technology · No. 04</span></div>
-    <h1 class="reveal" data-d="1">Three taps.<br><span class="tc">That is all.</span></h1>
-    <p class="lede reveal" data-d="2" style="max-width:52ch;margin-top:22px;color:var(--muted)">The technology is invisible when it works and offensive when it doesn't. So we obsess over it. Order in three taps, pick when it's ready, and walk straight to a finished cup.</p>
-  </div>
-</header>
+<main class="wh-page">
+  <section class="wh-page-hero is-light">
+    <div class="wh-page-hero-copy">
+      <p class="wh-page-kicker">App.</p>
+      <h1>Three taps. That is all.</h1>
+      <footer>
+        <p>Open app. Pick drink. Confirm. Your coffee is ready before you arrive.</p>
+        <a href="#features">How it works</a>
+      </footer>
+    </div>
+    <div class="wh-page-hero-media"><image-slot id="app-hero" shape="rect" src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=1600" placeholder="P.S. Coffee app" fit="cover"></image-slot></div>
+  </section>
 
-<!-- INTERACTIVE DEMO -->
-<section class="section">
-  <div class="wrap demo">
-    <div class="phone-wrap reveal">
-      <div class="phone">
-        <div class="screen">
-          <div class="scr on" data-scr="0">
-            <div class="scr-top"><span class="pmark">P.S.</span><span class="step">01 / Pick</span></div>
-            <div class="scr-h">Good morning.<br>Your usual?</div>
-            <div class="scr-body">
-              <div class="drink" data-drink="Cappuccino" data-pr="₹89"><div><div class="dn">Cappuccino</div><div class="di">Espresso · Milk · Foam</div></div><div class="dp">₹89</div></div>
-              <div class="drink" data-drink="Cold Brew" data-pr="₹119"><div><div class="dn">Cold Brew</div><div class="di">18hr steep · Ice</div></div><div class="dp">₹119</div></div>
-              <div class="drink matcha" data-drink="Iced Matcha" data-pr="₹149"><div><div class="dn">Iced Matcha</div><div class="di">Ceremonial · Oat</div></div><div class="dp">₹149</div></div>
-              <div class="drink" data-drink="Flat White" data-pr="₹109"><div><div class="dn">Flat White</div><div class="di">Double shot · Microfoam</div></div><div class="dp">₹109</div></div>
-            </div>
-            <div class="dots"><span class="on"></span><span></span><span></span><span></span></div>
-          </div>
-          <div class="scr" data-scr="1">
-            <div class="scr-top"><span class="pmark">P.S.</span><span class="step">02 / When</span></div>
-            <div class="scr-h">When do you<br>want it ready?</div>
-            <div class="scr-body">
-              <div class="timeopt" data-time="Ready in 5 min"><div class="tl">As soon as possible</div><div class="ts">~5 min · made to your arrival</div></div>
-              <div class="timeopt" data-time="Ready in 15 min"><div class="tl">In 15 minutes</div><div class="ts">Pull it as I head over</div></div>
-              <div class="timeopt" data-time="Ready in 30 min"><div class="tl">In 30 minutes</div><div class="ts">After this meeting</div></div>
-            </div>
-            <div class="dots"><span></span><span class="on"></span><span></span><span></span></div>
-          </div>
-          <div class="scr" data-scr="2">
-            <div class="scr-top"><span class="pmark">P.S.</span><span class="step">03 / Confirm</span></div>
-            <div class="scr-h">Confirm &amp; go.</div>
-            <div class="scr-body" style="gap:0;padding-top:6px">
-              <div class="confirm-row"><span class="k">Drink</span><span class="v" id="c-drink">Cappuccino</span></div>
-              <div class="confirm-row"><span class="k">Pick-up</span><span class="v" id="c-time">Ready in 5 min</span></div>
-              <div class="confirm-row"><span class="k">Pod</span><span class="v">Westgate Co-work</span></div>
-              <div class="confirm-row"><span class="k">Walk</span><span class="v">2 min away</span></div>
-              <div class="confirm-row" style="border-bottom:0"><span class="k">Total</span><span class="v" id="c-total" style="color:var(--tc)">₹89</span></div>
-            </div>
-            <div class="scr-foot"><button class="scr-btn" id="confirmBtn">Confirm order</button></div>
-          </div>
-          <div class="scr ready" data-scr="3">
-            <div class="check"><svg viewBox="0 0 40 40"><path d="M9 21l7 7 15-17"/></svg></div>
-            <h3>Your P.S.<br>is ready.</h3>
-            <div class="pod">Pod · Westgate Co-work</div>
-            <div class="pod">Pick up anytime in the next 15 min</div>
-            <div class="psl">P.S. — We knew.</div>
-            <div class="scr-foot" style="width:100%"><button class="scr-btn ghost" id="resetBtn">Start over</button></div>
-          </div>
-        </div>
+  <section class="wh-page-statement">
+    <p>Spot On Technology.</p>
+    <h2>The technology at P.S. Coffee is invisible when it works. Which is why we obsess over it.</h2>
+  </section>
+
+  <section class="wh-page-rail" id="features">
+    <header><h2>Built for habit.</h2><p>Daily coffee should not require daily friction.</p></header>
+    <div class="wh-page-cards">
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="app-card-1" shape="rect" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80&w=900" placeholder="Three tap order" fit="cover"></image-slot></div><h3>3-tap order.</h3><p>Open app. Pick drink. Confirm. No size names to memorise.</p><a href="menu.html">Pick a drink</a></article>
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="app-card-2" shape="rect" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=900" placeholder="Pickup time" fit="cover"></image-slot></div><h3>Pick-up time.</h3><p>You choose when your coffee is ready. It is made fresh to your arrival.</p><a href="about.html#pods">Find a Pod</a></article>
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="app-card-3" shape="rect" src="https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&q=80&w=900" placeholder="Smart favourites" fit="cover"></image-slot></div><h3>Your usual.</h3><p>After the third order, the app suggests your usual. It learns without making a speech.</p><a href="pack.html">Make it official</a></article>
+      <article class="wh-page-card"><div class="wh-page-card-img"><image-slot id="app-card-4" shape="rect" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=900" placeholder="Nearest Pod" fit="cover"></image-slot></div><h3>Nearest Pod.</h3><p>Real-time. Walk time. Not driving time. The Pod is inside your daily loop.</p><a href="about.html#pods">All Pods</a></article>
+    </div>
+  </section>
+
+  <section class="wh-page-list">
+    <div class="wh-page-list-grid">
+      <div class="wh-page-list-copy"><h2>Your coffee is ready.</h2></div>
+      <div class="wh-page-list-rows">
+        <p><span>Ready notification.</span><span>Not “preparing your order.” Ready means ready.</span></p>
+        <p><span>Pack balance.</span><span>P.S. Pack credits applied automatically.</span></p>
+        <p><span>Frequency rewards.</span><span>Daily drinkers get perks, not points to calculate.</span></p>
+        <p><span>No queue.</span><span>No wait. No awkward standing around.</span></p>
       </div>
     </div>
+  </section>
 
-    <div class="reveal" data-d="1">
-      <span class="eyebrow">Try it — tap through the order</span>
-      <p class="statement" style="font-size:clamp(26px,3.4vw,46px);margin-top:14px">Open. Pick.<br>Confirm. <span class="tc">Done.</span></p>
-      <p class="lede" style="color:var(--muted);margin-top:22px;max-width:42ch">No account setup for your first order. No loyalty points to calculate. No size names to memorise. The app learns your usual by the second time, and on day ten it's the first thing on screen.</p>
-      <div class="badge accent" style="margin-top:26px">Live demo · tap a drink to begin</div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="section bg-panel">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">What the app does</span><h2>A daily habit<br>without daily friction.</h2></div>
-    <div class="grid g-3">
-      <div class="value reveal" style="flex-direction:column;align-items:flex-start"><span class="v-ico"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><div><h4>3-Tap Ordering</h4><p>Open app, pick drink, confirm. No account required for the first order.</p></div></div>
-      <div class="value reveal" data-d="1" style="flex-direction:column;align-items:flex-start"><span class="v-ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><div><h4>Pick-up Time</h4><p>You choose when it's ready. Made fresh to your arrival — not going cold on a counter.</p></div></div>
-      <div class="value reveal" data-d="2" style="flex-direction:column;align-items:flex-start"><span class="v-ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 16.5 6.5 18.2l1-5.5-4-3.9L9 8z"/></svg></span><div><h4>Smart Favourites</h4><p>It learns your order. On day two it already knows. On day ten it's one tap.</p></div></div>
-      <div class="value reveal" style="flex-direction:column;align-items:flex-start"><span class="v-ico"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><h4>Nearest Pod Finder</h4><p>Real-time map. Walk time — not driving time. The Pod is in your building or one floor down.</p></div></div>
-      <div class="value reveal" data-d="1" style="flex-direction:column;align-items:flex-start"><span class="v-ico"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5"/><path d="M3 10h18M7 14h4"/></svg></span><div><h4>Subscription Balance</h4><p>P.S. Pack credits applied automatically. Never open your wallet for a daily coffee again.</p></div></div>
-      <div class="value reveal" data-d="2" style="flex-direction:column;align-items:flex-start"><span class="v-ico"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></span><div><h4>Frequency Rewards</h4><p>The more you come, the better it gets. Daily drinkers get perks — not points to count.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- P.S. PACK -->
-<section class="section" id="pack">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">The subscription</span><h2>The P.S. Pack.</h2></div>
-    <div class="pack">
-      <div class="reveal">
-        <p class="statement" style="font-size:clamp(26px,3.4vw,46px)">Pay once.<br>Drink daily. <span class="tc">Repeat.</span></p>
-        <p class="lede" style="color:var(--muted);margin-top:22px;max-width:40ch">Prepay 10 or 20 cups, save up to 20%, and never think about paying again. The best habit is one where the friction is already removed. Your coffee's already paid for — which means it's already yours.</p>
-        <div class="badge accent" style="margin-top:26px">P.S. — Some habits deserve a commitment</div>
-      </div>
-      <div class="pack-card reveal" data-d="1">
-        <div class="pack-toggle">
-          <button class="on" data-pack="10">10 Cups</button>
-          <button data-pack="20">20 Cups</button>
-        </div>
-        <div class="pack-price"><span class="pp" id="packPrice">₹799</span><span class="was" id="packWas">₹890</span></div>
-        <div class="pack-meta">
-          <span id="packPer">₹80 per cup</span> · save <b id="packSave">10%</b><br>
-          Credits applied automatically · Any drink<br>
-          No expiry stress · Cancel anytime
-        </div>
-        <a href="index.html#waitlist" class="btn accent lg block" style="margin-top:26px">Notify me at launch <span class="ar">→</span></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NOTIFICATIONS -->
-<section class="section bg-ink">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow" style="color:var(--tc)">Notifications you'll actually want</span><h2 style="color:#fff">Signed off,<br>like a letter.</h2></div>
-    <div class="grid g-2">
-      <div class="notif reveal"><div class="ni">P.S.</div><div class="nb"><div class="nt">Morning · 8:47am</div><div class="nm">Good morning. Your usual is queued. Ready in 6 minutes at Westgate Co-work. P.S. — We know.</div></div></div>
-      <div class="notif reveal" data-d="1"><div class="ni">P.S.</div><div class="nb"><div class="nt">Ready · just now</div><div class="nm">Your P.S. is ready. Pick up anytime in the next 15 minutes.</div></div></div>
-      <div class="notif reveal"><div class="ni">P.S.</div><div class="nb"><div class="nt">Afternoon · 3:00pm</div><div class="nm">P.S. — It's 3pm. You know what that means.</div></div></div>
-      <div class="notif reveal" data-d="1"><div class="ni">P.S.</div><div class="nb"><div class="nt">Pack low · 2 left</div><div class="nm">P.S. — 2 cups left on your pack. Time to make it official again.</div></div></div>
-    </div>
-  </div>
-</section>
+  <section class="wh-page-split">
+    <a href="pack.html"><image-slot id="app-split-pack" shape="rect" src="https://images.unsplash.com/photo-1522992319-0365e5f11656?auto=format&fit=crop&q=80&w=1200" placeholder="P.S. Pack" fit="cover"></image-slot><h2>Pay once. Drink daily.</h2><p>Your coffee is already paid for, which means it is already yours.</p><span>Subscribe →</span></a>
+    <a href="menu.html"><image-slot id="app-split-menu" shape="rect" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1200" placeholder="Menu" fit="cover"></image-slot><h2>The P.S. Menu.</h2><p>100% Arabica. Every drink. No exceptions.</p><span>View menu →</span></a>
+  </section>
+</main>
 
 <div id="ps-footer"></div>
-
-<script>
-(function(){
-  var scrs=[].slice.call(document.querySelectorAll(".scr"));
-  var order={drink:"Cappuccino",price:"₹89",time:"Ready in 5 min"};
-  function show(i){ scrs.forEach(function(s){ s.classList.toggle("on", +s.dataset.scr===i); }); }
-  document.querySelectorAll(".drink").forEach(function(d){
-    d.addEventListener("click", function(){
-      order.drink=d.dataset.drink; order.price=d.dataset.pr;
-      document.getElementById("c-drink").textContent=order.drink;
-      document.getElementById("c-total").textContent=order.price;
-      show(1);
-    });
-  });
-  document.querySelectorAll(".timeopt").forEach(function(t){
-    t.addEventListener("click", function(){
-      document.querySelectorAll(".timeopt").forEach(function(x){x.classList.remove("sel");}); t.classList.add("sel");
-      order.time=t.dataset.time;
-      document.getElementById("c-time").textContent=order.time;
-      setTimeout(function(){show(2);},180);
-    });
-  });
-  var cb=document.getElementById("confirmBtn"); if(cb) cb.addEventListener("click",function(){show(3);});
-  var rb=document.getElementById("resetBtn"); if(rb) rb.addEventListener("click",function(){
-    document.querySelectorAll(".timeopt").forEach(function(x){x.classList.remove("sel");}); show(0);
-  });
-  var PACK={10:{price:"₹799",was:"₹890",per:"₹80 per cup",save:"10%"},20:{price:"₹1,420",was:"₹1,780",per:"₹71 per cup",save:"20%"}};
-  document.querySelectorAll(".pack-toggle button").forEach(function(b){
-    b.addEventListener("click", function(){
-      document.querySelectorAll(".pack-toggle button").forEach(function(x){x.classList.remove("on");}); b.classList.add("on");
-      var p=PACK[b.dataset.pack];
-      document.getElementById("packPrice").textContent=p.price;
-      document.getElementById("packWas").textContent=p.was;
-      document.getElementById("packPer").textContent=p.per;
-      document.getElementById("packSave").textContent=p.save;
-    });
-  });
-})();
-</script>
 <script src="assets/image-slot.js"></script>
 <script src="assets/ps.js"></script>
 </body>
